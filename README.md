@@ -1,8 +1,9 @@
 # Autonomous_Car
-For `ATmega32 Datasheet` click [here](https://pdf1.alldatasheet.com/datasheet-pdf/view/77378/ATMEL/ATMEGA32.html)
+**For `ATmega32 Datasheet` click [here](https://pdf1.alldatasheet.com/datasheet-pdf/view/77378/ATMEL/ATMEGA32.html) .**
 
-**For codes link in drive click [here](https://drive.google.com/drive/folders/1PElyw5Zpfie02ob1f3pAfgriC47IlpKx?usp=drive_link) .**
-**For video link in drive click [here](https://drive.google.com/drive/folders/1-vLx3IUDkNg6pl5HG_9tUQvENXiMQRz7?usp=drive_link) .**
+**For `Codes Link` in drive click [here](https://drive.google.com/drive/folders/1PElyw5Zpfie02ob1f3pAfgriC47IlpKx?usp=drive_link) .**
+
+**For `Video Link` in drive click [here](https://drive.google.com/drive/folders/1-vLx3IUDkNg6pl5HG_9tUQvENXiMQRz7?usp=drive_link) .**
 <hr>
 
 ### Component
