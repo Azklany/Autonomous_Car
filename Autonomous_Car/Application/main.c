@@ -9,12 +9,13 @@
 
 void main(void) {
 	HAL_SM_voidSMInit();
+//			HAL_SM_voidSMSetAngle(i);
 	while (1) {
 		for (int i = 0; i <= 180; i += 5) {
 			HAL_SM_voidSMSetAngle(i);
 			_delay_ms(40);
 			if (i == 180) {
-				for (int i = 180; i > 0; i -= 5) {
+				for (int i = 180; i >= 0; i -= 5) {
 					HAL_SM_voidSMSetAngle(i);
 					_delay_ms(40);
 				}
