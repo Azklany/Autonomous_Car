@@ -26,6 +26,7 @@ RM := rm -rf
 -include HAL/KeyPad/subdir.mk
 -include HAL/H_Bridge/subdir.mk
 -include HAL/Buzzer/subdir.mk
+-include FreeRtos/subdir.mk
 -include Application/Autonomous_Car/subdir.mk
 -include Application/subdir.mk
 -include subdir.mk

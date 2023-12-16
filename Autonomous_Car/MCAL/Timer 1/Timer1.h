@@ -15,7 +15,7 @@
 	void vectNum (void)
 
 #define TIMER1_OVF_vect __vector_9
-#define TIMER1_COMPA_vect __vector_7
+//#define TIMER1_COMPA_vect __vector_7
 #define TIMER1_CAPT_vect __vector_6
 #define TIMER1_COMPB_vect __vector_8
 //Edge

@@ -22,6 +22,7 @@ C_DEPS :=
 SUBDIRS := \
 Application/Autonomous_Car \
 Application \
+FreeRtos \
 HAL/Buzzer \
 HAL/H_Bridge \
 HAL/KeyPad \

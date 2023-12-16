@@ -363,11 +363,11 @@ ISR(TIMER1_OVF_vect) {
 		Gptr_3();
 	}
 }
-ISR(TIMER1_COMPA_vect) {
-	if (Gptr_3 != '\0') {
-		Gptr_3();
-	}
-}
+//ISR(TIMER1_COMPA_vect) {
+//	if (Gptr_3 != '\0') {
+//		Gptr_3();
+//	}
+//}
 ISR(TIMER1_COMPB_vect) {
 	if (Gptr_3 != '\0') {
 		Gptr_3();
