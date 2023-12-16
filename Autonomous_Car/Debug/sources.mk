@@ -39,4 +39,5 @@ MCAL/Timer\ 0 \
 MCAL/Timer\ 1 \
 MCAL/UART \
 MCAL/WDT \
+SERVICE \
 

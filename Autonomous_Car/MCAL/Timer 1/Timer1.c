@@ -217,8 +217,7 @@ void MCAL_T1_voidNoiseCancller(void) {
 //Set TCNT1 Value
 void MCAL_T1_voidSetTCNT1Value(u16 LOC_u16Value) {
 	if (LOC_u16Value <= SIXTEEN_BIT_MAX_VALUE) {
-		TCNT1L = LOC_u16Value;
-		TCNT1H = (LOC_u16Value >> 8);
+		TCNT1 = LOC_u16Value;
 	} else {
 		//NOTHING
 	}
@@ -226,7 +225,7 @@ void MCAL_T1_voidSetTCNT1Value(u16 LOC_u16Value) {
 //GIT TCNT1
 void MCAL_T1_voidGetTCNT1Value(u16 *LOC_pu16Value) {
 	if (LOC_pu16Value) {
-		*LOC_pu16Value = (TCNT1H << 8) | TCNT1L;
+		*LOC_pu16Value = TCNT1;
 	}
 }
 //Set OCR1A
@@ -256,7 +255,7 @@ void MCAL_T1_voidSetICR1Value(u16 LOC_u16Value) {
 //Get ICR1
 void MCAL_T1_voidGetICR1Value(u16 *LOC_pu16Value) {
 	if (LOC_pu16Value) {
-		*LOC_pu16Value = (ICR1H << 8) | ICR1L;
+		*LOC_pu16Value = ICR1;
 	}
 }
 //TCNT1 PIE

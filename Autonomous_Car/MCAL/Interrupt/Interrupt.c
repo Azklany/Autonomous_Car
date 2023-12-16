@@ -103,10 +103,7 @@ void MCAL_Interrupt_EnableGIE(u8 Loc_u8value) {
 
 void MCAL_Interrupt_InterruptInit() {
 	MCAL_Interrupt_u8SetRegisterPin(Sreg, SREG_Pin, Pin_High);
-	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin5, Pin_High);
 	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin6, Pin_High);
-	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin7, Pin_High);
-	MCAL_Interrupt_u8SetRegisterPin(Mcucr, MCUCR_Pin, Pin_High);
 }
 
 ISR(VECT_INT0) {

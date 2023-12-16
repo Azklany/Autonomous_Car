@@ -60,6 +60,8 @@
 #define ICR1 (*(volatile uint16_t *)((0x26) + 0x20))
 #define OCR1A (*(volatile uint16_t *)((0x2A) + 0x20))
 #define OCR1B (*(volatile uint16_t *)((0x28) + 0x20))
+#define TCNT1 (*(volatile uint16_t *)((0x2C) + 0x20))
+
 
 //WDT
 #define WDTCR (*(volatile u8*)0x41)
