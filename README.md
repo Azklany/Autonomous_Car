@@ -39,6 +39,7 @@ turning to any empty direction.
   - LCD
   - Buzzer
   - H-Bridge
+  - Servo Motor
 - MCAL
   - DIO
   - WDT
