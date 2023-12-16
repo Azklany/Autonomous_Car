@@ -18,7 +18,7 @@ int main(void) {
 	  	SET_BIT(DDRD, Pin3);
 	  	MCAL_DIO_u8SetPinDirection(PortB, Pin3, Pin_High); //PWM
 	  	//T0
-	  	MCAL_Timer0_Init(FastPWM_Mode,Prescaller_8,NON_INVERTING_MODE);
+	  	MCAL_Timer0_Init(FastPWM_Mode,Prescaller_8,Non_Inverted);
 	  	MCAL_Timer0_SetCompareValue(64);
 
 	  	while (1) {
