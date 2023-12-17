@@ -33,12 +33,7 @@
 #define MCUCR (*(volatile u8*)0x55)
 #define MCUCSR (*(volatile u8*)0x54)
 
-//ADC
-#define ADMUX (*(volatile u8*)0x27)
-#define ADCSRA (*(volatile u8*)0x26)
-#define ACDH (*(volatile u8*)0x25)
-#define ACDL (*(volatile u8*)0x24)
-#define SFIOR (*(volatile u8*)0x50)
+
 
 //Timer0
 #define TIMSK (*(volatile u8*)0x59)
@@ -63,28 +58,9 @@
 #define TCNT1 (*(volatile uint16_t *)((0x2C) + 0x20))
 
 
-//WDT
-#define WDTCR (*(volatile u8*)0x41)
 
-//UART
-#define UCSRA (*(volatile u8*)0x2B)
-#define UCSRB (*(volatile u8*)0x2A)
-#define UCSRC (*(volatile u8*)0x40)
-#define UBRRH (*(volatile u8*)0x40)
-#define UBRRL (*(volatile u8*)0x29)
-#define UDR (*(volatile u8*)0x2C)
 
-//SPI
-#define SPCR (*(volatile u8*)0x2D)
-#define SPSR (*(volatile u8*)0x2E)
-#define SPDR (*(volatile u8*)0x2F)
 
-//TWI
-#define TWCR (*(volatile u8*)0x56)
-#define TWDR (*(volatile u8*)0x23)
-#define TWAR (*(volatile u8*)0x22)
-#define TWBR (*(volatile u8*)0x20)
 
-//#define GIE (*(volatile u8*)0x5f)
 
 #endif /* COMMONS_MCU_H_ */

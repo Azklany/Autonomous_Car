@@ -17,8 +17,8 @@
 #define TRIG_PIN 6
 #define ECHO_PORT PortD
 #define ECHO_PIN 2
-void ultrasonic_init(void);
-void EXTI_action(void);
-void ultrasonic_sendTrigger(void);
-void ultrasonic_get_Distance(f32*);
+void HAL_Ultrasonic_Sensor_voidInit(void) ;
+void HAL_Ultrasonic_Sensor_voidTrigger(void);
+void HAL_Ultrasonic_Sensor_voidCalcDistancse(f32*) ;
+void HAL_Ultrasonic_Sensor_voidInterrupt(void);
 #endif /* HAL_ULTRASONIC_SENSOR_ULTRASONIC_SENSOR_H_ */

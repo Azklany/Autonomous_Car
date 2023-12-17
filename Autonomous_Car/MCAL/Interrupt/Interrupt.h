@@ -41,7 +41,8 @@ void MCAL_Interrupt_u8SetRegisterPin(u8, u8 ,u8 );
 void MCAL_Interrupt_EXIT_CallBack_0(void (*ptr)(void));
 void MCAL_Interrupt_EXIT_CallBack_1(void (*ptr)(void));
 void MCAL_Interrupt_EXIT_CallBack_2(void (*ptr)(void));
-void MCAL_Interrupt_InterruptInit();
+void MCAL_Interrupt_InterruptRisingInit();
+void MCAL_Interrupt_InterruptFallingInit();
 void MCAL_Interrupt_EnableGIE(u8);
 
 

@@ -6,7 +6,7 @@
  */
 
 #include "../Timer 0/Timer_0.h"
-volatile   u16 OvfCounter=0;
+volatile   u16 Glob_u16OvfCounter=0;
 void (*Gptr3)(void)= '\0' ;
 f32 Glob_TickTime;
 u16 Start = 0;
@@ -150,7 +150,7 @@ void MCAL_Timer0_CallBack(void (*ptr)(void)) {
 ISR(TIMER0_OVF_vect) {
 	if (Gptr3 != '\0')
 		Gptr3();
-	OvfCounter++;
+	Glob_u16OvfCounter++;
 }
 ISR(TIMER0_COMP_vect) {
 	if (Gptr3 != '\0')

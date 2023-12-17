@@ -5,28 +5,25 @@
  *      Author: Mohamed
  */
 
-#include "main.h"
-#include "../MCAL/DIO/DIO.h"
-#include "../MCAL/Timer 0/Timer_0.h"
-#include "../SERVICE/ICU_Interface.h"
-#include "../HAL/Ultrasonic_Sensor/Ultrasonic_Sensor.h"
-#define stop 30
+#include "Autonomous_Car/Autonomous_Car.h"
 int main(void) {
-	f32 x=0;
-	    SET_BIT(DDRD,Pin3);
-	  	 SET_BIT(SREG,Pin7);
-	    ultrasonic_init();
-	    MCAL_Timer0_Init(Normal_Mode,Prescaller_64,Non_Inverted);
-	    MCAL_Timer0_SetPreloadValue(113);
-	    while(1){
-	    	ultrasonic_get_Distance(&x);
-	    	if(x>100){
-	    		SET_BIT(PORTD,Pin3);
-	    	}else {
-	    		CLR_BIT(PORTD,Pin3);
-
-			}
-	    }
+	APP_Autonomous_Car_voidInit();
+	APP_Autonomous_Car_voidApp();
+//	f32 x=0;
+//	    SET_BIT(DDRD,Pin3);
+//	  	 SET_BIT(SREG,Pin7);
+//	    HAL_Ultrasonic_Sensor_voidInit();
+//	    MCAL_Timer0_Init(Normal_Mode,Prescaller_64,Non_Inverted);
+//	    MCAL_Timer0_SetPreloadValue(113);
+//	    while(1){
+//	    	HAL_Ultrasonic_Sensor_voidCalcDistancse(&x);
+//	    	if(x>100){
+//	    		SET_BIT(PORTD,Pin3);
+//	    	}else {
+//	    		CLR_BIT(PORTD,Pin3);
+//
+//			}
+//	    }
 //	HAL_SM_voidSMInit();
 //			HAL_SM_voidSMSetAngle(i);
 //	u16 period_Ticks = 0;
@@ -45,16 +42,6 @@ int main(void) {
 //	  	}
 
 //	while (1) {
-//		for (int i = 0; i <= 180; i += 5) {
-//			HAL_SM_voidSMSetAngle(i);
-//			_delay_ms(40);
-//			if (i == 180) {
-//				for (int i = 180; i >= 0; i -= 5) {
-//					HAL_SM_voidSMSetAngle(i);
-//					_delay_ms(40);
-//				}
-//			}
 //
-//		}
 //	}
 }

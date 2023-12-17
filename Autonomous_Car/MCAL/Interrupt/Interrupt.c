@@ -101,12 +101,14 @@ void MCAL_Interrupt_EnableGIE(u8 Loc_u8value) {
 	}
 }
 
-void MCAL_Interrupt_InterruptInit() {
-	MCAL_Interrupt_u8SetRegisterPin(Sreg, SREG_Pin, Pin_High);
+void MCAL_Interrupt_InterruptRisingInit() {
 	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin6, Pin_High);
-	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin7, Pin_High);
-	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin5, Pin_High);
 	MCAL_Interrupt_u8SetRegisterPin(Mcucr,MCUCR_Pin0 , Pin_High);
+	MCAL_Interrupt_u8SetRegisterPin(Mcucr,MCUCR_Pin1 , Pin_High);
+}
+void MCAL_Interrupt_InterruptFallingInit() {
+	MCAL_Interrupt_u8SetRegisterPin(Gicr, GICR_Pin6, Pin_High);
+	MCAL_Interrupt_u8SetRegisterPin(Mcucr,MCUCR_Pin0 , Pin_Low);
 	MCAL_Interrupt_u8SetRegisterPin(Mcucr,MCUCR_Pin1 , Pin_High);
 }
 
