@@ -22,15 +22,14 @@ C_DEPS :=
 SUBDIRS := \
 Application/Autonomous_Car \
 Application \
-FreeRtos \
+FreeRTOS \
 HAL/Buzzer \
 HAL/H_Bridge \
 HAL/KeyPad \
 HAL/LCD \
 HAL/LED \
-HAL/Potentiometer \
-HAL/Push\ Button \
 HAL/Servo\ Motor \
+HAL/Ultrasonic_Sensor \
 MCAL/ADC \
 MCAL/DIO \
 MCAL/Interrupt \

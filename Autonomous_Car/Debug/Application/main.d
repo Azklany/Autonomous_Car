@@ -18,7 +18,8 @@ Application/main.o Application/main.o: ../Application/main.c \
   ../Application/../MCAL/Timer\ 0/../../Commons/MCU.h \
   ../Application/../MCAL/Timer\ 0/../../Commons/Macros.h \
   ../Application/../MCAL/Timer\ 0/../../Commons/STD_Types.h \
-  ../Application/../SERVICE/ICU_Interface.h
+  ../Application/../SERVICE/ICU_Interface.h \
+  ../Application/../HAL/Ultrasonic_Sensor/Ultrasonic_Sensor.h
 
 ../Application/main.h:
 
@@ -61,3 +62,5 @@ Application/main.o Application/main.o: ../Application/main.c \
 ../Application/../MCAL/Timer\ 0/../../Commons/STD_Types.h:
 
 ../Application/../SERVICE/ICU_Interface.h:
+
+../Application/../HAL/Ultrasonic_Sensor/Ultrasonic_Sensor.h:

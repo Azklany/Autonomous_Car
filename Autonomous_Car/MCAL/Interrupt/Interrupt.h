@@ -31,7 +31,8 @@
 #define GICR_Pin5 5
 #define GICR_Pin6 6
 #define GICR_Pin7 7
-#define MCUCR_Pin 1
+#define MCUCR_Pin1 1
+#define MCUCR_Pin0 0
 
 enum{Sreg,Gicr,Mcucr,Mcucsr};
 

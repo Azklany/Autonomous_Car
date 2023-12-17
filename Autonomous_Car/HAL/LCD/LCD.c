@@ -55,7 +55,7 @@ void HAL_LCD_u8SendChar(u8 Loc_u8LCD_Char) {
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_Low);
 }
 
-void HAL_LCD_u8SendString(u8* Loc_u8LCD_String) {
+void HAL_LCD_u8SendString(u8 * Loc_u8LCD_String) {
 	for (u32 count = 0; Loc_u8LCD_String[count] != '\0'; count++) {
 		HAL_LCD_u8SendChar(Loc_u8LCD_String[count]);
 	}

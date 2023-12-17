@@ -1,28 +1,28 @@
-FreeRtos/tasks.o FreeRtos/tasks.o: ../FreeRtos/tasks.c \
-  ../FreeRtos/FreeRTOS.h ../FreeRtos/FreeRTOSConfig.h \
-  ../FreeRtos/projdefs.h ../FreeRtos/portable.h \
-  ../FreeRtos/deprecated_definitions.h ../FreeRtos/portmacro.h \
-  ../FreeRtos/mpu_wrappers.h ../FreeRtos/task.h ../FreeRtos/list.h \
-  ../FreeRtos/timers.h ../FreeRtos/StackMacros.h
+FreeRTOS/tasks.o FreeRTOS/tasks.o: ../FreeRTOS/tasks.c \
+  ../FreeRTOS/FreeRTOS.h ../FreeRTOS/FreeRTOSConfig.h \
+  ../FreeRTOS/projdefs.h ../FreeRTOS/portable.h \
+  ../FreeRTOS/deprecated_definitions.h ../FreeRTOS/portmacro.h \
+  ../FreeRTOS/mpu_wrappers.h ../FreeRTOS/task.h ../FreeRTOS/list.h \
+  ../FreeRTOS/timers.h ../FreeRTOS/StackMacros.h
 
-../FreeRtos/FreeRTOS.h:
+../FreeRTOS/FreeRTOS.h:
 
-../FreeRtos/FreeRTOSConfig.h:
+../FreeRTOS/FreeRTOSConfig.h:
 
-../FreeRtos/projdefs.h:
+../FreeRTOS/projdefs.h:
 
-../FreeRtos/portable.h:
+../FreeRTOS/portable.h:
 
-../FreeRtos/deprecated_definitions.h:
+../FreeRTOS/deprecated_definitions.h:
 
-../FreeRtos/portmacro.h:
+../FreeRTOS/portmacro.h:
 
-../FreeRtos/mpu_wrappers.h:
+../FreeRTOS/mpu_wrappers.h:
 
-../FreeRtos/task.h:
+../FreeRTOS/task.h:
 
-../FreeRtos/list.h:
+../FreeRTOS/list.h:
 
-../FreeRtos/timers.h:
+../FreeRTOS/timers.h:
 
-../FreeRtos/StackMacros.h:
+../FreeRTOS/StackMacros.h:
