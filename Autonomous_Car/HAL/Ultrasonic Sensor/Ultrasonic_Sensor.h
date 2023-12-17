@@ -7,7 +7,10 @@
 
 #ifndef HAL_ULTRASONIC_SENSOR_ULTRASONIC_SENSOR_H_
 #define HAL_ULTRASONIC_SENSOR_ULTRASONIC_SENSOR_H_
-#define F_CPU 16000000UL
+#include "../../MCAL/DIO/DIO.h"
+#include "../../MCAL/Timer 0/Timer_0.h"
+#include "../../MCAL/Interrupt/Interrupt.h"
+
 #define  NUM0 0
 #define  NUM1 1
 #define TRIG_PORT PortD
@@ -17,5 +20,5 @@
 void ultrasonic_init(void);
 void EXTI_action(void);
 void ultrasonic_sendTrigger(void);
-void ultrasonic_get_Distance(f32* returned_distance);
+void ultrasonic_get_Distance(f32*);
 #endif /* HAL_ULTRASONIC_SENSOR_ULTRASONIC_SENSOR_H_ */
