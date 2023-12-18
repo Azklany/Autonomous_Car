@@ -40,11 +40,12 @@ turning to any empty direction.
   - Buzzer
   - H-Bridge
   - Servo Motor
+  - Ultrasonic Sensor
 - MCAL
   - DIO
-  - WDT
-  - Timer0
-  - Timer1
+  - Timer_0
+  - Timer_1
+  - Timer_2
   - Interrupt
 
 ### Common Files
