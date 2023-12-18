@@ -6,9 +6,10 @@
  */
 
 #include "Autonomous_Car/Autonomous_Car.h"
+#include "../HAL/Servo Motor/Servo_Motor.h"
 int main(void) {
-	APP_Autonomous_Car_voidInit();
-	APP_Autonomous_Car_voidApp();
+//	APP_Autonomous_Car_voidInit();
+//	APP_Autonomous_Car_voidApp();
 //	f32 x=0;
 //	    SET_BIT(DDRD,Pin3);
 //	  	 SET_BIT(SREG,Pin7);
@@ -24,22 +25,8 @@ int main(void) {
 //
 //			}
 //	    }
-//	HAL_SM_voidSMInit();
-//			HAL_SM_voidSMSetAngle(i);
-//	u16 period_Ticks = 0;
-//	  u16 on_Ticks = 0;
-//	  	SET_BIT(DDRD, Pin3);
-//	  	MCAL_DIO_u8SetPinDirection(PortB, Pin3, Pin_High); //PWM
-//	  	//T0
-//	  	MCAL_Timer0_Init(FastPWM_Mode,Prescaller_8,Non_Inverted);
-//	  	MCAL_Timer0_SetCompareValue(64);
-//
-//	  	while (1) {
-//	  	ICU_SW_init(&period_Ticks,&on_Ticks);
-//	  		if (on_Ticks == 64) {
-//	  			SET_BIT(PORTD, Pin3);
-//	  		}
-//	  	}
+	HAL_SM_voidSMInit();
+	HAL_SM_voidSMSetAngle(70);
 
 //	while (1) {
 //

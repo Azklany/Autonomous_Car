@@ -8,7 +8,7 @@
 #ifndef HAL_SERVO_MOTOR_SERVO_MOTOR_H_
 #define HAL_SERVO_MOTOR_SERVO_MOTOR_H_
 
-#include "../../MCAL/Timer 1/Timer1.h"
+#include "../../MCAL/Timer 2/Timer_2.h"
 #include "../../MCAL/DIO/DIO.h"
 #define INIT_VALUE 4999
 #define START_ZERO 138
