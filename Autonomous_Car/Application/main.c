@@ -25,10 +25,12 @@ int main(void) {
 //
 //			}
 //	    }
-	HAL_SM_voidSMInit();
-	HAL_SM_voidSMSetAngle(70);
 
-//	while (1) {
-//
-//	}
+		SET_BIT(DDRD,Pin7);
+	while (1) {
+		SET_BIT(PORTD,Pin7);
+		_delay_us(140);
+		CLR_BIT(PORTD,Pin7);
+		_delay_us(19860);
+	}
 }
