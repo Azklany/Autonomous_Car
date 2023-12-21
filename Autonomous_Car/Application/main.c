@@ -26,11 +26,28 @@ int main(void) {
 //			}
 //	    }
 
-		SET_BIT(DDRD,Pin7);
+	SET_BIT(DDRD, Pin7);
+	HAL_SM_voidSMSetAngle(90);
+	_delay_ms(2000);
 	while (1) {
-		SET_BIT(PORTD,Pin7);
-		_delay_us(140);
-		CLR_BIT(PORTD,Pin7);
-		_delay_us(19860);
+		for (int i = 90; i >= 0; i -= 2) {
+			HAL_SM_voidSMSetAngle(i);
+			_delay_ms(1);
+			if (i == 0) {
+				_delay_ms(200);
+				for (int i = 0; i <= 180; i += 2) {
+					HAL_SM_voidSMSetAngle(i);
+					_delay_ms(1);
+					if (i == 180) {
+						_delay_ms(200);
+						for (int i = 180; i >= 90; i -= 2) {
+							HAL_SM_voidSMSetAngle(i);
+							_delay_ms(1);
+						}
+					}
+				}
+
+			}
+		}
 	}
 }
