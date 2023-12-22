@@ -8,6 +8,8 @@
 #include "H_Bridge.h"
 
 void HAL_void_H_BridgeInit() {
+//	MCAL_DIO_u8SetPinDirection(PortD, Pin4, Pin_High);
+//	MCAL_DIO_u8SetPinDirection(PortD, Pin5, Pin_High);
 	MCAL_DIO_u8SetPinDirection(PortC, 3, Pin_High);
 	MCAL_DIO_u8SetPinDirection(PortC, 4, Pin_High);
 	MCAL_DIO_u8SetPinDirection(PortC, 5, Pin_High);
@@ -25,6 +27,8 @@ void HAL_void_H_BridgeCW(u8 copy_u8_speed) {
 void HAL_void_H_BridgeFront(u8 copy_u8_speed) {
 	MCAL_T1_FPWM_10bitRES(CHENNEL_B, copy_u8_speed);
 	MCAL_T1_FPWM_10bitRES(CHENNEL_A, copy_u8_speed);
+	MCAL_DIO_u8SetPinValue(PortD, Pin4, Pin_High);
+	MCAL_DIO_u8SetPinValue(PortD, Pin5, Pin_High);
 	MCAL_DIO_u8SetPinValue(PortC, Pin3, Pin_Low);
 	MCAL_DIO_u8SetPinValue(PortC, Pin4, Pin_High);
 	MCAL_DIO_u8SetPinValue(PortC, Pin5, Pin_High);

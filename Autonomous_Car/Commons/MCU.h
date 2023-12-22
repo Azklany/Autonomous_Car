@@ -57,15 +57,6 @@
 #define OCR1B (*(volatile uint16_t *)((0x28) + 0x20))
 #define TCNT1 (*(volatile uint16_t *)((0x2C) + 0x20))
 
-//Timer2
-#define TCCR2 *((volatile u8*)0x45)
-#define TCNT2 *((volatile u8*)0x44)
-#define OCR2 *((volatile u8*)0x43)
-#define TIMSK *((volatile u8*)0x59)
-#define TIFR *((volatile u8*)0x58)
-
-
-
 
 
 

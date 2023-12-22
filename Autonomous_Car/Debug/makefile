@@ -9,23 +9,16 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include SERVICE/subdir.mk
--include MCAL/WDT/subdir.mk
--include MCAL/UART/subdir.mk
 -include MCAL/Timer\ 1/subdir.mk
 -include MCAL/Timer\ 0/subdir.mk
--include MCAL/TWI/subdir.mk
--include MCAL/SPI/subdir.mk
 -include MCAL/Interrupt/subdir.mk
 -include MCAL/DIO/subdir.mk
--include MCAL/ADC/subdir.mk
--include HAL/Ultrasonic_Sensor/subdir.mk
+-include HAL/Ultrasonic\ Sensor/subdir.mk
 -include HAL/Servo\ Motor/subdir.mk
 -include HAL/LED/subdir.mk
 -include HAL/LCD/subdir.mk
--include HAL/KeyPad/subdir.mk
 -include HAL/H_Bridge/subdir.mk
 -include HAL/Buzzer/subdir.mk
--include FreeRTOS/subdir.mk
 -include Application/Autonomous_Car/subdir.mk
 -include Application/subdir.mk
 -include subdir.mk
