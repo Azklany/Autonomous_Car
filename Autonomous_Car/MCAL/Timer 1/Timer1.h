@@ -52,6 +52,14 @@
 #define PRESCALLING256 256
 #define PRESCALLING1024 1024
 #define CPU_FREQUNCY 16000000
+#define  PIN0 0
+#define  PIN1 1
+#define  PIN2 2
+#define  PIN3 3
+#define  PIN4 4
+#define  PIN5 5
+#define  PIN6 6
+#define  PIN7 7
 //Compare Output
 #define NON_INVERTING_MODE 0
 #define INVERTING_MODE 1

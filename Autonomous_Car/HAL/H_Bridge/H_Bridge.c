@@ -25,8 +25,8 @@ void HAL_void_H_BridgeCW(u8 copy_u8_speed) {
 	MCAL_DIO_u8SetPinValue(PortC, Pin6, Pin_Low);
 }
 void HAL_void_H_BridgeFront(u8 copy_u8_speed) {
-	MCAL_T1_FPWM_10bitRES(CHENNEL_B, copy_u8_speed);
 	MCAL_T1_FPWM_10bitRES(CHENNEL_A, copy_u8_speed);
+	MCAL_T1_FPWM_10bitRES(CHENNEL_B, copy_u8_speed);
 	MCAL_DIO_u8SetPinValue(PortD, Pin4, Pin_High);
 	MCAL_DIO_u8SetPinValue(PortD, Pin5, Pin_High);
 	MCAL_DIO_u8SetPinValue(PortC, Pin3, Pin_Low);
