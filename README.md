@@ -45,7 +45,6 @@ turning to any empty direction.
   - DIO
   - Timer_0
   - Timer_1
-  - Timer_2
   - Interrupt
 
 ### Common Files
