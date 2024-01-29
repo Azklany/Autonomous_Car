@@ -32,5 +32,4 @@ MCAL/DIO \
 MCAL/Interrupt \
 MCAL/Timer\ 0 \
 MCAL/Timer\ 1 \
-SERVICE \
 

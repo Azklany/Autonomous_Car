@@ -3,33 +3,33 @@ Autonomous_Car.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00005e82  00000000  00000000  00000094  2**1
+  0 .text         00005e96  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         0000016a  00800060  00005e82  00005f16  2**0
+  1 .data         0000016a  00800060  00005e96  00005f2a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000028  008001ca  008001ca  00006080  2**0
+  2 .bss          00000028  008001ca  008001ca  00006094  2**0
                   ALLOC
-  3 .stab         00006b70  00000000  00000000  00006080  2**2
+  3 .stab         00006ab0  00000000  00000000  00006094  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00002dc8  00000000  00000000  0000cbf0  2**0
+  4 .stabstr      00002da6  00000000  00000000  0000cb44  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 000001e0  00000000  00000000  0000f9b8  2**0
+  5 .debug_aranges 000001e0  00000000  00000000  0000f8ea  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_pubnames 00000232  00000000  00000000  0000fb98  2**0
+  6 .debug_pubnames 00000232  00000000  00000000  0000faca  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_info   00002891  00000000  00000000  0000fdca  2**0
+  7 .debug_info   00002891  00000000  00000000  0000fcfc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 00001628  00000000  00000000  0001265b  2**0
+  8 .debug_abbrev 00001628  00000000  00000000  0001258d  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   000013de  00000000  00000000  00013c83  2**0
+  9 .debug_line   000013de  00000000  00000000  00013bb5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_frame  00000200  00000000  00000000  00015064  2**2
+ 10 .debug_frame  00000200  00000000  00000000  00014f94  2**2
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    0000030f  00000000  00000000  00015264  2**0
+ 11 .debug_str    0000030f  00000000  00000000  00015194  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_loc    00000a56  00000000  00000000  00015573  2**0
+ 12 .debug_loc    00000a56  00000000  00000000  000154a3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000050  00000000  00000000  00015fc9  2**0
+ 13 .debug_ranges 00000050  00000000  00000000  00015ef9  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -69,7 +69,7 @@ Disassembly of section .text:
       60:	11 e0       	ldi	r17, 0x01	; 1
       62:	a0 e6       	ldi	r26, 0x60	; 96
       64:	b0 e0       	ldi	r27, 0x00	; 0
-      66:	e2 e8       	ldi	r30, 0x82	; 130
+      66:	e6 e9       	ldi	r30, 0x96	; 150
       68:	fe e5       	ldi	r31, 0x5E	; 94
       6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
 
@@ -95,8 +95,8 @@ Disassembly of section .text:
       80:	a2 3f       	cpi	r26, 0xF2	; 242
       82:	b1 07       	cpc	r27, r17
       84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
-      86:	0e 94 94 2e 	call	0x5d28	; 0x5d28 <main>
-      8a:	0c 94 3f 2f 	jmp	0x5e7e	; 0x5e7e <_exit>
+      86:	0e 94 9e 2e 	call	0x5d3c	; 0x5d3c <main>
+      8a:	0c 94 49 2f 	jmp	0x5e92	; 0x5e92 <_exit>
 
 0000008e <__bad_interrupt>:
       8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -148,7 +148,7 @@ Disassembly of section .text:
       ec:	b0 e0       	ldi	r27, 0x00	; 0
       ee:	eb e7       	ldi	r30, 0x7B	; 123
       f0:	f0 e0       	ldi	r31, 0x00	; 0
-      f2:	0c 94 c3 2e 	jmp	0x5d86	; 0x5d86 <__prologue_saves__>
+      f2:	0c 94 cd 2e 	jmp	0x5d9a	; 0x5d9a <__prologue_saves__>
       f6:	dc 01       	movw	r26, r24
       f8:	2b 01       	movw	r4, r22
       fa:	fa 01       	movw	r30, r20
@@ -473,14 +473,14 @@ Disassembly of section .text:
      378:	cd b7       	in	r28, 0x3d	; 61
      37a:	de b7       	in	r29, 0x3e	; 62
      37c:	e2 e1       	ldi	r30, 0x12	; 18
-     37e:	0c 94 df 2e 	jmp	0x5dbe	; 0x5dbe <__epilogue_restores__>
+     37e:	0c 94 e9 2e 	jmp	0x5dd2	; 0x5dd2 <__epilogue_restores__>
 
 00000382 <__subsf3>:
      382:	a0 e2       	ldi	r26, 0x20	; 32
      384:	b0 e0       	ldi	r27, 0x00	; 0
      386:	e7 ec       	ldi	r30, 0xC7	; 199
      388:	f1 e0       	ldi	r31, 0x01	; 1
-     38a:	0c 94 cf 2e 	jmp	0x5d9e	; 0x5d9e <__prologue_saves__+0x18>
+     38a:	0c 94 d9 2e 	jmp	0x5db2	; 0x5db2 <__prologue_saves__+0x18>
      38e:	69 83       	std	Y+1, r22	; 0x01
      390:	7a 83       	std	Y+2, r23	; 0x02
      392:	8b 83       	std	Y+3, r24	; 0x03
@@ -518,14 +518,14 @@ Disassembly of section .text:
      3d8:	0e 94 ff 05 	call	0xbfe	; 0xbfe <__pack_f>
      3dc:	a0 96       	adiw	r28, 0x20	; 32
      3de:	e6 e0       	ldi	r30, 0x06	; 6
-     3e0:	0c 94 eb 2e 	jmp	0x5dd6	; 0x5dd6 <__epilogue_restores__+0x18>
+     3e0:	0c 94 f5 2e 	jmp	0x5dea	; 0x5dea <__epilogue_restores__+0x18>
 
 000003e4 <__addsf3>:
      3e4:	a0 e2       	ldi	r26, 0x20	; 32
      3e6:	b0 e0       	ldi	r27, 0x00	; 0
      3e8:	e8 ef       	ldi	r30, 0xF8	; 248
      3ea:	f1 e0       	ldi	r31, 0x01	; 1
-     3ec:	0c 94 cf 2e 	jmp	0x5d9e	; 0x5d9e <__prologue_saves__+0x18>
+     3ec:	0c 94 d9 2e 	jmp	0x5db2	; 0x5db2 <__prologue_saves__+0x18>
      3f0:	69 83       	std	Y+1, r22	; 0x01
      3f2:	7a 83       	std	Y+2, r23	; 0x02
      3f4:	8b 83       	std	Y+3, r24	; 0x03
@@ -559,14 +559,14 @@ Disassembly of section .text:
      432:	0e 94 ff 05 	call	0xbfe	; 0xbfe <__pack_f>
      436:	a0 96       	adiw	r28, 0x20	; 32
      438:	e6 e0       	ldi	r30, 0x06	; 6
-     43a:	0c 94 eb 2e 	jmp	0x5dd6	; 0x5dd6 <__epilogue_restores__+0x18>
+     43a:	0c 94 f5 2e 	jmp	0x5dea	; 0x5dea <__epilogue_restores__+0x18>
 
 0000043e <__mulsf3>:
      43e:	a0 e2       	ldi	r26, 0x20	; 32
      440:	b0 e0       	ldi	r27, 0x00	; 0
      442:	e5 e2       	ldi	r30, 0x25	; 37
      444:	f2 e0       	ldi	r31, 0x02	; 2
-     446:	0c 94 c3 2e 	jmp	0x5d86	; 0x5d86 <__prologue_saves__>
+     446:	0c 94 cd 2e 	jmp	0x5d9a	; 0x5d9a <__prologue_saves__>
      44a:	69 83       	std	Y+1, r22	; 0x01
      44c:	7a 83       	std	Y+2, r23	; 0x02
      44e:	8b 83       	std	Y+3, r24	; 0x03
@@ -806,14 +806,14 @@ Disassembly of section .text:
      626:	0e 94 ff 05 	call	0xbfe	; 0xbfe <__pack_f>
      62a:	a0 96       	adiw	r28, 0x20	; 32
      62c:	e2 e1       	ldi	r30, 0x12	; 18
-     62e:	0c 94 df 2e 	jmp	0x5dbe	; 0x5dbe <__epilogue_restores__>
+     62e:	0c 94 e9 2e 	jmp	0x5dd2	; 0x5dd2 <__epilogue_restores__>
 
 00000632 <__divsf3>:
      632:	a8 e1       	ldi	r26, 0x18	; 24
      634:	b0 e0       	ldi	r27, 0x00	; 0
      636:	ef e1       	ldi	r30, 0x1F	; 31
      638:	f3 e0       	ldi	r31, 0x03	; 3
-     63a:	0c 94 cb 2e 	jmp	0x5d96	; 0x5d96 <__prologue_saves__+0x10>
+     63a:	0c 94 d5 2e 	jmp	0x5daa	; 0x5daa <__prologue_saves__+0x10>
      63e:	69 83       	std	Y+1, r22	; 0x01
      640:	7a 83       	std	Y+2, r23	; 0x02
      642:	8b 83       	std	Y+3, r24	; 0x03
@@ -975,14 +975,14 @@ Disassembly of section .text:
      77e:	0e 94 ff 05 	call	0xbfe	; 0xbfe <__pack_f>
      782:	68 96       	adiw	r28, 0x18	; 24
      784:	ea e0       	ldi	r30, 0x0A	; 10
-     786:	0c 94 e7 2e 	jmp	0x5dce	; 0x5dce <__epilogue_restores__+0x10>
+     786:	0c 94 f1 2e 	jmp	0x5de2	; 0x5de2 <__epilogue_restores__+0x10>
 
 0000078a <__gtsf2>:
      78a:	a8 e1       	ldi	r26, 0x18	; 24
      78c:	b0 e0       	ldi	r27, 0x00	; 0
      78e:	eb ec       	ldi	r30, 0xCB	; 203
      790:	f3 e0       	ldi	r31, 0x03	; 3
-     792:	0c 94 cf 2e 	jmp	0x5d9e	; 0x5d9e <__prologue_saves__+0x18>
+     792:	0c 94 d9 2e 	jmp	0x5db2	; 0x5db2 <__prologue_saves__+0x18>
      796:	69 83       	std	Y+1, r22	; 0x01
      798:	7a 83       	std	Y+2, r23	; 0x02
      79a:	8b 83       	std	Y+3, r24	; 0x03
@@ -1020,14 +1020,14 @@ Disassembly of section .text:
      7e0:	8f ef       	ldi	r24, 0xFF	; 255
      7e2:	68 96       	adiw	r28, 0x18	; 24
      7e4:	e6 e0       	ldi	r30, 0x06	; 6
-     7e6:	0c 94 eb 2e 	jmp	0x5dd6	; 0x5dd6 <__epilogue_restores__+0x18>
+     7e6:	0c 94 f5 2e 	jmp	0x5dea	; 0x5dea <__epilogue_restores__+0x18>
 
 000007ea <__gesf2>:
      7ea:	a8 e1       	ldi	r26, 0x18	; 24
      7ec:	b0 e0       	ldi	r27, 0x00	; 0
      7ee:	eb ef       	ldi	r30, 0xFB	; 251
      7f0:	f3 e0       	ldi	r31, 0x03	; 3
-     7f2:	0c 94 cf 2e 	jmp	0x5d9e	; 0x5d9e <__prologue_saves__+0x18>
+     7f2:	0c 94 d9 2e 	jmp	0x5db2	; 0x5db2 <__prologue_saves__+0x18>
      7f6:	69 83       	std	Y+1, r22	; 0x01
      7f8:	7a 83       	std	Y+2, r23	; 0x02
      7fa:	8b 83       	std	Y+3, r24	; 0x03
@@ -1065,14 +1065,14 @@ Disassembly of section .text:
      840:	8f ef       	ldi	r24, 0xFF	; 255
      842:	68 96       	adiw	r28, 0x18	; 24
      844:	e6 e0       	ldi	r30, 0x06	; 6
-     846:	0c 94 eb 2e 	jmp	0x5dd6	; 0x5dd6 <__epilogue_restores__+0x18>
+     846:	0c 94 f5 2e 	jmp	0x5dea	; 0x5dea <__epilogue_restores__+0x18>
 
 0000084a <__ltsf2>:
      84a:	a8 e1       	ldi	r26, 0x18	; 24
      84c:	b0 e0       	ldi	r27, 0x00	; 0
      84e:	eb e2       	ldi	r30, 0x2B	; 43
      850:	f4 e0       	ldi	r31, 0x04	; 4
-     852:	0c 94 cf 2e 	jmp	0x5d9e	; 0x5d9e <__prologue_saves__+0x18>
+     852:	0c 94 d9 2e 	jmp	0x5db2	; 0x5db2 <__prologue_saves__+0x18>
      856:	69 83       	std	Y+1, r22	; 0x01
      858:	7a 83       	std	Y+2, r23	; 0x02
      85a:	8b 83       	std	Y+3, r24	; 0x03
@@ -1110,14 +1110,14 @@ Disassembly of section .text:
      8a0:	81 e0       	ldi	r24, 0x01	; 1
      8a2:	68 96       	adiw	r28, 0x18	; 24
      8a4:	e6 e0       	ldi	r30, 0x06	; 6
-     8a6:	0c 94 eb 2e 	jmp	0x5dd6	; 0x5dd6 <__epilogue_restores__+0x18>
+     8a6:	0c 94 f5 2e 	jmp	0x5dea	; 0x5dea <__epilogue_restores__+0x18>
 
 000008aa <__lesf2>:
      8aa:	a8 e1       	ldi	r26, 0x18	; 24
      8ac:	b0 e0       	ldi	r27, 0x00	; 0
      8ae:	eb e5       	ldi	r30, 0x5B	; 91
      8b0:	f4 e0       	ldi	r31, 0x04	; 4
-     8b2:	0c 94 cf 2e 	jmp	0x5d9e	; 0x5d9e <__prologue_saves__+0x18>
+     8b2:	0c 94 d9 2e 	jmp	0x5db2	; 0x5db2 <__prologue_saves__+0x18>
      8b6:	69 83       	std	Y+1, r22	; 0x01
      8b8:	7a 83       	std	Y+2, r23	; 0x02
      8ba:	8b 83       	std	Y+3, r24	; 0x03
@@ -1155,14 +1155,14 @@ Disassembly of section .text:
      900:	81 e0       	ldi	r24, 0x01	; 1
      902:	68 96       	adiw	r28, 0x18	; 24
      904:	e6 e0       	ldi	r30, 0x06	; 6
-     906:	0c 94 eb 2e 	jmp	0x5dd6	; 0x5dd6 <__epilogue_restores__+0x18>
+     906:	0c 94 f5 2e 	jmp	0x5dea	; 0x5dea <__epilogue_restores__+0x18>
 
 0000090a <__floatsisf>:
      90a:	a8 e0       	ldi	r26, 0x08	; 8
      90c:	b0 e0       	ldi	r27, 0x00	; 0
      90e:	eb e8       	ldi	r30, 0x8B	; 139
      910:	f4 e0       	ldi	r31, 0x04	; 4
-     912:	0c 94 cc 2e 	jmp	0x5d98	; 0x5d98 <__prologue_saves__+0x12>
+     912:	0c 94 d6 2e 	jmp	0x5dac	; 0x5dac <__prologue_saves__+0x12>
      916:	9b 01       	movw	r18, r22
      918:	ac 01       	movw	r20, r24
      91a:	83 e0       	ldi	r24, 0x03	; 3
@@ -1247,14 +1247,14 @@ Disassembly of section .text:
      9ba:	0e 94 ff 05 	call	0xbfe	; 0xbfe <__pack_f>
      9be:	28 96       	adiw	r28, 0x08	; 8
      9c0:	e9 e0       	ldi	r30, 0x09	; 9
-     9c2:	0c 94 e8 2e 	jmp	0x5dd0	; 0x5dd0 <__epilogue_restores__+0x12>
+     9c2:	0c 94 f2 2e 	jmp	0x5de4	; 0x5de4 <__epilogue_restores__+0x12>
 
 000009c6 <__fixsfsi>:
      9c6:	ac e0       	ldi	r26, 0x0C	; 12
      9c8:	b0 e0       	ldi	r27, 0x00	; 0
      9ca:	e9 ee       	ldi	r30, 0xE9	; 233
      9cc:	f4 e0       	ldi	r31, 0x04	; 4
-     9ce:	0c 94 d3 2e 	jmp	0x5da6	; 0x5da6 <__prologue_saves__+0x20>
+     9ce:	0c 94 dd 2e 	jmp	0x5dba	; 0x5dba <__prologue_saves__+0x20>
      9d2:	69 83       	std	Y+1, r22	; 0x01
      9d4:	7a 83       	std	Y+2, r23	; 0x02
      9d6:	8b 83       	std	Y+3, r24	; 0x03
@@ -1330,14 +1330,14 @@ Disassembly of section .text:
      a64:	ca 01       	movw	r24, r20
      a66:	2c 96       	adiw	r28, 0x0c	; 12
      a68:	e2 e0       	ldi	r30, 0x02	; 2
-     a6a:	0c 94 ef 2e 	jmp	0x5dde	; 0x5dde <__epilogue_restores__+0x20>
+     a6a:	0c 94 f9 2e 	jmp	0x5df2	; 0x5df2 <__epilogue_restores__+0x20>
 
 00000a6e <__floatunsisf>:
      a6e:	a8 e0       	ldi	r26, 0x08	; 8
      a70:	b0 e0       	ldi	r27, 0x00	; 0
      a72:	ed e3       	ldi	r30, 0x3D	; 61
      a74:	f5 e0       	ldi	r31, 0x05	; 5
-     a76:	0c 94 cb 2e 	jmp	0x5d96	; 0x5d96 <__prologue_saves__+0x10>
+     a76:	0c 94 d5 2e 	jmp	0x5daa	; 0x5daa <__prologue_saves__+0x10>
      a7a:	7b 01       	movw	r14, r22
      a7c:	8c 01       	movw	r16, r24
      a7e:	61 15       	cp	r22, r1
@@ -1449,7 +1449,7 @@ Disassembly of section .text:
      b54:	0e 94 ff 05 	call	0xbfe	; 0xbfe <__pack_f>
      b58:	28 96       	adiw	r28, 0x08	; 8
      b5a:	ea e0       	ldi	r30, 0x0A	; 10
-     b5c:	0c 94 e7 2e 	jmp	0x5dce	; 0x5dce <__epilogue_restores__+0x10>
+     b5c:	0c 94 f1 2e 	jmp	0x5de2	; 0x5de2 <__epilogue_restores__+0x10>
 
 00000b60 <__clzsi2>:
      b60:	ef 92       	push	r14
@@ -3623,7 +3623,7 @@ u8 MCAL_T1_u8T1DelayNormalMode(u8 LOC_u8Clock_Selection,
     19b6:	50 e0       	ldi	r21, 0x00	; 0
     19b8:	bc 01       	movw	r22, r24
     19ba:	cd 01       	movw	r24, r26
-    19bc:	0e 94 a1 2e 	call	0x5d42	; 0x5d42 <__udivmodsi4>
+    19bc:	0e 94 ab 2e 	call	0x5d56	; 0x5d56 <__udivmodsi4>
     19c0:	dc 01       	movw	r26, r24
     19c2:	cb 01       	movw	r24, r22
     19c4:	9a 83       	std	Y+2, r25	; 0x02
@@ -3655,7 +3655,7 @@ u8 MCAL_T1_u8T1DelayNormalMode(u8 LOC_u8Clock_Selection,
     19f2:	50 e0       	ldi	r21, 0x00	; 0
     19f4:	bc 01       	movw	r22, r24
     19f6:	cd 01       	movw	r24, r26
-    19f8:	0e 94 a1 2e 	call	0x5d42	; 0x5d42 <__udivmodsi4>
+    19f8:	0e 94 ab 2e 	call	0x5d56	; 0x5d56 <__udivmodsi4>
     19fc:	da 01       	movw	r26, r20
     19fe:	c9 01       	movw	r24, r18
     1a00:	9c 83       	std	Y+4, r25	; 0x04
@@ -3688,7 +3688,7 @@ u8 MCAL_T1_u8T1DelayNormalMode(u8 LOC_u8Clock_Selection,
     1a30:	50 e0       	ldi	r21, 0x00	; 0
     1a32:	bc 01       	movw	r22, r24
     1a34:	cd 01       	movw	r24, r26
-    1a36:	0e 94 a1 2e 	call	0x5d42	; 0x5d42 <__udivmodsi4>
+    1a36:	0e 94 ab 2e 	call	0x5d56	; 0x5d56 <__udivmodsi4>
     1a3a:	da 01       	movw	r26, r20
     1a3c:	c9 01       	movw	r24, r18
     1a3e:	01 96       	adiw	r24, 0x01	; 1
@@ -10586,7 +10586,7 @@ void HAL_LCD_u8SendNumber(u16 Loc_u8LCD_Number) {
     4756:	b9 01       	movw	r22, r18
     4758:	4a e0       	ldi	r20, 0x0A	; 10
     475a:	50 e0       	ldi	r21, 0x00	; 0
-    475c:	0e 94 fa 2e 	call	0x5df4	; 0x5df4 <itoa>
+    475c:	0e 94 04 2f 	call	0x5e08	; 0x5e08 <itoa>
 	HAL_LCD_u8SendString(str);
     4760:	ce 01       	movw	r24, r28
     4762:	01 96       	adiw	r24, 0x01	; 1
@@ -12450,1631 +12450,1641 @@ _delay_ms(double __ms)
     536e:	0e 94 55 04 	call	0x8aa	; 0x8aa <__lesf2>
     5372:	18 16       	cp	r1, r24
     5374:	0c f4       	brge	.+2      	; 0x5378 <APP_Autonomous_Car_voidApp+0x276>
-    5376:	bc c0       	rjmp	.+376    	; 0x54f0 <APP_Autonomous_Car_voidApp+0x3ee>
+    5376:	c6 c0       	rjmp	.+396    	; 0x5504 <APP_Autonomous_Car_voidApp+0x402>
+				HAL_Buzzer_u8BuzzerMode(PortA,Pin3,Pin_High);
+    5378:	80 e0       	ldi	r24, 0x00	; 0
+    537a:	63 e0       	ldi	r22, 0x03	; 3
+    537c:	41 e0       	ldi	r20, 0x01	; 1
+    537e:	0e 94 2e 28 	call	0x505c	; 0x505c <HAL_Buzzer_u8BuzzerMode>
 				HAL_LCD_u8Clear();
-    5378:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
+    5382:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
 				HAL_LCD_u8SendString("Moving Back...");
-    537c:	8b e7       	ldi	r24, 0x7B	; 123
-    537e:	90 e0       	ldi	r25, 0x00	; 0
-    5380:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    5386:	8b e7       	ldi	r24, 0x7B	; 123
+    5388:	90 e0       	ldi	r25, 0x00	; 0
+    538a:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 				HAL_void_H_BridgeBack(MAX_SPEED);
-    5384:	83 e6       	ldi	r24, 0x63	; 99
-    5386:	0e 94 9f 27 	call	0x4f3e	; 0x4f3e <HAL_void_H_BridgeBack>
-    538a:	fe 01       	movw	r30, r28
-    538c:	e1 5a       	subi	r30, 0xA1	; 161
-    538e:	ff 4f       	sbci	r31, 0xFF	; 255
-    5390:	80 e0       	ldi	r24, 0x00	; 0
-    5392:	90 e0       	ldi	r25, 0x00	; 0
-    5394:	aa e7       	ldi	r26, 0x7A	; 122
-    5396:	b4 e4       	ldi	r27, 0x44	; 68
-    5398:	80 83       	st	Z, r24
-    539a:	91 83       	std	Z+1, r25	; 0x01
-    539c:	a2 83       	std	Z+2, r26	; 0x02
-    539e:	b3 83       	std	Z+3, r27	; 0x03
+    538e:	83 e6       	ldi	r24, 0x63	; 99
+    5390:	0e 94 9f 27 	call	0x4f3e	; 0x4f3e <HAL_void_H_BridgeBack>
+    5394:	fe 01       	movw	r30, r28
+    5396:	e1 5a       	subi	r30, 0xA1	; 161
+    5398:	ff 4f       	sbci	r31, 0xFF	; 255
+    539a:	80 e0       	ldi	r24, 0x00	; 0
+    539c:	90 e0       	ldi	r25, 0x00	; 0
+    539e:	aa e7       	ldi	r26, 0x7A	; 122
+    53a0:	b4 e4       	ldi	r27, 0x44	; 68
+    53a2:	80 83       	st	Z, r24
+    53a4:	91 83       	std	Z+1, r25	; 0x01
+    53a6:	a2 83       	std	Z+2, r26	; 0x02
+    53a8:	b3 83       	std	Z+3, r27	; 0x03
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    53a0:	8e 01       	movw	r16, r28
-    53a2:	05 5a       	subi	r16, 0xA5	; 165
-    53a4:	1f 4f       	sbci	r17, 0xFF	; 255
-    53a6:	fe 01       	movw	r30, r28
-    53a8:	e1 5a       	subi	r30, 0xA1	; 161
-    53aa:	ff 4f       	sbci	r31, 0xFF	; 255
-    53ac:	60 81       	ld	r22, Z
-    53ae:	71 81       	ldd	r23, Z+1	; 0x01
-    53b0:	82 81       	ldd	r24, Z+2	; 0x02
-    53b2:	93 81       	ldd	r25, Z+3	; 0x03
-    53b4:	20 e0       	ldi	r18, 0x00	; 0
-    53b6:	30 e0       	ldi	r19, 0x00	; 0
-    53b8:	4a e7       	ldi	r20, 0x7A	; 122
-    53ba:	55 e4       	ldi	r21, 0x45	; 69
-    53bc:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    53c0:	dc 01       	movw	r26, r24
-    53c2:	cb 01       	movw	r24, r22
-    53c4:	f8 01       	movw	r30, r16
-    53c6:	80 83       	st	Z, r24
-    53c8:	91 83       	std	Z+1, r25	; 0x01
-    53ca:	a2 83       	std	Z+2, r26	; 0x02
-    53cc:	b3 83       	std	Z+3, r27	; 0x03
+    53aa:	8e 01       	movw	r16, r28
+    53ac:	05 5a       	subi	r16, 0xA5	; 165
+    53ae:	1f 4f       	sbci	r17, 0xFF	; 255
+    53b0:	fe 01       	movw	r30, r28
+    53b2:	e1 5a       	subi	r30, 0xA1	; 161
+    53b4:	ff 4f       	sbci	r31, 0xFF	; 255
+    53b6:	60 81       	ld	r22, Z
+    53b8:	71 81       	ldd	r23, Z+1	; 0x01
+    53ba:	82 81       	ldd	r24, Z+2	; 0x02
+    53bc:	93 81       	ldd	r25, Z+3	; 0x03
+    53be:	20 e0       	ldi	r18, 0x00	; 0
+    53c0:	30 e0       	ldi	r19, 0x00	; 0
+    53c2:	4a e7       	ldi	r20, 0x7A	; 122
+    53c4:	55 e4       	ldi	r21, 0x45	; 69
+    53c6:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    53ca:	dc 01       	movw	r26, r24
+    53cc:	cb 01       	movw	r24, r22
+    53ce:	f8 01       	movw	r30, r16
+    53d0:	80 83       	st	Z, r24
+    53d2:	91 83       	std	Z+1, r25	; 0x01
+    53d4:	a2 83       	std	Z+2, r26	; 0x02
+    53d6:	b3 83       	std	Z+3, r27	; 0x03
 	if (__tmp < 1.0)
-    53ce:	fe 01       	movw	r30, r28
-    53d0:	e5 5a       	subi	r30, 0xA5	; 165
-    53d2:	ff 4f       	sbci	r31, 0xFF	; 255
-    53d4:	60 81       	ld	r22, Z
-    53d6:	71 81       	ldd	r23, Z+1	; 0x01
-    53d8:	82 81       	ldd	r24, Z+2	; 0x02
-    53da:	93 81       	ldd	r25, Z+3	; 0x03
-    53dc:	20 e0       	ldi	r18, 0x00	; 0
-    53de:	30 e0       	ldi	r19, 0x00	; 0
-    53e0:	40 e8       	ldi	r20, 0x80	; 128
-    53e2:	5f e3       	ldi	r21, 0x3F	; 63
-    53e4:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    53e8:	88 23       	and	r24, r24
-    53ea:	44 f4       	brge	.+16     	; 0x53fc <APP_Autonomous_Car_voidApp+0x2fa>
+    53d8:	fe 01       	movw	r30, r28
+    53da:	e5 5a       	subi	r30, 0xA5	; 165
+    53dc:	ff 4f       	sbci	r31, 0xFF	; 255
+    53de:	60 81       	ld	r22, Z
+    53e0:	71 81       	ldd	r23, Z+1	; 0x01
+    53e2:	82 81       	ldd	r24, Z+2	; 0x02
+    53e4:	93 81       	ldd	r25, Z+3	; 0x03
+    53e6:	20 e0       	ldi	r18, 0x00	; 0
+    53e8:	30 e0       	ldi	r19, 0x00	; 0
+    53ea:	40 e8       	ldi	r20, 0x80	; 128
+    53ec:	5f e3       	ldi	r21, 0x3F	; 63
+    53ee:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    53f2:	88 23       	and	r24, r24
+    53f4:	44 f4       	brge	.+16     	; 0x5406 <APP_Autonomous_Car_voidApp+0x304>
 		__ticks = 1;
-    53ec:	fe 01       	movw	r30, r28
-    53ee:	e7 5a       	subi	r30, 0xA7	; 167
-    53f0:	ff 4f       	sbci	r31, 0xFF	; 255
-    53f2:	81 e0       	ldi	r24, 0x01	; 1
-    53f4:	90 e0       	ldi	r25, 0x00	; 0
-    53f6:	91 83       	std	Z+1, r25	; 0x01
-    53f8:	80 83       	st	Z, r24
-    53fa:	64 c0       	rjmp	.+200    	; 0x54c4 <APP_Autonomous_Car_voidApp+0x3c2>
+    53f6:	fe 01       	movw	r30, r28
+    53f8:	e7 5a       	subi	r30, 0xA7	; 167
+    53fa:	ff 4f       	sbci	r31, 0xFF	; 255
+    53fc:	81 e0       	ldi	r24, 0x01	; 1
+    53fe:	90 e0       	ldi	r25, 0x00	; 0
+    5400:	91 83       	std	Z+1, r25	; 0x01
+    5402:	80 83       	st	Z, r24
+    5404:	64 c0       	rjmp	.+200    	; 0x54ce <APP_Autonomous_Car_voidApp+0x3cc>
 	else if (__tmp > 65535)
-    53fc:	fe 01       	movw	r30, r28
-    53fe:	e5 5a       	subi	r30, 0xA5	; 165
-    5400:	ff 4f       	sbci	r31, 0xFF	; 255
-    5402:	60 81       	ld	r22, Z
-    5404:	71 81       	ldd	r23, Z+1	; 0x01
-    5406:	82 81       	ldd	r24, Z+2	; 0x02
-    5408:	93 81       	ldd	r25, Z+3	; 0x03
-    540a:	20 e0       	ldi	r18, 0x00	; 0
-    540c:	3f ef       	ldi	r19, 0xFF	; 255
-    540e:	4f e7       	ldi	r20, 0x7F	; 127
-    5410:	57 e4       	ldi	r21, 0x47	; 71
-    5412:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    5416:	18 16       	cp	r1, r24
-    5418:	0c f0       	brlt	.+2      	; 0x541c <APP_Autonomous_Car_voidApp+0x31a>
-    541a:	43 c0       	rjmp	.+134    	; 0x54a2 <APP_Autonomous_Car_voidApp+0x3a0>
+    5406:	fe 01       	movw	r30, r28
+    5408:	e5 5a       	subi	r30, 0xA5	; 165
+    540a:	ff 4f       	sbci	r31, 0xFF	; 255
+    540c:	60 81       	ld	r22, Z
+    540e:	71 81       	ldd	r23, Z+1	; 0x01
+    5410:	82 81       	ldd	r24, Z+2	; 0x02
+    5412:	93 81       	ldd	r25, Z+3	; 0x03
+    5414:	20 e0       	ldi	r18, 0x00	; 0
+    5416:	3f ef       	ldi	r19, 0xFF	; 255
+    5418:	4f e7       	ldi	r20, 0x7F	; 127
+    541a:	57 e4       	ldi	r21, 0x47	; 71
+    541c:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    5420:	18 16       	cp	r1, r24
+    5422:	0c f0       	brlt	.+2      	; 0x5426 <APP_Autonomous_Car_voidApp+0x324>
+    5424:	43 c0       	rjmp	.+134    	; 0x54ac <APP_Autonomous_Car_voidApp+0x3aa>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    541c:	fe 01       	movw	r30, r28
-    541e:	e1 5a       	subi	r30, 0xA1	; 161
-    5420:	ff 4f       	sbci	r31, 0xFF	; 255
-    5422:	60 81       	ld	r22, Z
-    5424:	71 81       	ldd	r23, Z+1	; 0x01
-    5426:	82 81       	ldd	r24, Z+2	; 0x02
-    5428:	93 81       	ldd	r25, Z+3	; 0x03
-    542a:	20 e0       	ldi	r18, 0x00	; 0
-    542c:	30 e0       	ldi	r19, 0x00	; 0
-    542e:	40 e2       	ldi	r20, 0x20	; 32
-    5430:	51 e4       	ldi	r21, 0x41	; 65
-    5432:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5436:	dc 01       	movw	r26, r24
-    5438:	cb 01       	movw	r24, r22
-    543a:	8e 01       	movw	r16, r28
-    543c:	07 5a       	subi	r16, 0xA7	; 167
-    543e:	1f 4f       	sbci	r17, 0xFF	; 255
-    5440:	bc 01       	movw	r22, r24
-    5442:	cd 01       	movw	r24, r26
-    5444:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5448:	dc 01       	movw	r26, r24
-    544a:	cb 01       	movw	r24, r22
-    544c:	f8 01       	movw	r30, r16
-    544e:	91 83       	std	Z+1, r25	; 0x01
-    5450:	80 83       	st	Z, r24
-    5452:	1f c0       	rjmp	.+62     	; 0x5492 <APP_Autonomous_Car_voidApp+0x390>
-    5454:	fe 01       	movw	r30, r28
-    5456:	e9 5a       	subi	r30, 0xA9	; 169
-    5458:	ff 4f       	sbci	r31, 0xFF	; 255
-    545a:	80 e9       	ldi	r24, 0x90	; 144
-    545c:	91 e0       	ldi	r25, 0x01	; 1
-    545e:	91 83       	std	Z+1, r25	; 0x01
-    5460:	80 83       	st	Z, r24
-    5462:	fe 01       	movw	r30, r28
-    5464:	e9 5a       	subi	r30, 0xA9	; 169
-    5466:	ff 4f       	sbci	r31, 0xFF	; 255
-    5468:	80 81       	ld	r24, Z
-    546a:	91 81       	ldd	r25, Z+1	; 0x01
-    546c:	01 97       	sbiw	r24, 0x01	; 1
-    546e:	f1 f7       	brne	.-4      	; 0x546c <APP_Autonomous_Car_voidApp+0x36a>
-    5470:	fe 01       	movw	r30, r28
-    5472:	e9 5a       	subi	r30, 0xA9	; 169
-    5474:	ff 4f       	sbci	r31, 0xFF	; 255
-    5476:	91 83       	std	Z+1, r25	; 0x01
-    5478:	80 83       	st	Z, r24
+    5426:	fe 01       	movw	r30, r28
+    5428:	e1 5a       	subi	r30, 0xA1	; 161
+    542a:	ff 4f       	sbci	r31, 0xFF	; 255
+    542c:	60 81       	ld	r22, Z
+    542e:	71 81       	ldd	r23, Z+1	; 0x01
+    5430:	82 81       	ldd	r24, Z+2	; 0x02
+    5432:	93 81       	ldd	r25, Z+3	; 0x03
+    5434:	20 e0       	ldi	r18, 0x00	; 0
+    5436:	30 e0       	ldi	r19, 0x00	; 0
+    5438:	40 e2       	ldi	r20, 0x20	; 32
+    543a:	51 e4       	ldi	r21, 0x41	; 65
+    543c:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5440:	dc 01       	movw	r26, r24
+    5442:	cb 01       	movw	r24, r22
+    5444:	8e 01       	movw	r16, r28
+    5446:	07 5a       	subi	r16, 0xA7	; 167
+    5448:	1f 4f       	sbci	r17, 0xFF	; 255
+    544a:	bc 01       	movw	r22, r24
+    544c:	cd 01       	movw	r24, r26
+    544e:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5452:	dc 01       	movw	r26, r24
+    5454:	cb 01       	movw	r24, r22
+    5456:	f8 01       	movw	r30, r16
+    5458:	91 83       	std	Z+1, r25	; 0x01
+    545a:	80 83       	st	Z, r24
+    545c:	1f c0       	rjmp	.+62     	; 0x549c <APP_Autonomous_Car_voidApp+0x39a>
+    545e:	fe 01       	movw	r30, r28
+    5460:	e9 5a       	subi	r30, 0xA9	; 169
+    5462:	ff 4f       	sbci	r31, 0xFF	; 255
+    5464:	80 e9       	ldi	r24, 0x90	; 144
+    5466:	91 e0       	ldi	r25, 0x01	; 1
+    5468:	91 83       	std	Z+1, r25	; 0x01
+    546a:	80 83       	st	Z, r24
+    546c:	fe 01       	movw	r30, r28
+    546e:	e9 5a       	subi	r30, 0xA9	; 169
+    5470:	ff 4f       	sbci	r31, 0xFF	; 255
+    5472:	80 81       	ld	r24, Z
+    5474:	91 81       	ldd	r25, Z+1	; 0x01
+    5476:	01 97       	sbiw	r24, 0x01	; 1
+    5478:	f1 f7       	brne	.-4      	; 0x5476 <APP_Autonomous_Car_voidApp+0x374>
+    547a:	fe 01       	movw	r30, r28
+    547c:	e9 5a       	subi	r30, 0xA9	; 169
+    547e:	ff 4f       	sbci	r31, 0xFF	; 255
+    5480:	91 83       	std	Z+1, r25	; 0x01
+    5482:	80 83       	st	Z, r24
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    547a:	de 01       	movw	r26, r28
-    547c:	a7 5a       	subi	r26, 0xA7	; 167
-    547e:	bf 4f       	sbci	r27, 0xFF	; 255
-    5480:	fe 01       	movw	r30, r28
-    5482:	e7 5a       	subi	r30, 0xA7	; 167
-    5484:	ff 4f       	sbci	r31, 0xFF	; 255
-    5486:	80 81       	ld	r24, Z
-    5488:	91 81       	ldd	r25, Z+1	; 0x01
-    548a:	01 97       	sbiw	r24, 0x01	; 1
-    548c:	11 96       	adiw	r26, 0x01	; 1
-    548e:	9c 93       	st	X, r25
-    5490:	8e 93       	st	-X, r24
+    5484:	de 01       	movw	r26, r28
+    5486:	a7 5a       	subi	r26, 0xA7	; 167
+    5488:	bf 4f       	sbci	r27, 0xFF	; 255
+    548a:	fe 01       	movw	r30, r28
+    548c:	e7 5a       	subi	r30, 0xA7	; 167
+    548e:	ff 4f       	sbci	r31, 0xFF	; 255
+    5490:	80 81       	ld	r24, Z
+    5492:	91 81       	ldd	r25, Z+1	; 0x01
+    5494:	01 97       	sbiw	r24, 0x01	; 1
+    5496:	11 96       	adiw	r26, 0x01	; 1
+    5498:	9c 93       	st	X, r25
+    549a:	8e 93       	st	-X, r24
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    5492:	fe 01       	movw	r30, r28
-    5494:	e7 5a       	subi	r30, 0xA7	; 167
-    5496:	ff 4f       	sbci	r31, 0xFF	; 255
-    5498:	80 81       	ld	r24, Z
-    549a:	91 81       	ldd	r25, Z+1	; 0x01
-    549c:	00 97       	sbiw	r24, 0x00	; 0
-    549e:	d1 f6       	brne	.-76     	; 0x5454 <APP_Autonomous_Car_voidApp+0x352>
-    54a0:	27 c0       	rjmp	.+78     	; 0x54f0 <APP_Autonomous_Car_voidApp+0x3ee>
+    549c:	fe 01       	movw	r30, r28
+    549e:	e7 5a       	subi	r30, 0xA7	; 167
+    54a0:	ff 4f       	sbci	r31, 0xFF	; 255
+    54a2:	80 81       	ld	r24, Z
+    54a4:	91 81       	ldd	r25, Z+1	; 0x01
+    54a6:	00 97       	sbiw	r24, 0x00	; 0
+    54a8:	d1 f6       	brne	.-76     	; 0x545e <APP_Autonomous_Car_voidApp+0x35c>
+    54aa:	27 c0       	rjmp	.+78     	; 0x54fa <APP_Autonomous_Car_voidApp+0x3f8>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    54a2:	8e 01       	movw	r16, r28
-    54a4:	07 5a       	subi	r16, 0xA7	; 167
-    54a6:	1f 4f       	sbci	r17, 0xFF	; 255
-    54a8:	fe 01       	movw	r30, r28
-    54aa:	e5 5a       	subi	r30, 0xA5	; 165
-    54ac:	ff 4f       	sbci	r31, 0xFF	; 255
-    54ae:	60 81       	ld	r22, Z
-    54b0:	71 81       	ldd	r23, Z+1	; 0x01
-    54b2:	82 81       	ldd	r24, Z+2	; 0x02
-    54b4:	93 81       	ldd	r25, Z+3	; 0x03
-    54b6:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    54ba:	dc 01       	movw	r26, r24
-    54bc:	cb 01       	movw	r24, r22
-    54be:	f8 01       	movw	r30, r16
-    54c0:	91 83       	std	Z+1, r25	; 0x01
-    54c2:	80 83       	st	Z, r24
-    54c4:	de 01       	movw	r26, r28
-    54c6:	ab 5a       	subi	r26, 0xAB	; 171
-    54c8:	bf 4f       	sbci	r27, 0xFF	; 255
-    54ca:	fe 01       	movw	r30, r28
-    54cc:	e7 5a       	subi	r30, 0xA7	; 167
-    54ce:	ff 4f       	sbci	r31, 0xFF	; 255
-    54d0:	80 81       	ld	r24, Z
-    54d2:	91 81       	ldd	r25, Z+1	; 0x01
-    54d4:	8d 93       	st	X+, r24
-    54d6:	9c 93       	st	X, r25
-    54d8:	fe 01       	movw	r30, r28
-    54da:	eb 5a       	subi	r30, 0xAB	; 171
-    54dc:	ff 4f       	sbci	r31, 0xFF	; 255
-    54de:	80 81       	ld	r24, Z
-    54e0:	91 81       	ldd	r25, Z+1	; 0x01
-    54e2:	01 97       	sbiw	r24, 0x01	; 1
-    54e4:	f1 f7       	brne	.-4      	; 0x54e2 <APP_Autonomous_Car_voidApp+0x3e0>
-    54e6:	fe 01       	movw	r30, r28
-    54e8:	eb 5a       	subi	r30, 0xAB	; 171
-    54ea:	ff 4f       	sbci	r31, 0xFF	; 255
-    54ec:	91 83       	std	Z+1, r25	; 0x01
-    54ee:	80 83       	st	Z, r24
+    54ac:	8e 01       	movw	r16, r28
+    54ae:	07 5a       	subi	r16, 0xA7	; 167
+    54b0:	1f 4f       	sbci	r17, 0xFF	; 255
+    54b2:	fe 01       	movw	r30, r28
+    54b4:	e5 5a       	subi	r30, 0xA5	; 165
+    54b6:	ff 4f       	sbci	r31, 0xFF	; 255
+    54b8:	60 81       	ld	r22, Z
+    54ba:	71 81       	ldd	r23, Z+1	; 0x01
+    54bc:	82 81       	ldd	r24, Z+2	; 0x02
+    54be:	93 81       	ldd	r25, Z+3	; 0x03
+    54c0:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    54c4:	dc 01       	movw	r26, r24
+    54c6:	cb 01       	movw	r24, r22
+    54c8:	f8 01       	movw	r30, r16
+    54ca:	91 83       	std	Z+1, r25	; 0x01
+    54cc:	80 83       	st	Z, r24
+    54ce:	de 01       	movw	r26, r28
+    54d0:	ab 5a       	subi	r26, 0xAB	; 171
+    54d2:	bf 4f       	sbci	r27, 0xFF	; 255
+    54d4:	fe 01       	movw	r30, r28
+    54d6:	e7 5a       	subi	r30, 0xA7	; 167
+    54d8:	ff 4f       	sbci	r31, 0xFF	; 255
+    54da:	80 81       	ld	r24, Z
+    54dc:	91 81       	ldd	r25, Z+1	; 0x01
+    54de:	8d 93       	st	X+, r24
+    54e0:	9c 93       	st	X, r25
+    54e2:	fe 01       	movw	r30, r28
+    54e4:	eb 5a       	subi	r30, 0xAB	; 171
+    54e6:	ff 4f       	sbci	r31, 0xFF	; 255
+    54e8:	80 81       	ld	r24, Z
+    54ea:	91 81       	ldd	r25, Z+1	; 0x01
+    54ec:	01 97       	sbiw	r24, 0x01	; 1
+    54ee:	f1 f7       	brne	.-4      	; 0x54ec <APP_Autonomous_Car_voidApp+0x3ea>
+    54f0:	fe 01       	movw	r30, r28
+    54f2:	eb 5a       	subi	r30, 0xAB	; 171
+    54f4:	ff 4f       	sbci	r31, 0xFF	; 255
+    54f6:	91 83       	std	Z+1, r25	; 0x01
+    54f8:	80 83       	st	Z, r24
 				_delay_ms(1000);
+				HAL_Buzzer_u8BuzzerMode(PortA,Pin3,Pin_Low);
+    54fa:	80 e0       	ldi	r24, 0x00	; 0
+    54fc:	63 e0       	ldi	r22, 0x03	; 3
+    54fe:	40 e0       	ldi	r20, 0x00	; 0
+    5500:	0e 94 2e 28 	call	0x505c	; 0x505c <HAL_Buzzer_u8BuzzerMode>
 			}
 			HAL_void_H_BridgeStop(NUM0);
-    54f0:	80 e0       	ldi	r24, 0x00	; 0
-    54f2:	0e 94 eb 27 	call	0x4fd6	; 0x4fd6 <HAL_void_H_BridgeStop>
+    5504:	80 e0       	ldi	r24, 0x00	; 0
+    5506:	0e 94 eb 27 	call	0x4fd6	; 0x4fd6 <HAL_void_H_BridgeStop>
 			HAL_LED_u8LedMode(PortA, Pin1, LED_ON);
-    54f6:	80 e0       	ldi	r24, 0x00	; 0
-    54f8:	61 e0       	ldi	r22, 0x01	; 1
-    54fa:	41 e0       	ldi	r20, 0x01	; 1
-    54fc:	0e 94 a2 1d 	call	0x3b44	; 0x3b44 <HAL_LED_u8LedMode>
+    550a:	80 e0       	ldi	r24, 0x00	; 0
+    550c:	61 e0       	ldi	r22, 0x01	; 1
+    550e:	41 e0       	ldi	r20, 0x01	; 1
+    5510:	0e 94 a2 1d 	call	0x3b44	; 0x3b44 <HAL_LED_u8LedMode>
 			for (int i = START_ANGLE; i >= MAX_CCW_ANGLE; i -= NUM_2) {
-    5500:	fe 01       	movw	r30, r28
-    5502:	eb 58       	subi	r30, 0x8B	; 139
-    5504:	ff 4f       	sbci	r31, 0xFF	; 255
-    5506:	8a e5       	ldi	r24, 0x5A	; 90
-    5508:	90 e0       	ldi	r25, 0x00	; 0
-    550a:	91 83       	std	Z+1, r25	; 0x01
-    550c:	80 83       	st	Z, r24
-    550e:	c6 c2       	rjmp	.+1420   	; 0x5a9c <APP_Autonomous_Car_voidApp+0x99a>
+    5514:	fe 01       	movw	r30, r28
+    5516:	eb 58       	subi	r30, 0x8B	; 139
+    5518:	ff 4f       	sbci	r31, 0xFF	; 255
+    551a:	8a e5       	ldi	r24, 0x5A	; 90
+    551c:	90 e0       	ldi	r25, 0x00	; 0
+    551e:	91 83       	std	Z+1, r25	; 0x01
+    5520:	80 83       	st	Z, r24
+    5522:	c6 c2       	rjmp	.+1420   	; 0x5ab0 <APP_Autonomous_Car_voidApp+0x9ae>
 				HAL_SM_voidSMSetAngle(i);
-    5510:	fe 01       	movw	r30, r28
-    5512:	eb 58       	subi	r30, 0x8B	; 139
-    5514:	ff 4f       	sbci	r31, 0xFF	; 255
-    5516:	80 81       	ld	r24, Z
-    5518:	0e 94 8c 1b 	call	0x3718	; 0x3718 <HAL_SM_voidSMSetAngle>
+    5524:	fe 01       	movw	r30, r28
+    5526:	eb 58       	subi	r30, 0x8B	; 139
+    5528:	ff 4f       	sbci	r31, 0xFF	; 255
+    552a:	80 81       	ld	r24, Z
+    552c:	0e 94 8c 1b 	call	0x3718	; 0x3718 <HAL_SM_voidSMSetAngle>
 				if (i == MAX_CCW_ANGLE) {
-    551c:	fe 01       	movw	r30, r28
-    551e:	eb 58       	subi	r30, 0x8B	; 139
-    5520:	ff 4f       	sbci	r31, 0xFF	; 255
-    5522:	80 81       	ld	r24, Z
-    5524:	91 81       	ldd	r25, Z+1	; 0x01
-    5526:	00 97       	sbiw	r24, 0x00	; 0
-    5528:	09 f0       	breq	.+2      	; 0x552c <APP_Autonomous_Car_voidApp+0x42a>
-    552a:	ac c2       	rjmp	.+1368   	; 0x5a84 <APP_Autonomous_Car_voidApp+0x982>
-    552c:	fe 01       	movw	r30, r28
-    552e:	ef 5a       	subi	r30, 0xAF	; 175
-    5530:	ff 4f       	sbci	r31, 0xFF	; 255
-    5532:	80 e0       	ldi	r24, 0x00	; 0
-    5534:	90 e0       	ldi	r25, 0x00	; 0
-    5536:	a8 e4       	ldi	r26, 0x48	; 72
-    5538:	b2 e4       	ldi	r27, 0x42	; 66
-    553a:	80 83       	st	Z, r24
-    553c:	91 83       	std	Z+1, r25	; 0x01
-    553e:	a2 83       	std	Z+2, r26	; 0x02
-    5540:	b3 83       	std	Z+3, r27	; 0x03
+    5530:	fe 01       	movw	r30, r28
+    5532:	eb 58       	subi	r30, 0x8B	; 139
+    5534:	ff 4f       	sbci	r31, 0xFF	; 255
+    5536:	80 81       	ld	r24, Z
+    5538:	91 81       	ldd	r25, Z+1	; 0x01
+    553a:	00 97       	sbiw	r24, 0x00	; 0
+    553c:	09 f0       	breq	.+2      	; 0x5540 <APP_Autonomous_Car_voidApp+0x43e>
+    553e:	ac c2       	rjmp	.+1368   	; 0x5a98 <APP_Autonomous_Car_voidApp+0x996>
+    5540:	fe 01       	movw	r30, r28
+    5542:	ef 5a       	subi	r30, 0xAF	; 175
+    5544:	ff 4f       	sbci	r31, 0xFF	; 255
+    5546:	80 e0       	ldi	r24, 0x00	; 0
+    5548:	90 e0       	ldi	r25, 0x00	; 0
+    554a:	a8 e4       	ldi	r26, 0x48	; 72
+    554c:	b2 e4       	ldi	r27, 0x42	; 66
+    554e:	80 83       	st	Z, r24
+    5550:	91 83       	std	Z+1, r25	; 0x01
+    5552:	a2 83       	std	Z+2, r26	; 0x02
+    5554:	b3 83       	std	Z+3, r27	; 0x03
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    5542:	8e 01       	movw	r16, r28
-    5544:	03 5b       	subi	r16, 0xB3	; 179
-    5546:	1f 4f       	sbci	r17, 0xFF	; 255
-    5548:	fe 01       	movw	r30, r28
-    554a:	ef 5a       	subi	r30, 0xAF	; 175
-    554c:	ff 4f       	sbci	r31, 0xFF	; 255
-    554e:	60 81       	ld	r22, Z
-    5550:	71 81       	ldd	r23, Z+1	; 0x01
-    5552:	82 81       	ldd	r24, Z+2	; 0x02
-    5554:	93 81       	ldd	r25, Z+3	; 0x03
-    5556:	20 e0       	ldi	r18, 0x00	; 0
-    5558:	30 e0       	ldi	r19, 0x00	; 0
-    555a:	4a e7       	ldi	r20, 0x7A	; 122
-    555c:	55 e4       	ldi	r21, 0x45	; 69
-    555e:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5562:	dc 01       	movw	r26, r24
-    5564:	cb 01       	movw	r24, r22
-    5566:	f8 01       	movw	r30, r16
-    5568:	80 83       	st	Z, r24
-    556a:	91 83       	std	Z+1, r25	; 0x01
-    556c:	a2 83       	std	Z+2, r26	; 0x02
-    556e:	b3 83       	std	Z+3, r27	; 0x03
+    5556:	8e 01       	movw	r16, r28
+    5558:	03 5b       	subi	r16, 0xB3	; 179
+    555a:	1f 4f       	sbci	r17, 0xFF	; 255
+    555c:	fe 01       	movw	r30, r28
+    555e:	ef 5a       	subi	r30, 0xAF	; 175
+    5560:	ff 4f       	sbci	r31, 0xFF	; 255
+    5562:	60 81       	ld	r22, Z
+    5564:	71 81       	ldd	r23, Z+1	; 0x01
+    5566:	82 81       	ldd	r24, Z+2	; 0x02
+    5568:	93 81       	ldd	r25, Z+3	; 0x03
+    556a:	20 e0       	ldi	r18, 0x00	; 0
+    556c:	30 e0       	ldi	r19, 0x00	; 0
+    556e:	4a e7       	ldi	r20, 0x7A	; 122
+    5570:	55 e4       	ldi	r21, 0x45	; 69
+    5572:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5576:	dc 01       	movw	r26, r24
+    5578:	cb 01       	movw	r24, r22
+    557a:	f8 01       	movw	r30, r16
+    557c:	80 83       	st	Z, r24
+    557e:	91 83       	std	Z+1, r25	; 0x01
+    5580:	a2 83       	std	Z+2, r26	; 0x02
+    5582:	b3 83       	std	Z+3, r27	; 0x03
 	if (__tmp < 1.0)
-    5570:	fe 01       	movw	r30, r28
-    5572:	e3 5b       	subi	r30, 0xB3	; 179
-    5574:	ff 4f       	sbci	r31, 0xFF	; 255
-    5576:	60 81       	ld	r22, Z
-    5578:	71 81       	ldd	r23, Z+1	; 0x01
-    557a:	82 81       	ldd	r24, Z+2	; 0x02
-    557c:	93 81       	ldd	r25, Z+3	; 0x03
-    557e:	20 e0       	ldi	r18, 0x00	; 0
-    5580:	30 e0       	ldi	r19, 0x00	; 0
-    5582:	40 e8       	ldi	r20, 0x80	; 128
-    5584:	5f e3       	ldi	r21, 0x3F	; 63
-    5586:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    558a:	88 23       	and	r24, r24
-    558c:	44 f4       	brge	.+16     	; 0x559e <APP_Autonomous_Car_voidApp+0x49c>
+    5584:	fe 01       	movw	r30, r28
+    5586:	e3 5b       	subi	r30, 0xB3	; 179
+    5588:	ff 4f       	sbci	r31, 0xFF	; 255
+    558a:	60 81       	ld	r22, Z
+    558c:	71 81       	ldd	r23, Z+1	; 0x01
+    558e:	82 81       	ldd	r24, Z+2	; 0x02
+    5590:	93 81       	ldd	r25, Z+3	; 0x03
+    5592:	20 e0       	ldi	r18, 0x00	; 0
+    5594:	30 e0       	ldi	r19, 0x00	; 0
+    5596:	40 e8       	ldi	r20, 0x80	; 128
+    5598:	5f e3       	ldi	r21, 0x3F	; 63
+    559a:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    559e:	88 23       	and	r24, r24
+    55a0:	44 f4       	brge	.+16     	; 0x55b2 <APP_Autonomous_Car_voidApp+0x4b0>
 		__ticks = 1;
-    558e:	fe 01       	movw	r30, r28
-    5590:	e5 5b       	subi	r30, 0xB5	; 181
-    5592:	ff 4f       	sbci	r31, 0xFF	; 255
-    5594:	81 e0       	ldi	r24, 0x01	; 1
-    5596:	90 e0       	ldi	r25, 0x00	; 0
-    5598:	91 83       	std	Z+1, r25	; 0x01
-    559a:	80 83       	st	Z, r24
-    559c:	64 c0       	rjmp	.+200    	; 0x5666 <APP_Autonomous_Car_voidApp+0x564>
+    55a2:	fe 01       	movw	r30, r28
+    55a4:	e5 5b       	subi	r30, 0xB5	; 181
+    55a6:	ff 4f       	sbci	r31, 0xFF	; 255
+    55a8:	81 e0       	ldi	r24, 0x01	; 1
+    55aa:	90 e0       	ldi	r25, 0x00	; 0
+    55ac:	91 83       	std	Z+1, r25	; 0x01
+    55ae:	80 83       	st	Z, r24
+    55b0:	64 c0       	rjmp	.+200    	; 0x567a <APP_Autonomous_Car_voidApp+0x578>
 	else if (__tmp > 65535)
-    559e:	fe 01       	movw	r30, r28
-    55a0:	e3 5b       	subi	r30, 0xB3	; 179
-    55a2:	ff 4f       	sbci	r31, 0xFF	; 255
-    55a4:	60 81       	ld	r22, Z
-    55a6:	71 81       	ldd	r23, Z+1	; 0x01
-    55a8:	82 81       	ldd	r24, Z+2	; 0x02
-    55aa:	93 81       	ldd	r25, Z+3	; 0x03
-    55ac:	20 e0       	ldi	r18, 0x00	; 0
-    55ae:	3f ef       	ldi	r19, 0xFF	; 255
-    55b0:	4f e7       	ldi	r20, 0x7F	; 127
-    55b2:	57 e4       	ldi	r21, 0x47	; 71
-    55b4:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    55b8:	18 16       	cp	r1, r24
-    55ba:	0c f0       	brlt	.+2      	; 0x55be <APP_Autonomous_Car_voidApp+0x4bc>
-    55bc:	43 c0       	rjmp	.+134    	; 0x5644 <APP_Autonomous_Car_voidApp+0x542>
+    55b2:	fe 01       	movw	r30, r28
+    55b4:	e3 5b       	subi	r30, 0xB3	; 179
+    55b6:	ff 4f       	sbci	r31, 0xFF	; 255
+    55b8:	60 81       	ld	r22, Z
+    55ba:	71 81       	ldd	r23, Z+1	; 0x01
+    55bc:	82 81       	ldd	r24, Z+2	; 0x02
+    55be:	93 81       	ldd	r25, Z+3	; 0x03
+    55c0:	20 e0       	ldi	r18, 0x00	; 0
+    55c2:	3f ef       	ldi	r19, 0xFF	; 255
+    55c4:	4f e7       	ldi	r20, 0x7F	; 127
+    55c6:	57 e4       	ldi	r21, 0x47	; 71
+    55c8:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    55cc:	18 16       	cp	r1, r24
+    55ce:	0c f0       	brlt	.+2      	; 0x55d2 <APP_Autonomous_Car_voidApp+0x4d0>
+    55d0:	43 c0       	rjmp	.+134    	; 0x5658 <APP_Autonomous_Car_voidApp+0x556>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    55be:	fe 01       	movw	r30, r28
-    55c0:	ef 5a       	subi	r30, 0xAF	; 175
-    55c2:	ff 4f       	sbci	r31, 0xFF	; 255
-    55c4:	60 81       	ld	r22, Z
-    55c6:	71 81       	ldd	r23, Z+1	; 0x01
-    55c8:	82 81       	ldd	r24, Z+2	; 0x02
-    55ca:	93 81       	ldd	r25, Z+3	; 0x03
-    55cc:	20 e0       	ldi	r18, 0x00	; 0
-    55ce:	30 e0       	ldi	r19, 0x00	; 0
-    55d0:	40 e2       	ldi	r20, 0x20	; 32
-    55d2:	51 e4       	ldi	r21, 0x41	; 65
-    55d4:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    55d8:	dc 01       	movw	r26, r24
-    55da:	cb 01       	movw	r24, r22
-    55dc:	8e 01       	movw	r16, r28
-    55de:	05 5b       	subi	r16, 0xB5	; 181
-    55e0:	1f 4f       	sbci	r17, 0xFF	; 255
-    55e2:	bc 01       	movw	r22, r24
-    55e4:	cd 01       	movw	r24, r26
-    55e6:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    55ea:	dc 01       	movw	r26, r24
-    55ec:	cb 01       	movw	r24, r22
-    55ee:	f8 01       	movw	r30, r16
-    55f0:	91 83       	std	Z+1, r25	; 0x01
-    55f2:	80 83       	st	Z, r24
-    55f4:	1f c0       	rjmp	.+62     	; 0x5634 <APP_Autonomous_Car_voidApp+0x532>
-    55f6:	fe 01       	movw	r30, r28
-    55f8:	e7 5b       	subi	r30, 0xB7	; 183
-    55fa:	ff 4f       	sbci	r31, 0xFF	; 255
-    55fc:	80 e9       	ldi	r24, 0x90	; 144
-    55fe:	91 e0       	ldi	r25, 0x01	; 1
-    5600:	91 83       	std	Z+1, r25	; 0x01
-    5602:	80 83       	st	Z, r24
-    5604:	fe 01       	movw	r30, r28
-    5606:	e7 5b       	subi	r30, 0xB7	; 183
-    5608:	ff 4f       	sbci	r31, 0xFF	; 255
-    560a:	80 81       	ld	r24, Z
-    560c:	91 81       	ldd	r25, Z+1	; 0x01
-    560e:	01 97       	sbiw	r24, 0x01	; 1
-    5610:	f1 f7       	brne	.-4      	; 0x560e <APP_Autonomous_Car_voidApp+0x50c>
-    5612:	fe 01       	movw	r30, r28
-    5614:	e7 5b       	subi	r30, 0xB7	; 183
-    5616:	ff 4f       	sbci	r31, 0xFF	; 255
-    5618:	91 83       	std	Z+1, r25	; 0x01
-    561a:	80 83       	st	Z, r24
+    55d2:	fe 01       	movw	r30, r28
+    55d4:	ef 5a       	subi	r30, 0xAF	; 175
+    55d6:	ff 4f       	sbci	r31, 0xFF	; 255
+    55d8:	60 81       	ld	r22, Z
+    55da:	71 81       	ldd	r23, Z+1	; 0x01
+    55dc:	82 81       	ldd	r24, Z+2	; 0x02
+    55de:	93 81       	ldd	r25, Z+3	; 0x03
+    55e0:	20 e0       	ldi	r18, 0x00	; 0
+    55e2:	30 e0       	ldi	r19, 0x00	; 0
+    55e4:	40 e2       	ldi	r20, 0x20	; 32
+    55e6:	51 e4       	ldi	r21, 0x41	; 65
+    55e8:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    55ec:	dc 01       	movw	r26, r24
+    55ee:	cb 01       	movw	r24, r22
+    55f0:	8e 01       	movw	r16, r28
+    55f2:	05 5b       	subi	r16, 0xB5	; 181
+    55f4:	1f 4f       	sbci	r17, 0xFF	; 255
+    55f6:	bc 01       	movw	r22, r24
+    55f8:	cd 01       	movw	r24, r26
+    55fa:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    55fe:	dc 01       	movw	r26, r24
+    5600:	cb 01       	movw	r24, r22
+    5602:	f8 01       	movw	r30, r16
+    5604:	91 83       	std	Z+1, r25	; 0x01
+    5606:	80 83       	st	Z, r24
+    5608:	1f c0       	rjmp	.+62     	; 0x5648 <APP_Autonomous_Car_voidApp+0x546>
+    560a:	fe 01       	movw	r30, r28
+    560c:	e7 5b       	subi	r30, 0xB7	; 183
+    560e:	ff 4f       	sbci	r31, 0xFF	; 255
+    5610:	80 e9       	ldi	r24, 0x90	; 144
+    5612:	91 e0       	ldi	r25, 0x01	; 1
+    5614:	91 83       	std	Z+1, r25	; 0x01
+    5616:	80 83       	st	Z, r24
+    5618:	fe 01       	movw	r30, r28
+    561a:	e7 5b       	subi	r30, 0xB7	; 183
+    561c:	ff 4f       	sbci	r31, 0xFF	; 255
+    561e:	80 81       	ld	r24, Z
+    5620:	91 81       	ldd	r25, Z+1	; 0x01
+    5622:	01 97       	sbiw	r24, 0x01	; 1
+    5624:	f1 f7       	brne	.-4      	; 0x5622 <APP_Autonomous_Car_voidApp+0x520>
+    5626:	fe 01       	movw	r30, r28
+    5628:	e7 5b       	subi	r30, 0xB7	; 183
+    562a:	ff 4f       	sbci	r31, 0xFF	; 255
+    562c:	91 83       	std	Z+1, r25	; 0x01
+    562e:	80 83       	st	Z, r24
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    561c:	de 01       	movw	r26, r28
-    561e:	a5 5b       	subi	r26, 0xB5	; 181
-    5620:	bf 4f       	sbci	r27, 0xFF	; 255
-    5622:	fe 01       	movw	r30, r28
-    5624:	e5 5b       	subi	r30, 0xB5	; 181
-    5626:	ff 4f       	sbci	r31, 0xFF	; 255
-    5628:	80 81       	ld	r24, Z
-    562a:	91 81       	ldd	r25, Z+1	; 0x01
-    562c:	01 97       	sbiw	r24, 0x01	; 1
-    562e:	11 96       	adiw	r26, 0x01	; 1
-    5630:	9c 93       	st	X, r25
-    5632:	8e 93       	st	-X, r24
+    5630:	de 01       	movw	r26, r28
+    5632:	a5 5b       	subi	r26, 0xB5	; 181
+    5634:	bf 4f       	sbci	r27, 0xFF	; 255
+    5636:	fe 01       	movw	r30, r28
+    5638:	e5 5b       	subi	r30, 0xB5	; 181
+    563a:	ff 4f       	sbci	r31, 0xFF	; 255
+    563c:	80 81       	ld	r24, Z
+    563e:	91 81       	ldd	r25, Z+1	; 0x01
+    5640:	01 97       	sbiw	r24, 0x01	; 1
+    5642:	11 96       	adiw	r26, 0x01	; 1
+    5644:	9c 93       	st	X, r25
+    5646:	8e 93       	st	-X, r24
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    5634:	fe 01       	movw	r30, r28
-    5636:	e5 5b       	subi	r30, 0xB5	; 181
-    5638:	ff 4f       	sbci	r31, 0xFF	; 255
-    563a:	80 81       	ld	r24, Z
-    563c:	91 81       	ldd	r25, Z+1	; 0x01
-    563e:	00 97       	sbiw	r24, 0x00	; 0
-    5640:	d1 f6       	brne	.-76     	; 0x55f6 <APP_Autonomous_Car_voidApp+0x4f4>
-    5642:	27 c0       	rjmp	.+78     	; 0x5692 <APP_Autonomous_Car_voidApp+0x590>
+    5648:	fe 01       	movw	r30, r28
+    564a:	e5 5b       	subi	r30, 0xB5	; 181
+    564c:	ff 4f       	sbci	r31, 0xFF	; 255
+    564e:	80 81       	ld	r24, Z
+    5650:	91 81       	ldd	r25, Z+1	; 0x01
+    5652:	00 97       	sbiw	r24, 0x00	; 0
+    5654:	d1 f6       	brne	.-76     	; 0x560a <APP_Autonomous_Car_voidApp+0x508>
+    5656:	27 c0       	rjmp	.+78     	; 0x56a6 <APP_Autonomous_Car_voidApp+0x5a4>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    5644:	8e 01       	movw	r16, r28
-    5646:	05 5b       	subi	r16, 0xB5	; 181
-    5648:	1f 4f       	sbci	r17, 0xFF	; 255
-    564a:	fe 01       	movw	r30, r28
-    564c:	e3 5b       	subi	r30, 0xB3	; 179
-    564e:	ff 4f       	sbci	r31, 0xFF	; 255
-    5650:	60 81       	ld	r22, Z
-    5652:	71 81       	ldd	r23, Z+1	; 0x01
-    5654:	82 81       	ldd	r24, Z+2	; 0x02
-    5656:	93 81       	ldd	r25, Z+3	; 0x03
-    5658:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    565c:	dc 01       	movw	r26, r24
-    565e:	cb 01       	movw	r24, r22
-    5660:	f8 01       	movw	r30, r16
-    5662:	91 83       	std	Z+1, r25	; 0x01
-    5664:	80 83       	st	Z, r24
-    5666:	de 01       	movw	r26, r28
-    5668:	a9 5b       	subi	r26, 0xB9	; 185
-    566a:	bf 4f       	sbci	r27, 0xFF	; 255
-    566c:	fe 01       	movw	r30, r28
-    566e:	e5 5b       	subi	r30, 0xB5	; 181
-    5670:	ff 4f       	sbci	r31, 0xFF	; 255
-    5672:	80 81       	ld	r24, Z
-    5674:	91 81       	ldd	r25, Z+1	; 0x01
-    5676:	8d 93       	st	X+, r24
-    5678:	9c 93       	st	X, r25
-    567a:	fe 01       	movw	r30, r28
-    567c:	e9 5b       	subi	r30, 0xB9	; 185
-    567e:	ff 4f       	sbci	r31, 0xFF	; 255
-    5680:	80 81       	ld	r24, Z
-    5682:	91 81       	ldd	r25, Z+1	; 0x01
-    5684:	01 97       	sbiw	r24, 0x01	; 1
-    5686:	f1 f7       	brne	.-4      	; 0x5684 <APP_Autonomous_Car_voidApp+0x582>
-    5688:	fe 01       	movw	r30, r28
-    568a:	e9 5b       	subi	r30, 0xB9	; 185
-    568c:	ff 4f       	sbci	r31, 0xFF	; 255
-    568e:	91 83       	std	Z+1, r25	; 0x01
-    5690:	80 83       	st	Z, r24
+    5658:	8e 01       	movw	r16, r28
+    565a:	05 5b       	subi	r16, 0xB5	; 181
+    565c:	1f 4f       	sbci	r17, 0xFF	; 255
+    565e:	fe 01       	movw	r30, r28
+    5660:	e3 5b       	subi	r30, 0xB3	; 179
+    5662:	ff 4f       	sbci	r31, 0xFF	; 255
+    5664:	60 81       	ld	r22, Z
+    5666:	71 81       	ldd	r23, Z+1	; 0x01
+    5668:	82 81       	ldd	r24, Z+2	; 0x02
+    566a:	93 81       	ldd	r25, Z+3	; 0x03
+    566c:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5670:	dc 01       	movw	r26, r24
+    5672:	cb 01       	movw	r24, r22
+    5674:	f8 01       	movw	r30, r16
+    5676:	91 83       	std	Z+1, r25	; 0x01
+    5678:	80 83       	st	Z, r24
+    567a:	de 01       	movw	r26, r28
+    567c:	a9 5b       	subi	r26, 0xB9	; 185
+    567e:	bf 4f       	sbci	r27, 0xFF	; 255
+    5680:	fe 01       	movw	r30, r28
+    5682:	e5 5b       	subi	r30, 0xB5	; 181
+    5684:	ff 4f       	sbci	r31, 0xFF	; 255
+    5686:	80 81       	ld	r24, Z
+    5688:	91 81       	ldd	r25, Z+1	; 0x01
+    568a:	8d 93       	st	X+, r24
+    568c:	9c 93       	st	X, r25
+    568e:	fe 01       	movw	r30, r28
+    5690:	e9 5b       	subi	r30, 0xB9	; 185
+    5692:	ff 4f       	sbci	r31, 0xFF	; 255
+    5694:	80 81       	ld	r24, Z
+    5696:	91 81       	ldd	r25, Z+1	; 0x01
+    5698:	01 97       	sbiw	r24, 0x01	; 1
+    569a:	f1 f7       	brne	.-4      	; 0x5698 <APP_Autonomous_Car_voidApp+0x596>
+    569c:	fe 01       	movw	r30, r28
+    569e:	e9 5b       	subi	r30, 0xB9	; 185
+    56a0:	ff 4f       	sbci	r31, 0xFF	; 255
+    56a2:	91 83       	std	Z+1, r25	; 0x01
+    56a4:	80 83       	st	Z, r24
 					_delay_ms(50);
 					HAL_Ultrasonic_Sensor_voidCalcDistancse(&LOC_f32Distance);
-    5692:	ce 01       	movw	r24, r28
-    5694:	89 58       	subi	r24, 0x89	; 137
-    5696:	9f 4f       	sbci	r25, 0xFF	; 255
-    5698:	0e 94 64 1a 	call	0x34c8	; 0x34c8 <HAL_Ultrasonic_Sensor_voidCalcDistancse>
+    56a6:	ce 01       	movw	r24, r28
+    56a8:	89 58       	subi	r24, 0x89	; 137
+    56aa:	9f 4f       	sbci	r25, 0xFF	; 255
+    56ac:	0e 94 64 1a 	call	0x34c8	; 0x34c8 <HAL_Ultrasonic_Sensor_voidCalcDistancse>
 					HAL_LCD_u8Clear();
-    569c:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
+    56b0:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
 					HAL_LCD_u8SendString("Dir Right: ");
-    56a0:	8a e8       	ldi	r24, 0x8A	; 138
-    56a2:	90 e0       	ldi	r25, 0x00	; 0
-    56a4:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    56b4:	8a e8       	ldi	r24, 0x8A	; 138
+    56b6:	90 e0       	ldi	r25, 0x00	; 0
+    56b8:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 					Glob_u16DirRight = LOC_f32Distance;
-    56a8:	fe 01       	movw	r30, r28
-    56aa:	e9 58       	subi	r30, 0x89	; 137
-    56ac:	ff 4f       	sbci	r31, 0xFF	; 255
-    56ae:	80 81       	ld	r24, Z
-    56b0:	91 81       	ldd	r25, Z+1	; 0x01
-    56b2:	a2 81       	ldd	r26, Z+2	; 0x02
-    56b4:	b3 81       	ldd	r27, Z+3	; 0x03
-    56b6:	bc 01       	movw	r22, r24
-    56b8:	cd 01       	movw	r24, r26
-    56ba:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    56be:	dc 01       	movw	r26, r24
-    56c0:	cb 01       	movw	r24, r22
-    56c2:	90 93 e7 01 	sts	0x01E7, r25
-    56c6:	80 93 e6 01 	sts	0x01E6, r24
+    56bc:	fe 01       	movw	r30, r28
+    56be:	e9 58       	subi	r30, 0x89	; 137
+    56c0:	ff 4f       	sbci	r31, 0xFF	; 255
+    56c2:	80 81       	ld	r24, Z
+    56c4:	91 81       	ldd	r25, Z+1	; 0x01
+    56c6:	a2 81       	ldd	r26, Z+2	; 0x02
+    56c8:	b3 81       	ldd	r27, Z+3	; 0x03
+    56ca:	bc 01       	movw	r22, r24
+    56cc:	cd 01       	movw	r24, r26
+    56ce:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    56d2:	dc 01       	movw	r26, r24
+    56d4:	cb 01       	movw	r24, r22
+    56d6:	90 93 e7 01 	sts	0x01E7, r25
+    56da:	80 93 e6 01 	sts	0x01E6, r24
 					HAL_LCD_u8SendNumber(Glob_u16DirRight);
-    56ca:	80 91 e6 01 	lds	r24, 0x01E6
-    56ce:	90 91 e7 01 	lds	r25, 0x01E7
-    56d2:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
-    56d6:	fe 01       	movw	r30, r28
-    56d8:	ed 5b       	subi	r30, 0xBD	; 189
-    56da:	ff 4f       	sbci	r31, 0xFF	; 255
-    56dc:	80 e0       	ldi	r24, 0x00	; 0
-    56de:	90 e0       	ldi	r25, 0x00	; 0
-    56e0:	a8 e4       	ldi	r26, 0x48	; 72
-    56e2:	b3 e4       	ldi	r27, 0x43	; 67
-    56e4:	80 83       	st	Z, r24
-    56e6:	91 83       	std	Z+1, r25	; 0x01
-    56e8:	a2 83       	std	Z+2, r26	; 0x02
-    56ea:	b3 83       	std	Z+3, r27	; 0x03
+    56de:	80 91 e6 01 	lds	r24, 0x01E6
+    56e2:	90 91 e7 01 	lds	r25, 0x01E7
+    56e6:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
+    56ea:	fe 01       	movw	r30, r28
+    56ec:	ed 5b       	subi	r30, 0xBD	; 189
+    56ee:	ff 4f       	sbci	r31, 0xFF	; 255
+    56f0:	80 e0       	ldi	r24, 0x00	; 0
+    56f2:	90 e0       	ldi	r25, 0x00	; 0
+    56f4:	a8 e4       	ldi	r26, 0x48	; 72
+    56f6:	b3 e4       	ldi	r27, 0x43	; 67
+    56f8:	80 83       	st	Z, r24
+    56fa:	91 83       	std	Z+1, r25	; 0x01
+    56fc:	a2 83       	std	Z+2, r26	; 0x02
+    56fe:	b3 83       	std	Z+3, r27	; 0x03
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    56ec:	8e 01       	movw	r16, r28
-    56ee:	01 5c       	subi	r16, 0xC1	; 193
-    56f0:	1f 4f       	sbci	r17, 0xFF	; 255
-    56f2:	fe 01       	movw	r30, r28
-    56f4:	ed 5b       	subi	r30, 0xBD	; 189
-    56f6:	ff 4f       	sbci	r31, 0xFF	; 255
-    56f8:	60 81       	ld	r22, Z
-    56fa:	71 81       	ldd	r23, Z+1	; 0x01
-    56fc:	82 81       	ldd	r24, Z+2	; 0x02
-    56fe:	93 81       	ldd	r25, Z+3	; 0x03
-    5700:	20 e0       	ldi	r18, 0x00	; 0
-    5702:	30 e0       	ldi	r19, 0x00	; 0
-    5704:	4a e7       	ldi	r20, 0x7A	; 122
-    5706:	55 e4       	ldi	r21, 0x45	; 69
-    5708:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    570c:	dc 01       	movw	r26, r24
-    570e:	cb 01       	movw	r24, r22
-    5710:	f8 01       	movw	r30, r16
-    5712:	80 83       	st	Z, r24
-    5714:	91 83       	std	Z+1, r25	; 0x01
-    5716:	a2 83       	std	Z+2, r26	; 0x02
-    5718:	b3 83       	std	Z+3, r27	; 0x03
+    5700:	8e 01       	movw	r16, r28
+    5702:	01 5c       	subi	r16, 0xC1	; 193
+    5704:	1f 4f       	sbci	r17, 0xFF	; 255
+    5706:	fe 01       	movw	r30, r28
+    5708:	ed 5b       	subi	r30, 0xBD	; 189
+    570a:	ff 4f       	sbci	r31, 0xFF	; 255
+    570c:	60 81       	ld	r22, Z
+    570e:	71 81       	ldd	r23, Z+1	; 0x01
+    5710:	82 81       	ldd	r24, Z+2	; 0x02
+    5712:	93 81       	ldd	r25, Z+3	; 0x03
+    5714:	20 e0       	ldi	r18, 0x00	; 0
+    5716:	30 e0       	ldi	r19, 0x00	; 0
+    5718:	4a e7       	ldi	r20, 0x7A	; 122
+    571a:	55 e4       	ldi	r21, 0x45	; 69
+    571c:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5720:	dc 01       	movw	r26, r24
+    5722:	cb 01       	movw	r24, r22
+    5724:	f8 01       	movw	r30, r16
+    5726:	80 83       	st	Z, r24
+    5728:	91 83       	std	Z+1, r25	; 0x01
+    572a:	a2 83       	std	Z+2, r26	; 0x02
+    572c:	b3 83       	std	Z+3, r27	; 0x03
 	if (__tmp < 1.0)
-    571a:	fe 01       	movw	r30, r28
-    571c:	ff 96       	adiw	r30, 0x3f	; 63
-    571e:	60 81       	ld	r22, Z
-    5720:	71 81       	ldd	r23, Z+1	; 0x01
-    5722:	82 81       	ldd	r24, Z+2	; 0x02
-    5724:	93 81       	ldd	r25, Z+3	; 0x03
-    5726:	20 e0       	ldi	r18, 0x00	; 0
-    5728:	30 e0       	ldi	r19, 0x00	; 0
-    572a:	40 e8       	ldi	r20, 0x80	; 128
-    572c:	5f e3       	ldi	r21, 0x3F	; 63
-    572e:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    5732:	88 23       	and	r24, r24
-    5734:	2c f4       	brge	.+10     	; 0x5740 <APP_Autonomous_Car_voidApp+0x63e>
+    572e:	fe 01       	movw	r30, r28
+    5730:	ff 96       	adiw	r30, 0x3f	; 63
+    5732:	60 81       	ld	r22, Z
+    5734:	71 81       	ldd	r23, Z+1	; 0x01
+    5736:	82 81       	ldd	r24, Z+2	; 0x02
+    5738:	93 81       	ldd	r25, Z+3	; 0x03
+    573a:	20 e0       	ldi	r18, 0x00	; 0
+    573c:	30 e0       	ldi	r19, 0x00	; 0
+    573e:	40 e8       	ldi	r20, 0x80	; 128
+    5740:	5f e3       	ldi	r21, 0x3F	; 63
+    5742:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    5746:	88 23       	and	r24, r24
+    5748:	2c f4       	brge	.+10     	; 0x5754 <APP_Autonomous_Car_voidApp+0x652>
 		__ticks = 1;
-    5736:	81 e0       	ldi	r24, 0x01	; 1
-    5738:	90 e0       	ldi	r25, 0x00	; 0
-    573a:	9e af       	std	Y+62, r25	; 0x3e
-    573c:	8d af       	std	Y+61, r24	; 0x3d
-    573e:	46 c0       	rjmp	.+140    	; 0x57cc <APP_Autonomous_Car_voidApp+0x6ca>
+    574a:	81 e0       	ldi	r24, 0x01	; 1
+    574c:	90 e0       	ldi	r25, 0x00	; 0
+    574e:	9e af       	std	Y+62, r25	; 0x3e
+    5750:	8d af       	std	Y+61, r24	; 0x3d
+    5752:	46 c0       	rjmp	.+140    	; 0x57e0 <APP_Autonomous_Car_voidApp+0x6de>
 	else if (__tmp > 65535)
-    5740:	fe 01       	movw	r30, r28
-    5742:	ff 96       	adiw	r30, 0x3f	; 63
-    5744:	60 81       	ld	r22, Z
-    5746:	71 81       	ldd	r23, Z+1	; 0x01
-    5748:	82 81       	ldd	r24, Z+2	; 0x02
-    574a:	93 81       	ldd	r25, Z+3	; 0x03
-    574c:	20 e0       	ldi	r18, 0x00	; 0
-    574e:	3f ef       	ldi	r19, 0xFF	; 255
-    5750:	4f e7       	ldi	r20, 0x7F	; 127
-    5752:	57 e4       	ldi	r21, 0x47	; 71
-    5754:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    5758:	18 16       	cp	r1, r24
-    575a:	64 f5       	brge	.+88     	; 0x57b4 <APP_Autonomous_Car_voidApp+0x6b2>
+    5754:	fe 01       	movw	r30, r28
+    5756:	ff 96       	adiw	r30, 0x3f	; 63
+    5758:	60 81       	ld	r22, Z
+    575a:	71 81       	ldd	r23, Z+1	; 0x01
+    575c:	82 81       	ldd	r24, Z+2	; 0x02
+    575e:	93 81       	ldd	r25, Z+3	; 0x03
+    5760:	20 e0       	ldi	r18, 0x00	; 0
+    5762:	3f ef       	ldi	r19, 0xFF	; 255
+    5764:	4f e7       	ldi	r20, 0x7F	; 127
+    5766:	57 e4       	ldi	r21, 0x47	; 71
+    5768:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    576c:	18 16       	cp	r1, r24
+    576e:	64 f5       	brge	.+88     	; 0x57c8 <APP_Autonomous_Car_voidApp+0x6c6>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    575c:	fe 01       	movw	r30, r28
-    575e:	ed 5b       	subi	r30, 0xBD	; 189
-    5760:	ff 4f       	sbci	r31, 0xFF	; 255
-    5762:	60 81       	ld	r22, Z
-    5764:	71 81       	ldd	r23, Z+1	; 0x01
-    5766:	82 81       	ldd	r24, Z+2	; 0x02
-    5768:	93 81       	ldd	r25, Z+3	; 0x03
-    576a:	20 e0       	ldi	r18, 0x00	; 0
-    576c:	30 e0       	ldi	r19, 0x00	; 0
-    576e:	40 e2       	ldi	r20, 0x20	; 32
-    5770:	51 e4       	ldi	r21, 0x41	; 65
-    5772:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5776:	dc 01       	movw	r26, r24
-    5778:	cb 01       	movw	r24, r22
-    577a:	bc 01       	movw	r22, r24
-    577c:	cd 01       	movw	r24, r26
-    577e:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5782:	dc 01       	movw	r26, r24
-    5784:	cb 01       	movw	r24, r22
-    5786:	9e af       	std	Y+62, r25	; 0x3e
-    5788:	8d af       	std	Y+61, r24	; 0x3d
-    578a:	0f c0       	rjmp	.+30     	; 0x57aa <APP_Autonomous_Car_voidApp+0x6a8>
-    578c:	80 e9       	ldi	r24, 0x90	; 144
-    578e:	91 e0       	ldi	r25, 0x01	; 1
-    5790:	9c af       	std	Y+60, r25	; 0x3c
-    5792:	8b af       	std	Y+59, r24	; 0x3b
-    5794:	8b ad       	ldd	r24, Y+59	; 0x3b
-    5796:	9c ad       	ldd	r25, Y+60	; 0x3c
-    5798:	01 97       	sbiw	r24, 0x01	; 1
-    579a:	f1 f7       	brne	.-4      	; 0x5798 <APP_Autonomous_Car_voidApp+0x696>
-    579c:	9c af       	std	Y+60, r25	; 0x3c
-    579e:	8b af       	std	Y+59, r24	; 0x3b
+    5770:	fe 01       	movw	r30, r28
+    5772:	ed 5b       	subi	r30, 0xBD	; 189
+    5774:	ff 4f       	sbci	r31, 0xFF	; 255
+    5776:	60 81       	ld	r22, Z
+    5778:	71 81       	ldd	r23, Z+1	; 0x01
+    577a:	82 81       	ldd	r24, Z+2	; 0x02
+    577c:	93 81       	ldd	r25, Z+3	; 0x03
+    577e:	20 e0       	ldi	r18, 0x00	; 0
+    5780:	30 e0       	ldi	r19, 0x00	; 0
+    5782:	40 e2       	ldi	r20, 0x20	; 32
+    5784:	51 e4       	ldi	r21, 0x41	; 65
+    5786:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    578a:	dc 01       	movw	r26, r24
+    578c:	cb 01       	movw	r24, r22
+    578e:	bc 01       	movw	r22, r24
+    5790:	cd 01       	movw	r24, r26
+    5792:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5796:	dc 01       	movw	r26, r24
+    5798:	cb 01       	movw	r24, r22
+    579a:	9e af       	std	Y+62, r25	; 0x3e
+    579c:	8d af       	std	Y+61, r24	; 0x3d
+    579e:	0f c0       	rjmp	.+30     	; 0x57be <APP_Autonomous_Car_voidApp+0x6bc>
+    57a0:	80 e9       	ldi	r24, 0x90	; 144
+    57a2:	91 e0       	ldi	r25, 0x01	; 1
+    57a4:	9c af       	std	Y+60, r25	; 0x3c
+    57a6:	8b af       	std	Y+59, r24	; 0x3b
+    57a8:	8b ad       	ldd	r24, Y+59	; 0x3b
+    57aa:	9c ad       	ldd	r25, Y+60	; 0x3c
+    57ac:	01 97       	sbiw	r24, 0x01	; 1
+    57ae:	f1 f7       	brne	.-4      	; 0x57ac <APP_Autonomous_Car_voidApp+0x6aa>
+    57b0:	9c af       	std	Y+60, r25	; 0x3c
+    57b2:	8b af       	std	Y+59, r24	; 0x3b
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    57a0:	8d ad       	ldd	r24, Y+61	; 0x3d
-    57a2:	9e ad       	ldd	r25, Y+62	; 0x3e
-    57a4:	01 97       	sbiw	r24, 0x01	; 1
-    57a6:	9e af       	std	Y+62, r25	; 0x3e
-    57a8:	8d af       	std	Y+61, r24	; 0x3d
+    57b4:	8d ad       	ldd	r24, Y+61	; 0x3d
+    57b6:	9e ad       	ldd	r25, Y+62	; 0x3e
+    57b8:	01 97       	sbiw	r24, 0x01	; 1
+    57ba:	9e af       	std	Y+62, r25	; 0x3e
+    57bc:	8d af       	std	Y+61, r24	; 0x3d
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    57aa:	8d ad       	ldd	r24, Y+61	; 0x3d
-    57ac:	9e ad       	ldd	r25, Y+62	; 0x3e
-    57ae:	00 97       	sbiw	r24, 0x00	; 0
-    57b0:	69 f7       	brne	.-38     	; 0x578c <APP_Autonomous_Car_voidApp+0x68a>
-    57b2:	16 c0       	rjmp	.+44     	; 0x57e0 <APP_Autonomous_Car_voidApp+0x6de>
+    57be:	8d ad       	ldd	r24, Y+61	; 0x3d
+    57c0:	9e ad       	ldd	r25, Y+62	; 0x3e
+    57c2:	00 97       	sbiw	r24, 0x00	; 0
+    57c4:	69 f7       	brne	.-38     	; 0x57a0 <APP_Autonomous_Car_voidApp+0x69e>
+    57c6:	16 c0       	rjmp	.+44     	; 0x57f4 <APP_Autonomous_Car_voidApp+0x6f2>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    57b4:	fe 01       	movw	r30, r28
-    57b6:	ff 96       	adiw	r30, 0x3f	; 63
-    57b8:	60 81       	ld	r22, Z
-    57ba:	71 81       	ldd	r23, Z+1	; 0x01
-    57bc:	82 81       	ldd	r24, Z+2	; 0x02
-    57be:	93 81       	ldd	r25, Z+3	; 0x03
-    57c0:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    57c4:	dc 01       	movw	r26, r24
-    57c6:	cb 01       	movw	r24, r22
-    57c8:	9e af       	std	Y+62, r25	; 0x3e
-    57ca:	8d af       	std	Y+61, r24	; 0x3d
-    57cc:	8d ad       	ldd	r24, Y+61	; 0x3d
-    57ce:	9e ad       	ldd	r25, Y+62	; 0x3e
-    57d0:	9a af       	std	Y+58, r25	; 0x3a
-    57d2:	89 af       	std	Y+57, r24	; 0x39
-    57d4:	89 ad       	ldd	r24, Y+57	; 0x39
-    57d6:	9a ad       	ldd	r25, Y+58	; 0x3a
-    57d8:	01 97       	sbiw	r24, 0x01	; 1
-    57da:	f1 f7       	brne	.-4      	; 0x57d8 <APP_Autonomous_Car_voidApp+0x6d6>
-    57dc:	9a af       	std	Y+58, r25	; 0x3a
-    57de:	89 af       	std	Y+57, r24	; 0x39
+    57c8:	fe 01       	movw	r30, r28
+    57ca:	ff 96       	adiw	r30, 0x3f	; 63
+    57cc:	60 81       	ld	r22, Z
+    57ce:	71 81       	ldd	r23, Z+1	; 0x01
+    57d0:	82 81       	ldd	r24, Z+2	; 0x02
+    57d2:	93 81       	ldd	r25, Z+3	; 0x03
+    57d4:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    57d8:	dc 01       	movw	r26, r24
+    57da:	cb 01       	movw	r24, r22
+    57dc:	9e af       	std	Y+62, r25	; 0x3e
+    57de:	8d af       	std	Y+61, r24	; 0x3d
+    57e0:	8d ad       	ldd	r24, Y+61	; 0x3d
+    57e2:	9e ad       	ldd	r25, Y+62	; 0x3e
+    57e4:	9a af       	std	Y+58, r25	; 0x3a
+    57e6:	89 af       	std	Y+57, r24	; 0x39
+    57e8:	89 ad       	ldd	r24, Y+57	; 0x39
+    57ea:	9a ad       	ldd	r25, Y+58	; 0x3a
+    57ec:	01 97       	sbiw	r24, 0x01	; 1
+    57ee:	f1 f7       	brne	.-4      	; 0x57ec <APP_Autonomous_Car_voidApp+0x6ea>
+    57f0:	9a af       	std	Y+58, r25	; 0x3a
+    57f2:	89 af       	std	Y+57, r24	; 0x39
 					_delay_ms(200);
 					for (int j = MAX_CCW_ANGLE; j <= MAX_CW_ANGLE; j += NUM_2) {
-    57e0:	fe 01       	movw	r30, r28
-    57e2:	ed 58       	subi	r30, 0x8D	; 141
-    57e4:	ff 4f       	sbci	r31, 0xFF	; 255
-    57e6:	11 82       	std	Z+1, r1	; 0x01
-    57e8:	10 82       	st	Z, r1
-    57ea:	43 c1       	rjmp	.+646    	; 0x5a72 <APP_Autonomous_Car_voidApp+0x970>
+    57f4:	fe 01       	movw	r30, r28
+    57f6:	ed 58       	subi	r30, 0x8D	; 141
+    57f8:	ff 4f       	sbci	r31, 0xFF	; 255
+    57fa:	11 82       	std	Z+1, r1	; 0x01
+    57fc:	10 82       	st	Z, r1
+    57fe:	43 c1       	rjmp	.+646    	; 0x5a86 <APP_Autonomous_Car_voidApp+0x984>
 						HAL_SM_voidSMSetAngle(j);
-    57ec:	fe 01       	movw	r30, r28
-    57ee:	ed 58       	subi	r30, 0x8D	; 141
-    57f0:	ff 4f       	sbci	r31, 0xFF	; 255
-    57f2:	80 81       	ld	r24, Z
-    57f4:	0e 94 8c 1b 	call	0x3718	; 0x3718 <HAL_SM_voidSMSetAngle>
+    5800:	fe 01       	movw	r30, r28
+    5802:	ed 58       	subi	r30, 0x8D	; 141
+    5804:	ff 4f       	sbci	r31, 0xFF	; 255
+    5806:	80 81       	ld	r24, Z
+    5808:	0e 94 8c 1b 	call	0x3718	; 0x3718 <HAL_SM_voidSMSetAngle>
 						if (j == MAX_CW_ANGLE) {
-    57f8:	fe 01       	movw	r30, r28
-    57fa:	ed 58       	subi	r30, 0x8D	; 141
-    57fc:	ff 4f       	sbci	r31, 0xFF	; 255
-    57fe:	80 81       	ld	r24, Z
-    5800:	91 81       	ldd	r25, Z+1	; 0x01
-    5802:	84 3b       	cpi	r24, 0xB4	; 180
-    5804:	91 05       	cpc	r25, r1
-    5806:	09 f0       	breq	.+2      	; 0x580a <APP_Autonomous_Car_voidApp+0x708>
-    5808:	28 c1       	rjmp	.+592    	; 0x5a5a <APP_Autonomous_Car_voidApp+0x958>
-    580a:	80 e0       	ldi	r24, 0x00	; 0
-    580c:	90 e0       	ldi	r25, 0x00	; 0
-    580e:	a8 e4       	ldi	r26, 0x48	; 72
-    5810:	b2 e4       	ldi	r27, 0x42	; 66
-    5812:	8d ab       	std	Y+53, r24	; 0x35
-    5814:	9e ab       	std	Y+54, r25	; 0x36
-    5816:	af ab       	std	Y+55, r26	; 0x37
-    5818:	b8 af       	std	Y+56, r27	; 0x38
+    580c:	fe 01       	movw	r30, r28
+    580e:	ed 58       	subi	r30, 0x8D	; 141
+    5810:	ff 4f       	sbci	r31, 0xFF	; 255
+    5812:	80 81       	ld	r24, Z
+    5814:	91 81       	ldd	r25, Z+1	; 0x01
+    5816:	84 3b       	cpi	r24, 0xB4	; 180
+    5818:	91 05       	cpc	r25, r1
+    581a:	09 f0       	breq	.+2      	; 0x581e <APP_Autonomous_Car_voidApp+0x71c>
+    581c:	28 c1       	rjmp	.+592    	; 0x5a6e <APP_Autonomous_Car_voidApp+0x96c>
+    581e:	80 e0       	ldi	r24, 0x00	; 0
+    5820:	90 e0       	ldi	r25, 0x00	; 0
+    5822:	a8 e4       	ldi	r26, 0x48	; 72
+    5824:	b2 e4       	ldi	r27, 0x42	; 66
+    5826:	8d ab       	std	Y+53, r24	; 0x35
+    5828:	9e ab       	std	Y+54, r25	; 0x36
+    582a:	af ab       	std	Y+55, r26	; 0x37
+    582c:	b8 af       	std	Y+56, r27	; 0x38
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    581a:	6d a9       	ldd	r22, Y+53	; 0x35
-    581c:	7e a9       	ldd	r23, Y+54	; 0x36
-    581e:	8f a9       	ldd	r24, Y+55	; 0x37
-    5820:	98 ad       	ldd	r25, Y+56	; 0x38
-    5822:	20 e0       	ldi	r18, 0x00	; 0
-    5824:	30 e0       	ldi	r19, 0x00	; 0
-    5826:	4a e7       	ldi	r20, 0x7A	; 122
-    5828:	55 e4       	ldi	r21, 0x45	; 69
-    582a:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    582e:	dc 01       	movw	r26, r24
-    5830:	cb 01       	movw	r24, r22
-    5832:	89 ab       	std	Y+49, r24	; 0x31
-    5834:	9a ab       	std	Y+50, r25	; 0x32
-    5836:	ab ab       	std	Y+51, r26	; 0x33
-    5838:	bc ab       	std	Y+52, r27	; 0x34
+    582e:	6d a9       	ldd	r22, Y+53	; 0x35
+    5830:	7e a9       	ldd	r23, Y+54	; 0x36
+    5832:	8f a9       	ldd	r24, Y+55	; 0x37
+    5834:	98 ad       	ldd	r25, Y+56	; 0x38
+    5836:	20 e0       	ldi	r18, 0x00	; 0
+    5838:	30 e0       	ldi	r19, 0x00	; 0
+    583a:	4a e7       	ldi	r20, 0x7A	; 122
+    583c:	55 e4       	ldi	r21, 0x45	; 69
+    583e:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5842:	dc 01       	movw	r26, r24
+    5844:	cb 01       	movw	r24, r22
+    5846:	89 ab       	std	Y+49, r24	; 0x31
+    5848:	9a ab       	std	Y+50, r25	; 0x32
+    584a:	ab ab       	std	Y+51, r26	; 0x33
+    584c:	bc ab       	std	Y+52, r27	; 0x34
 	if (__tmp < 1.0)
-    583a:	69 a9       	ldd	r22, Y+49	; 0x31
-    583c:	7a a9       	ldd	r23, Y+50	; 0x32
-    583e:	8b a9       	ldd	r24, Y+51	; 0x33
-    5840:	9c a9       	ldd	r25, Y+52	; 0x34
-    5842:	20 e0       	ldi	r18, 0x00	; 0
-    5844:	30 e0       	ldi	r19, 0x00	; 0
-    5846:	40 e8       	ldi	r20, 0x80	; 128
-    5848:	5f e3       	ldi	r21, 0x3F	; 63
-    584a:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    584e:	88 23       	and	r24, r24
-    5850:	2c f4       	brge	.+10     	; 0x585c <APP_Autonomous_Car_voidApp+0x75a>
+    584e:	69 a9       	ldd	r22, Y+49	; 0x31
+    5850:	7a a9       	ldd	r23, Y+50	; 0x32
+    5852:	8b a9       	ldd	r24, Y+51	; 0x33
+    5854:	9c a9       	ldd	r25, Y+52	; 0x34
+    5856:	20 e0       	ldi	r18, 0x00	; 0
+    5858:	30 e0       	ldi	r19, 0x00	; 0
+    585a:	40 e8       	ldi	r20, 0x80	; 128
+    585c:	5f e3       	ldi	r21, 0x3F	; 63
+    585e:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    5862:	88 23       	and	r24, r24
+    5864:	2c f4       	brge	.+10     	; 0x5870 <APP_Autonomous_Car_voidApp+0x76e>
 		__ticks = 1;
-    5852:	81 e0       	ldi	r24, 0x01	; 1
-    5854:	90 e0       	ldi	r25, 0x00	; 0
-    5856:	98 ab       	std	Y+48, r25	; 0x30
-    5858:	8f a7       	std	Y+47, r24	; 0x2f
-    585a:	3f c0       	rjmp	.+126    	; 0x58da <APP_Autonomous_Car_voidApp+0x7d8>
+    5866:	81 e0       	ldi	r24, 0x01	; 1
+    5868:	90 e0       	ldi	r25, 0x00	; 0
+    586a:	98 ab       	std	Y+48, r25	; 0x30
+    586c:	8f a7       	std	Y+47, r24	; 0x2f
+    586e:	3f c0       	rjmp	.+126    	; 0x58ee <APP_Autonomous_Car_voidApp+0x7ec>
 	else if (__tmp > 65535)
-    585c:	69 a9       	ldd	r22, Y+49	; 0x31
-    585e:	7a a9       	ldd	r23, Y+50	; 0x32
-    5860:	8b a9       	ldd	r24, Y+51	; 0x33
-    5862:	9c a9       	ldd	r25, Y+52	; 0x34
-    5864:	20 e0       	ldi	r18, 0x00	; 0
-    5866:	3f ef       	ldi	r19, 0xFF	; 255
-    5868:	4f e7       	ldi	r20, 0x7F	; 127
-    586a:	57 e4       	ldi	r21, 0x47	; 71
-    586c:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    5870:	18 16       	cp	r1, r24
-    5872:	4c f5       	brge	.+82     	; 0x58c6 <APP_Autonomous_Car_voidApp+0x7c4>
+    5870:	69 a9       	ldd	r22, Y+49	; 0x31
+    5872:	7a a9       	ldd	r23, Y+50	; 0x32
+    5874:	8b a9       	ldd	r24, Y+51	; 0x33
+    5876:	9c a9       	ldd	r25, Y+52	; 0x34
+    5878:	20 e0       	ldi	r18, 0x00	; 0
+    587a:	3f ef       	ldi	r19, 0xFF	; 255
+    587c:	4f e7       	ldi	r20, 0x7F	; 127
+    587e:	57 e4       	ldi	r21, 0x47	; 71
+    5880:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    5884:	18 16       	cp	r1, r24
+    5886:	4c f5       	brge	.+82     	; 0x58da <APP_Autonomous_Car_voidApp+0x7d8>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    5874:	6d a9       	ldd	r22, Y+53	; 0x35
-    5876:	7e a9       	ldd	r23, Y+54	; 0x36
-    5878:	8f a9       	ldd	r24, Y+55	; 0x37
-    587a:	98 ad       	ldd	r25, Y+56	; 0x38
-    587c:	20 e0       	ldi	r18, 0x00	; 0
-    587e:	30 e0       	ldi	r19, 0x00	; 0
-    5880:	40 e2       	ldi	r20, 0x20	; 32
-    5882:	51 e4       	ldi	r21, 0x41	; 65
-    5884:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5888:	dc 01       	movw	r26, r24
-    588a:	cb 01       	movw	r24, r22
-    588c:	bc 01       	movw	r22, r24
-    588e:	cd 01       	movw	r24, r26
-    5890:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5894:	dc 01       	movw	r26, r24
-    5896:	cb 01       	movw	r24, r22
-    5898:	98 ab       	std	Y+48, r25	; 0x30
-    589a:	8f a7       	std	Y+47, r24	; 0x2f
-    589c:	0f c0       	rjmp	.+30     	; 0x58bc <APP_Autonomous_Car_voidApp+0x7ba>
-    589e:	80 e9       	ldi	r24, 0x90	; 144
-    58a0:	91 e0       	ldi	r25, 0x01	; 1
-    58a2:	9e a7       	std	Y+46, r25	; 0x2e
-    58a4:	8d a7       	std	Y+45, r24	; 0x2d
-    58a6:	8d a5       	ldd	r24, Y+45	; 0x2d
-    58a8:	9e a5       	ldd	r25, Y+46	; 0x2e
-    58aa:	01 97       	sbiw	r24, 0x01	; 1
-    58ac:	f1 f7       	brne	.-4      	; 0x58aa <APP_Autonomous_Car_voidApp+0x7a8>
-    58ae:	9e a7       	std	Y+46, r25	; 0x2e
-    58b0:	8d a7       	std	Y+45, r24	; 0x2d
+    5888:	6d a9       	ldd	r22, Y+53	; 0x35
+    588a:	7e a9       	ldd	r23, Y+54	; 0x36
+    588c:	8f a9       	ldd	r24, Y+55	; 0x37
+    588e:	98 ad       	ldd	r25, Y+56	; 0x38
+    5890:	20 e0       	ldi	r18, 0x00	; 0
+    5892:	30 e0       	ldi	r19, 0x00	; 0
+    5894:	40 e2       	ldi	r20, 0x20	; 32
+    5896:	51 e4       	ldi	r21, 0x41	; 65
+    5898:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    589c:	dc 01       	movw	r26, r24
+    589e:	cb 01       	movw	r24, r22
+    58a0:	bc 01       	movw	r22, r24
+    58a2:	cd 01       	movw	r24, r26
+    58a4:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    58a8:	dc 01       	movw	r26, r24
+    58aa:	cb 01       	movw	r24, r22
+    58ac:	98 ab       	std	Y+48, r25	; 0x30
+    58ae:	8f a7       	std	Y+47, r24	; 0x2f
+    58b0:	0f c0       	rjmp	.+30     	; 0x58d0 <APP_Autonomous_Car_voidApp+0x7ce>
+    58b2:	80 e9       	ldi	r24, 0x90	; 144
+    58b4:	91 e0       	ldi	r25, 0x01	; 1
+    58b6:	9e a7       	std	Y+46, r25	; 0x2e
+    58b8:	8d a7       	std	Y+45, r24	; 0x2d
+    58ba:	8d a5       	ldd	r24, Y+45	; 0x2d
+    58bc:	9e a5       	ldd	r25, Y+46	; 0x2e
+    58be:	01 97       	sbiw	r24, 0x01	; 1
+    58c0:	f1 f7       	brne	.-4      	; 0x58be <APP_Autonomous_Car_voidApp+0x7bc>
+    58c2:	9e a7       	std	Y+46, r25	; 0x2e
+    58c4:	8d a7       	std	Y+45, r24	; 0x2d
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    58b2:	8f a5       	ldd	r24, Y+47	; 0x2f
-    58b4:	98 a9       	ldd	r25, Y+48	; 0x30
-    58b6:	01 97       	sbiw	r24, 0x01	; 1
-    58b8:	98 ab       	std	Y+48, r25	; 0x30
-    58ba:	8f a7       	std	Y+47, r24	; 0x2f
+    58c6:	8f a5       	ldd	r24, Y+47	; 0x2f
+    58c8:	98 a9       	ldd	r25, Y+48	; 0x30
+    58ca:	01 97       	sbiw	r24, 0x01	; 1
+    58cc:	98 ab       	std	Y+48, r25	; 0x30
+    58ce:	8f a7       	std	Y+47, r24	; 0x2f
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    58bc:	8f a5       	ldd	r24, Y+47	; 0x2f
-    58be:	98 a9       	ldd	r25, Y+48	; 0x30
-    58c0:	00 97       	sbiw	r24, 0x00	; 0
-    58c2:	69 f7       	brne	.-38     	; 0x589e <APP_Autonomous_Car_voidApp+0x79c>
-    58c4:	14 c0       	rjmp	.+40     	; 0x58ee <APP_Autonomous_Car_voidApp+0x7ec>
+    58d0:	8f a5       	ldd	r24, Y+47	; 0x2f
+    58d2:	98 a9       	ldd	r25, Y+48	; 0x30
+    58d4:	00 97       	sbiw	r24, 0x00	; 0
+    58d6:	69 f7       	brne	.-38     	; 0x58b2 <APP_Autonomous_Car_voidApp+0x7b0>
+    58d8:	14 c0       	rjmp	.+40     	; 0x5902 <APP_Autonomous_Car_voidApp+0x800>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    58c6:	69 a9       	ldd	r22, Y+49	; 0x31
-    58c8:	7a a9       	ldd	r23, Y+50	; 0x32
-    58ca:	8b a9       	ldd	r24, Y+51	; 0x33
-    58cc:	9c a9       	ldd	r25, Y+52	; 0x34
-    58ce:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    58d2:	dc 01       	movw	r26, r24
-    58d4:	cb 01       	movw	r24, r22
-    58d6:	98 ab       	std	Y+48, r25	; 0x30
-    58d8:	8f a7       	std	Y+47, r24	; 0x2f
-    58da:	8f a5       	ldd	r24, Y+47	; 0x2f
-    58dc:	98 a9       	ldd	r25, Y+48	; 0x30
-    58de:	9c a7       	std	Y+44, r25	; 0x2c
-    58e0:	8b a7       	std	Y+43, r24	; 0x2b
-    58e2:	8b a5       	ldd	r24, Y+43	; 0x2b
-    58e4:	9c a5       	ldd	r25, Y+44	; 0x2c
-    58e6:	01 97       	sbiw	r24, 0x01	; 1
-    58e8:	f1 f7       	brne	.-4      	; 0x58e6 <APP_Autonomous_Car_voidApp+0x7e4>
-    58ea:	9c a7       	std	Y+44, r25	; 0x2c
-    58ec:	8b a7       	std	Y+43, r24	; 0x2b
+    58da:	69 a9       	ldd	r22, Y+49	; 0x31
+    58dc:	7a a9       	ldd	r23, Y+50	; 0x32
+    58de:	8b a9       	ldd	r24, Y+51	; 0x33
+    58e0:	9c a9       	ldd	r25, Y+52	; 0x34
+    58e2:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    58e6:	dc 01       	movw	r26, r24
+    58e8:	cb 01       	movw	r24, r22
+    58ea:	98 ab       	std	Y+48, r25	; 0x30
+    58ec:	8f a7       	std	Y+47, r24	; 0x2f
+    58ee:	8f a5       	ldd	r24, Y+47	; 0x2f
+    58f0:	98 a9       	ldd	r25, Y+48	; 0x30
+    58f2:	9c a7       	std	Y+44, r25	; 0x2c
+    58f4:	8b a7       	std	Y+43, r24	; 0x2b
+    58f6:	8b a5       	ldd	r24, Y+43	; 0x2b
+    58f8:	9c a5       	ldd	r25, Y+44	; 0x2c
+    58fa:	01 97       	sbiw	r24, 0x01	; 1
+    58fc:	f1 f7       	brne	.-4      	; 0x58fa <APP_Autonomous_Car_voidApp+0x7f8>
+    58fe:	9c a7       	std	Y+44, r25	; 0x2c
+    5900:	8b a7       	std	Y+43, r24	; 0x2b
 							_delay_ms(50);
 							HAL_Ultrasonic_Sensor_voidCalcDistancse(
-    58ee:	ce 01       	movw	r24, r28
-    58f0:	89 58       	subi	r24, 0x89	; 137
-    58f2:	9f 4f       	sbci	r25, 0xFF	; 255
-    58f4:	0e 94 64 1a 	call	0x34c8	; 0x34c8 <HAL_Ultrasonic_Sensor_voidCalcDistancse>
+    5902:	ce 01       	movw	r24, r28
+    5904:	89 58       	subi	r24, 0x89	; 137
+    5906:	9f 4f       	sbci	r25, 0xFF	; 255
+    5908:	0e 94 64 1a 	call	0x34c8	; 0x34c8 <HAL_Ultrasonic_Sensor_voidCalcDistancse>
 									&LOC_f32Distance);
 							HAL_LCD_u8Clear();
-    58f8:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
+    590c:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
 							HAL_LCD_u8SendString("Dir Left: ");
-    58fc:	86 e9       	ldi	r24, 0x96	; 150
-    58fe:	90 e0       	ldi	r25, 0x00	; 0
-    5900:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    5910:	86 e9       	ldi	r24, 0x96	; 150
+    5912:	90 e0       	ldi	r25, 0x00	; 0
+    5914:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 							Glob_u16DirLeft = LOC_f32Distance;
-    5904:	fe 01       	movw	r30, r28
-    5906:	e9 58       	subi	r30, 0x89	; 137
-    5908:	ff 4f       	sbci	r31, 0xFF	; 255
-    590a:	80 81       	ld	r24, Z
-    590c:	91 81       	ldd	r25, Z+1	; 0x01
-    590e:	a2 81       	ldd	r26, Z+2	; 0x02
-    5910:	b3 81       	ldd	r27, Z+3	; 0x03
-    5912:	bc 01       	movw	r22, r24
-    5914:	cd 01       	movw	r24, r26
-    5916:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    591a:	dc 01       	movw	r26, r24
-    591c:	cb 01       	movw	r24, r22
-    591e:	90 93 e5 01 	sts	0x01E5, r25
-    5922:	80 93 e4 01 	sts	0x01E4, r24
+    5918:	fe 01       	movw	r30, r28
+    591a:	e9 58       	subi	r30, 0x89	; 137
+    591c:	ff 4f       	sbci	r31, 0xFF	; 255
+    591e:	80 81       	ld	r24, Z
+    5920:	91 81       	ldd	r25, Z+1	; 0x01
+    5922:	a2 81       	ldd	r26, Z+2	; 0x02
+    5924:	b3 81       	ldd	r27, Z+3	; 0x03
+    5926:	bc 01       	movw	r22, r24
+    5928:	cd 01       	movw	r24, r26
+    592a:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    592e:	dc 01       	movw	r26, r24
+    5930:	cb 01       	movw	r24, r22
+    5932:	90 93 e5 01 	sts	0x01E5, r25
+    5936:	80 93 e4 01 	sts	0x01E4, r24
 							HAL_LCD_u8SendNumber(Glob_u16DirLeft);
-    5926:	80 91 e4 01 	lds	r24, 0x01E4
-    592a:	90 91 e5 01 	lds	r25, 0x01E5
-    592e:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
-    5932:	80 e0       	ldi	r24, 0x00	; 0
-    5934:	90 e0       	ldi	r25, 0x00	; 0
-    5936:	a8 e4       	ldi	r26, 0x48	; 72
-    5938:	b3 e4       	ldi	r27, 0x43	; 67
-    593a:	8f a3       	std	Y+39, r24	; 0x27
-    593c:	98 a7       	std	Y+40, r25	; 0x28
-    593e:	a9 a7       	std	Y+41, r26	; 0x29
-    5940:	ba a7       	std	Y+42, r27	; 0x2a
+    593a:	80 91 e4 01 	lds	r24, 0x01E4
+    593e:	90 91 e5 01 	lds	r25, 0x01E5
+    5942:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
+    5946:	80 e0       	ldi	r24, 0x00	; 0
+    5948:	90 e0       	ldi	r25, 0x00	; 0
+    594a:	a8 e4       	ldi	r26, 0x48	; 72
+    594c:	b3 e4       	ldi	r27, 0x43	; 67
+    594e:	8f a3       	std	Y+39, r24	; 0x27
+    5950:	98 a7       	std	Y+40, r25	; 0x28
+    5952:	a9 a7       	std	Y+41, r26	; 0x29
+    5954:	ba a7       	std	Y+42, r27	; 0x2a
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    5942:	6f a1       	ldd	r22, Y+39	; 0x27
-    5944:	78 a5       	ldd	r23, Y+40	; 0x28
-    5946:	89 a5       	ldd	r24, Y+41	; 0x29
-    5948:	9a a5       	ldd	r25, Y+42	; 0x2a
-    594a:	20 e0       	ldi	r18, 0x00	; 0
-    594c:	30 e0       	ldi	r19, 0x00	; 0
-    594e:	4a e7       	ldi	r20, 0x7A	; 122
-    5950:	55 e4       	ldi	r21, 0x45	; 69
-    5952:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5956:	dc 01       	movw	r26, r24
-    5958:	cb 01       	movw	r24, r22
-    595a:	8b a3       	std	Y+35, r24	; 0x23
-    595c:	9c a3       	std	Y+36, r25	; 0x24
-    595e:	ad a3       	std	Y+37, r26	; 0x25
-    5960:	be a3       	std	Y+38, r27	; 0x26
+    5956:	6f a1       	ldd	r22, Y+39	; 0x27
+    5958:	78 a5       	ldd	r23, Y+40	; 0x28
+    595a:	89 a5       	ldd	r24, Y+41	; 0x29
+    595c:	9a a5       	ldd	r25, Y+42	; 0x2a
+    595e:	20 e0       	ldi	r18, 0x00	; 0
+    5960:	30 e0       	ldi	r19, 0x00	; 0
+    5962:	4a e7       	ldi	r20, 0x7A	; 122
+    5964:	55 e4       	ldi	r21, 0x45	; 69
+    5966:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    596a:	dc 01       	movw	r26, r24
+    596c:	cb 01       	movw	r24, r22
+    596e:	8b a3       	std	Y+35, r24	; 0x23
+    5970:	9c a3       	std	Y+36, r25	; 0x24
+    5972:	ad a3       	std	Y+37, r26	; 0x25
+    5974:	be a3       	std	Y+38, r27	; 0x26
 	if (__tmp < 1.0)
-    5962:	6b a1       	ldd	r22, Y+35	; 0x23
-    5964:	7c a1       	ldd	r23, Y+36	; 0x24
-    5966:	8d a1       	ldd	r24, Y+37	; 0x25
-    5968:	9e a1       	ldd	r25, Y+38	; 0x26
-    596a:	20 e0       	ldi	r18, 0x00	; 0
-    596c:	30 e0       	ldi	r19, 0x00	; 0
-    596e:	40 e8       	ldi	r20, 0x80	; 128
-    5970:	5f e3       	ldi	r21, 0x3F	; 63
-    5972:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    5976:	88 23       	and	r24, r24
-    5978:	2c f4       	brge	.+10     	; 0x5984 <APP_Autonomous_Car_voidApp+0x882>
+    5976:	6b a1       	ldd	r22, Y+35	; 0x23
+    5978:	7c a1       	ldd	r23, Y+36	; 0x24
+    597a:	8d a1       	ldd	r24, Y+37	; 0x25
+    597c:	9e a1       	ldd	r25, Y+38	; 0x26
+    597e:	20 e0       	ldi	r18, 0x00	; 0
+    5980:	30 e0       	ldi	r19, 0x00	; 0
+    5982:	40 e8       	ldi	r20, 0x80	; 128
+    5984:	5f e3       	ldi	r21, 0x3F	; 63
+    5986:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    598a:	88 23       	and	r24, r24
+    598c:	2c f4       	brge	.+10     	; 0x5998 <APP_Autonomous_Car_voidApp+0x896>
 		__ticks = 1;
-    597a:	81 e0       	ldi	r24, 0x01	; 1
-    597c:	90 e0       	ldi	r25, 0x00	; 0
-    597e:	9a a3       	std	Y+34, r25	; 0x22
-    5980:	89 a3       	std	Y+33, r24	; 0x21
-    5982:	3f c0       	rjmp	.+126    	; 0x5a02 <APP_Autonomous_Car_voidApp+0x900>
+    598e:	81 e0       	ldi	r24, 0x01	; 1
+    5990:	90 e0       	ldi	r25, 0x00	; 0
+    5992:	9a a3       	std	Y+34, r25	; 0x22
+    5994:	89 a3       	std	Y+33, r24	; 0x21
+    5996:	3f c0       	rjmp	.+126    	; 0x5a16 <APP_Autonomous_Car_voidApp+0x914>
 	else if (__tmp > 65535)
-    5984:	6b a1       	ldd	r22, Y+35	; 0x23
-    5986:	7c a1       	ldd	r23, Y+36	; 0x24
-    5988:	8d a1       	ldd	r24, Y+37	; 0x25
-    598a:	9e a1       	ldd	r25, Y+38	; 0x26
-    598c:	20 e0       	ldi	r18, 0x00	; 0
-    598e:	3f ef       	ldi	r19, 0xFF	; 255
-    5990:	4f e7       	ldi	r20, 0x7F	; 127
-    5992:	57 e4       	ldi	r21, 0x47	; 71
-    5994:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    5998:	18 16       	cp	r1, r24
-    599a:	4c f5       	brge	.+82     	; 0x59ee <APP_Autonomous_Car_voidApp+0x8ec>
+    5998:	6b a1       	ldd	r22, Y+35	; 0x23
+    599a:	7c a1       	ldd	r23, Y+36	; 0x24
+    599c:	8d a1       	ldd	r24, Y+37	; 0x25
+    599e:	9e a1       	ldd	r25, Y+38	; 0x26
+    59a0:	20 e0       	ldi	r18, 0x00	; 0
+    59a2:	3f ef       	ldi	r19, 0xFF	; 255
+    59a4:	4f e7       	ldi	r20, 0x7F	; 127
+    59a6:	57 e4       	ldi	r21, 0x47	; 71
+    59a8:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    59ac:	18 16       	cp	r1, r24
+    59ae:	4c f5       	brge	.+82     	; 0x5a02 <APP_Autonomous_Car_voidApp+0x900>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    599c:	6f a1       	ldd	r22, Y+39	; 0x27
-    599e:	78 a5       	ldd	r23, Y+40	; 0x28
-    59a0:	89 a5       	ldd	r24, Y+41	; 0x29
-    59a2:	9a a5       	ldd	r25, Y+42	; 0x2a
-    59a4:	20 e0       	ldi	r18, 0x00	; 0
-    59a6:	30 e0       	ldi	r19, 0x00	; 0
-    59a8:	40 e2       	ldi	r20, 0x20	; 32
-    59aa:	51 e4       	ldi	r21, 0x41	; 65
-    59ac:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    59b0:	dc 01       	movw	r26, r24
-    59b2:	cb 01       	movw	r24, r22
-    59b4:	bc 01       	movw	r22, r24
-    59b6:	cd 01       	movw	r24, r26
-    59b8:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    59bc:	dc 01       	movw	r26, r24
-    59be:	cb 01       	movw	r24, r22
-    59c0:	9a a3       	std	Y+34, r25	; 0x22
-    59c2:	89 a3       	std	Y+33, r24	; 0x21
-    59c4:	0f c0       	rjmp	.+30     	; 0x59e4 <APP_Autonomous_Car_voidApp+0x8e2>
-    59c6:	80 e9       	ldi	r24, 0x90	; 144
-    59c8:	91 e0       	ldi	r25, 0x01	; 1
-    59ca:	98 a3       	std	Y+32, r25	; 0x20
-    59cc:	8f 8f       	std	Y+31, r24	; 0x1f
-    59ce:	8f 8d       	ldd	r24, Y+31	; 0x1f
-    59d0:	98 a1       	ldd	r25, Y+32	; 0x20
-    59d2:	01 97       	sbiw	r24, 0x01	; 1
-    59d4:	f1 f7       	brne	.-4      	; 0x59d2 <APP_Autonomous_Car_voidApp+0x8d0>
-    59d6:	98 a3       	std	Y+32, r25	; 0x20
-    59d8:	8f 8f       	std	Y+31, r24	; 0x1f
+    59b0:	6f a1       	ldd	r22, Y+39	; 0x27
+    59b2:	78 a5       	ldd	r23, Y+40	; 0x28
+    59b4:	89 a5       	ldd	r24, Y+41	; 0x29
+    59b6:	9a a5       	ldd	r25, Y+42	; 0x2a
+    59b8:	20 e0       	ldi	r18, 0x00	; 0
+    59ba:	30 e0       	ldi	r19, 0x00	; 0
+    59bc:	40 e2       	ldi	r20, 0x20	; 32
+    59be:	51 e4       	ldi	r21, 0x41	; 65
+    59c0:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    59c4:	dc 01       	movw	r26, r24
+    59c6:	cb 01       	movw	r24, r22
+    59c8:	bc 01       	movw	r22, r24
+    59ca:	cd 01       	movw	r24, r26
+    59cc:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    59d0:	dc 01       	movw	r26, r24
+    59d2:	cb 01       	movw	r24, r22
+    59d4:	9a a3       	std	Y+34, r25	; 0x22
+    59d6:	89 a3       	std	Y+33, r24	; 0x21
+    59d8:	0f c0       	rjmp	.+30     	; 0x59f8 <APP_Autonomous_Car_voidApp+0x8f6>
+    59da:	80 e9       	ldi	r24, 0x90	; 144
+    59dc:	91 e0       	ldi	r25, 0x01	; 1
+    59de:	98 a3       	std	Y+32, r25	; 0x20
+    59e0:	8f 8f       	std	Y+31, r24	; 0x1f
+    59e2:	8f 8d       	ldd	r24, Y+31	; 0x1f
+    59e4:	98 a1       	ldd	r25, Y+32	; 0x20
+    59e6:	01 97       	sbiw	r24, 0x01	; 1
+    59e8:	f1 f7       	brne	.-4      	; 0x59e6 <APP_Autonomous_Car_voidApp+0x8e4>
+    59ea:	98 a3       	std	Y+32, r25	; 0x20
+    59ec:	8f 8f       	std	Y+31, r24	; 0x1f
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    59da:	89 a1       	ldd	r24, Y+33	; 0x21
-    59dc:	9a a1       	ldd	r25, Y+34	; 0x22
-    59de:	01 97       	sbiw	r24, 0x01	; 1
-    59e0:	9a a3       	std	Y+34, r25	; 0x22
-    59e2:	89 a3       	std	Y+33, r24	; 0x21
+    59ee:	89 a1       	ldd	r24, Y+33	; 0x21
+    59f0:	9a a1       	ldd	r25, Y+34	; 0x22
+    59f2:	01 97       	sbiw	r24, 0x01	; 1
+    59f4:	9a a3       	std	Y+34, r25	; 0x22
+    59f6:	89 a3       	std	Y+33, r24	; 0x21
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    59e4:	89 a1       	ldd	r24, Y+33	; 0x21
-    59e6:	9a a1       	ldd	r25, Y+34	; 0x22
-    59e8:	00 97       	sbiw	r24, 0x00	; 0
-    59ea:	69 f7       	brne	.-38     	; 0x59c6 <APP_Autonomous_Car_voidApp+0x8c4>
-    59ec:	14 c0       	rjmp	.+40     	; 0x5a16 <APP_Autonomous_Car_voidApp+0x914>
+    59f8:	89 a1       	ldd	r24, Y+33	; 0x21
+    59fa:	9a a1       	ldd	r25, Y+34	; 0x22
+    59fc:	00 97       	sbiw	r24, 0x00	; 0
+    59fe:	69 f7       	brne	.-38     	; 0x59da <APP_Autonomous_Car_voidApp+0x8d8>
+    5a00:	14 c0       	rjmp	.+40     	; 0x5a2a <APP_Autonomous_Car_voidApp+0x928>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    59ee:	6b a1       	ldd	r22, Y+35	; 0x23
-    59f0:	7c a1       	ldd	r23, Y+36	; 0x24
-    59f2:	8d a1       	ldd	r24, Y+37	; 0x25
-    59f4:	9e a1       	ldd	r25, Y+38	; 0x26
-    59f6:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    59fa:	dc 01       	movw	r26, r24
-    59fc:	cb 01       	movw	r24, r22
-    59fe:	9a a3       	std	Y+34, r25	; 0x22
-    5a00:	89 a3       	std	Y+33, r24	; 0x21
-    5a02:	89 a1       	ldd	r24, Y+33	; 0x21
-    5a04:	9a a1       	ldd	r25, Y+34	; 0x22
-    5a06:	9e 8f       	std	Y+30, r25	; 0x1e
-    5a08:	8d 8f       	std	Y+29, r24	; 0x1d
-    5a0a:	8d 8d       	ldd	r24, Y+29	; 0x1d
-    5a0c:	9e 8d       	ldd	r25, Y+30	; 0x1e
-    5a0e:	01 97       	sbiw	r24, 0x01	; 1
-    5a10:	f1 f7       	brne	.-4      	; 0x5a0e <APP_Autonomous_Car_voidApp+0x90c>
-    5a12:	9e 8f       	std	Y+30, r25	; 0x1e
-    5a14:	8d 8f       	std	Y+29, r24	; 0x1d
+    5a02:	6b a1       	ldd	r22, Y+35	; 0x23
+    5a04:	7c a1       	ldd	r23, Y+36	; 0x24
+    5a06:	8d a1       	ldd	r24, Y+37	; 0x25
+    5a08:	9e a1       	ldd	r25, Y+38	; 0x26
+    5a0a:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5a0e:	dc 01       	movw	r26, r24
+    5a10:	cb 01       	movw	r24, r22
+    5a12:	9a a3       	std	Y+34, r25	; 0x22
+    5a14:	89 a3       	std	Y+33, r24	; 0x21
+    5a16:	89 a1       	ldd	r24, Y+33	; 0x21
+    5a18:	9a a1       	ldd	r25, Y+34	; 0x22
+    5a1a:	9e 8f       	std	Y+30, r25	; 0x1e
+    5a1c:	8d 8f       	std	Y+29, r24	; 0x1d
+    5a1e:	8d 8d       	ldd	r24, Y+29	; 0x1d
+    5a20:	9e 8d       	ldd	r25, Y+30	; 0x1e
+    5a22:	01 97       	sbiw	r24, 0x01	; 1
+    5a24:	f1 f7       	brne	.-4      	; 0x5a22 <APP_Autonomous_Car_voidApp+0x920>
+    5a26:	9e 8f       	std	Y+30, r25	; 0x1e
+    5a28:	8d 8f       	std	Y+29, r24	; 0x1d
 							_delay_ms(200);
 							for (int k = MAX_CW_ANGLE; k >= START_ANGLE; k -= NUM_2) {
-    5a16:	fe 01       	movw	r30, r28
-    5a18:	ef 58       	subi	r30, 0x8F	; 143
-    5a1a:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a1c:	84 eb       	ldi	r24, 0xB4	; 180
-    5a1e:	90 e0       	ldi	r25, 0x00	; 0
-    5a20:	91 83       	std	Z+1, r25	; 0x01
-    5a22:	80 83       	st	Z, r24
-    5a24:	12 c0       	rjmp	.+36     	; 0x5a4a <APP_Autonomous_Car_voidApp+0x948>
+    5a2a:	fe 01       	movw	r30, r28
+    5a2c:	ef 58       	subi	r30, 0x8F	; 143
+    5a2e:	ff 4f       	sbci	r31, 0xFF	; 255
+    5a30:	84 eb       	ldi	r24, 0xB4	; 180
+    5a32:	90 e0       	ldi	r25, 0x00	; 0
+    5a34:	91 83       	std	Z+1, r25	; 0x01
+    5a36:	80 83       	st	Z, r24
+    5a38:	12 c0       	rjmp	.+36     	; 0x5a5e <APP_Autonomous_Car_voidApp+0x95c>
 								HAL_SM_voidSMSetAngle(k);
-    5a26:	fe 01       	movw	r30, r28
-    5a28:	ef 58       	subi	r30, 0x8F	; 143
-    5a2a:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a2c:	80 81       	ld	r24, Z
-    5a2e:	0e 94 8c 1b 	call	0x3718	; 0x3718 <HAL_SM_voidSMSetAngle>
+    5a3a:	fe 01       	movw	r30, r28
+    5a3c:	ef 58       	subi	r30, 0x8F	; 143
+    5a3e:	ff 4f       	sbci	r31, 0xFF	; 255
+    5a40:	80 81       	ld	r24, Z
+    5a42:	0e 94 8c 1b 	call	0x3718	; 0x3718 <HAL_SM_voidSMSetAngle>
 							HAL_LCD_u8Clear();
 							HAL_LCD_u8SendString("Dir Left: ");
 							Glob_u16DirLeft = LOC_f32Distance;
 							HAL_LCD_u8SendNumber(Glob_u16DirLeft);
 							_delay_ms(200);
 							for (int k = MAX_CW_ANGLE; k >= START_ANGLE; k -= NUM_2) {
-    5a32:	de 01       	movw	r26, r28
-    5a34:	af 58       	subi	r26, 0x8F	; 143
-    5a36:	bf 4f       	sbci	r27, 0xFF	; 255
-    5a38:	fe 01       	movw	r30, r28
-    5a3a:	ef 58       	subi	r30, 0x8F	; 143
-    5a3c:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a3e:	80 81       	ld	r24, Z
-    5a40:	91 81       	ldd	r25, Z+1	; 0x01
-    5a42:	02 97       	sbiw	r24, 0x02	; 2
-    5a44:	11 96       	adiw	r26, 0x01	; 1
-    5a46:	9c 93       	st	X, r25
-    5a48:	8e 93       	st	-X, r24
-    5a4a:	fe 01       	movw	r30, r28
-    5a4c:	ef 58       	subi	r30, 0x8F	; 143
-    5a4e:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a50:	80 81       	ld	r24, Z
-    5a52:	91 81       	ldd	r25, Z+1	; 0x01
-    5a54:	8a 35       	cpi	r24, 0x5A	; 90
-    5a56:	91 05       	cpc	r25, r1
-    5a58:	34 f7       	brge	.-52     	; 0x5a26 <APP_Autonomous_Car_voidApp+0x924>
+    5a46:	de 01       	movw	r26, r28
+    5a48:	af 58       	subi	r26, 0x8F	; 143
+    5a4a:	bf 4f       	sbci	r27, 0xFF	; 255
+    5a4c:	fe 01       	movw	r30, r28
+    5a4e:	ef 58       	subi	r30, 0x8F	; 143
+    5a50:	ff 4f       	sbci	r31, 0xFF	; 255
+    5a52:	80 81       	ld	r24, Z
+    5a54:	91 81       	ldd	r25, Z+1	; 0x01
+    5a56:	02 97       	sbiw	r24, 0x02	; 2
+    5a58:	11 96       	adiw	r26, 0x01	; 1
+    5a5a:	9c 93       	st	X, r25
+    5a5c:	8e 93       	st	-X, r24
+    5a5e:	fe 01       	movw	r30, r28
+    5a60:	ef 58       	subi	r30, 0x8F	; 143
+    5a62:	ff 4f       	sbci	r31, 0xFF	; 255
+    5a64:	80 81       	ld	r24, Z
+    5a66:	91 81       	ldd	r25, Z+1	; 0x01
+    5a68:	8a 35       	cpi	r24, 0x5A	; 90
+    5a6a:	91 05       	cpc	r25, r1
+    5a6c:	34 f7       	brge	.-52     	; 0x5a3a <APP_Autonomous_Car_voidApp+0x938>
 					HAL_LCD_u8Clear();
 					HAL_LCD_u8SendString("Dir Right: ");
 					Glob_u16DirRight = LOC_f32Distance;
 					HAL_LCD_u8SendNumber(Glob_u16DirRight);
 					_delay_ms(200);
 					for (int j = MAX_CCW_ANGLE; j <= MAX_CW_ANGLE; j += NUM_2) {
-    5a5a:	de 01       	movw	r26, r28
-    5a5c:	ad 58       	subi	r26, 0x8D	; 141
-    5a5e:	bf 4f       	sbci	r27, 0xFF	; 255
-    5a60:	fe 01       	movw	r30, r28
-    5a62:	ed 58       	subi	r30, 0x8D	; 141
-    5a64:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a66:	80 81       	ld	r24, Z
-    5a68:	91 81       	ldd	r25, Z+1	; 0x01
-    5a6a:	02 96       	adiw	r24, 0x02	; 2
-    5a6c:	11 96       	adiw	r26, 0x01	; 1
-    5a6e:	9c 93       	st	X, r25
-    5a70:	8e 93       	st	-X, r24
-    5a72:	fe 01       	movw	r30, r28
-    5a74:	ed 58       	subi	r30, 0x8D	; 141
-    5a76:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a78:	80 81       	ld	r24, Z
-    5a7a:	91 81       	ldd	r25, Z+1	; 0x01
-    5a7c:	85 3b       	cpi	r24, 0xB5	; 181
-    5a7e:	91 05       	cpc	r25, r1
-    5a80:	0c f4       	brge	.+2      	; 0x5a84 <APP_Autonomous_Car_voidApp+0x982>
-    5a82:	b4 ce       	rjmp	.-664    	; 0x57ec <APP_Autonomous_Car_voidApp+0x6ea>
-				HAL_void_H_BridgeBack(MAX_SPEED);
+    5a6e:	de 01       	movw	r26, r28
+    5a70:	ad 58       	subi	r26, 0x8D	; 141
+    5a72:	bf 4f       	sbci	r27, 0xFF	; 255
+    5a74:	fe 01       	movw	r30, r28
+    5a76:	ed 58       	subi	r30, 0x8D	; 141
+    5a78:	ff 4f       	sbci	r31, 0xFF	; 255
+    5a7a:	80 81       	ld	r24, Z
+    5a7c:	91 81       	ldd	r25, Z+1	; 0x01
+    5a7e:	02 96       	adiw	r24, 0x02	; 2
+    5a80:	11 96       	adiw	r26, 0x01	; 1
+    5a82:	9c 93       	st	X, r25
+    5a84:	8e 93       	st	-X, r24
+    5a86:	fe 01       	movw	r30, r28
+    5a88:	ed 58       	subi	r30, 0x8D	; 141
+    5a8a:	ff 4f       	sbci	r31, 0xFF	; 255
+    5a8c:	80 81       	ld	r24, Z
+    5a8e:	91 81       	ldd	r25, Z+1	; 0x01
+    5a90:	85 3b       	cpi	r24, 0xB5	; 181
+    5a92:	91 05       	cpc	r25, r1
+    5a94:	0c f4       	brge	.+2      	; 0x5a98 <APP_Autonomous_Car_voidApp+0x996>
+    5a96:	b4 ce       	rjmp	.-664    	; 0x5800 <APP_Autonomous_Car_voidApp+0x6fe>
 				_delay_ms(1000);
+				HAL_Buzzer_u8BuzzerMode(PortA,Pin3,Pin_Low);
 			}
 			HAL_void_H_BridgeStop(NUM0);
 			HAL_LED_u8LedMode(PortA, Pin1, LED_ON);
 			for (int i = START_ANGLE; i >= MAX_CCW_ANGLE; i -= NUM_2) {
-    5a84:	de 01       	movw	r26, r28
-    5a86:	ab 58       	subi	r26, 0x8B	; 139
-    5a88:	bf 4f       	sbci	r27, 0xFF	; 255
-    5a8a:	fe 01       	movw	r30, r28
-    5a8c:	eb 58       	subi	r30, 0x8B	; 139
-    5a8e:	ff 4f       	sbci	r31, 0xFF	; 255
-    5a90:	80 81       	ld	r24, Z
-    5a92:	91 81       	ldd	r25, Z+1	; 0x01
-    5a94:	02 97       	sbiw	r24, 0x02	; 2
-    5a96:	11 96       	adiw	r26, 0x01	; 1
-    5a98:	9c 93       	st	X, r25
-    5a9a:	8e 93       	st	-X, r24
-    5a9c:	fe 01       	movw	r30, r28
-    5a9e:	eb 58       	subi	r30, 0x8B	; 139
-    5aa0:	ff 4f       	sbci	r31, 0xFF	; 255
-    5aa2:	80 81       	ld	r24, Z
-    5aa4:	91 81       	ldd	r25, Z+1	; 0x01
-    5aa6:	99 23       	and	r25, r25
-    5aa8:	0c f0       	brlt	.+2      	; 0x5aac <APP_Autonomous_Car_voidApp+0x9aa>
-    5aaa:	32 cd       	rjmp	.-1436   	; 0x5510 <APP_Autonomous_Car_voidApp+0x40e>
+    5a98:	de 01       	movw	r26, r28
+    5a9a:	ab 58       	subi	r26, 0x8B	; 139
+    5a9c:	bf 4f       	sbci	r27, 0xFF	; 255
+    5a9e:	fe 01       	movw	r30, r28
+    5aa0:	eb 58       	subi	r30, 0x8B	; 139
+    5aa2:	ff 4f       	sbci	r31, 0xFF	; 255
+    5aa4:	80 81       	ld	r24, Z
+    5aa6:	91 81       	ldd	r25, Z+1	; 0x01
+    5aa8:	02 97       	sbiw	r24, 0x02	; 2
+    5aaa:	11 96       	adiw	r26, 0x01	; 1
+    5aac:	9c 93       	st	X, r25
+    5aae:	8e 93       	st	-X, r24
+    5ab0:	fe 01       	movw	r30, r28
+    5ab2:	eb 58       	subi	r30, 0x8B	; 139
+    5ab4:	ff 4f       	sbci	r31, 0xFF	; 255
+    5ab6:	80 81       	ld	r24, Z
+    5ab8:	91 81       	ldd	r25, Z+1	; 0x01
+    5aba:	99 23       	and	r25, r25
+    5abc:	0c f0       	brlt	.+2      	; 0x5ac0 <APP_Autonomous_Car_voidApp+0x9be>
+    5abe:	32 cd       	rjmp	.-1436   	; 0x5524 <APP_Autonomous_Car_voidApp+0x422>
 							}
 						}
 					}
 				}
 			}
 			if (Glob_u16DirLeft > Glob_u16DirRight) {
-    5aac:	20 91 e4 01 	lds	r18, 0x01E4
-    5ab0:	30 91 e5 01 	lds	r19, 0x01E5
-    5ab4:	80 91 e6 01 	lds	r24, 0x01E6
-    5ab8:	90 91 e7 01 	lds	r25, 0x01E7
-    5abc:	82 17       	cp	r24, r18
-    5abe:	93 07       	cpc	r25, r19
-    5ac0:	08 f0       	brcs	.+2      	; 0x5ac4 <APP_Autonomous_Car_voidApp+0x9c2>
-    5ac2:	93 c0       	rjmp	.+294    	; 0x5bea <APP_Autonomous_Car_voidApp+0xae8>
+    5ac0:	20 91 e4 01 	lds	r18, 0x01E4
+    5ac4:	30 91 e5 01 	lds	r19, 0x01E5
+    5ac8:	80 91 e6 01 	lds	r24, 0x01E6
+    5acc:	90 91 e7 01 	lds	r25, 0x01E7
+    5ad0:	82 17       	cp	r24, r18
+    5ad2:	93 07       	cpc	r25, r19
+    5ad4:	08 f0       	brcs	.+2      	; 0x5ad8 <APP_Autonomous_Car_voidApp+0x9d6>
+    5ad6:	93 c0       	rjmp	.+294    	; 0x5bfe <APP_Autonomous_Car_voidApp+0xafc>
 				HAL_LCD_u8Clear();
-    5ac4:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
+    5ad8:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
 				HAL_LCD_u8SendString("Moving Left...");
-    5ac8:	81 ea       	ldi	r24, 0xA1	; 161
-    5aca:	90 e0       	ldi	r25, 0x00	; 0
-    5acc:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    5adc:	81 ea       	ldi	r24, 0xA1	; 161
+    5ade:	90 e0       	ldi	r25, 0x00	; 0
+    5ae0:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 				HAL_LCD_u8GoTo(Second_Line,NUM0);
-    5ad0:	83 e0       	ldi	r24, 0x03	; 3
-    5ad2:	60 e0       	ldi	r22, 0x00	; 0
-    5ad4:	0e 94 bd 23 	call	0x477a	; 0x477a <HAL_LCD_u8GoTo>
+    5ae4:	83 e0       	ldi	r24, 0x03	; 3
+    5ae6:	60 e0       	ldi	r22, 0x00	; 0
+    5ae8:	0e 94 bd 23 	call	0x477a	; 0x477a <HAL_LCD_u8GoTo>
 				HAL_LCD_u8SendString("Distance: ");
-    5ad8:	80 e7       	ldi	r24, 0x70	; 112
-    5ada:	90 e0       	ldi	r25, 0x00	; 0
-    5adc:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    5aec:	80 e7       	ldi	r24, 0x70	; 112
+    5aee:	90 e0       	ldi	r25, 0x00	; 0
+    5af0:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 				HAL_LCD_u8SendNumber((u16)LOC_f32Distance);
-    5ae0:	fe 01       	movw	r30, r28
-    5ae2:	e9 58       	subi	r30, 0x89	; 137
-    5ae4:	ff 4f       	sbci	r31, 0xFF	; 255
-    5ae6:	80 81       	ld	r24, Z
-    5ae8:	91 81       	ldd	r25, Z+1	; 0x01
-    5aea:	a2 81       	ldd	r26, Z+2	; 0x02
-    5aec:	b3 81       	ldd	r27, Z+3	; 0x03
-    5aee:	bc 01       	movw	r22, r24
-    5af0:	cd 01       	movw	r24, r26
-    5af2:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5af6:	dc 01       	movw	r26, r24
-    5af8:	cb 01       	movw	r24, r22
-    5afa:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
+    5af4:	fe 01       	movw	r30, r28
+    5af6:	e9 58       	subi	r30, 0x89	; 137
+    5af8:	ff 4f       	sbci	r31, 0xFF	; 255
+    5afa:	80 81       	ld	r24, Z
+    5afc:	91 81       	ldd	r25, Z+1	; 0x01
+    5afe:	a2 81       	ldd	r26, Z+2	; 0x02
+    5b00:	b3 81       	ldd	r27, Z+3	; 0x03
+    5b02:	bc 01       	movw	r22, r24
+    5b04:	cd 01       	movw	r24, r26
+    5b06:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5b0a:	dc 01       	movw	r26, r24
+    5b0c:	cb 01       	movw	r24, r22
+    5b0e:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
 				HAL_void_H_BridgeCCW(MAX_SPEED);
-    5afe:	83 e6       	ldi	r24, 0x63	; 99
-    5b00:	0e 94 c5 27 	call	0x4f8a	; 0x4f8a <HAL_void_H_BridgeCCW>
-    5b04:	80 e0       	ldi	r24, 0x00	; 0
-    5b06:	90 e0       	ldi	r25, 0x00	; 0
-    5b08:	a1 e6       	ldi	r26, 0x61	; 97
-    5b0a:	b4 e4       	ldi	r27, 0x44	; 68
-    5b0c:	89 8f       	std	Y+25, r24	; 0x19
-    5b0e:	9a 8f       	std	Y+26, r25	; 0x1a
-    5b10:	ab 8f       	std	Y+27, r26	; 0x1b
-    5b12:	bc 8f       	std	Y+28, r27	; 0x1c
+    5b12:	83 e6       	ldi	r24, 0x63	; 99
+    5b14:	0e 94 c5 27 	call	0x4f8a	; 0x4f8a <HAL_void_H_BridgeCCW>
+    5b18:	80 e0       	ldi	r24, 0x00	; 0
+    5b1a:	90 e0       	ldi	r25, 0x00	; 0
+    5b1c:	a1 e6       	ldi	r26, 0x61	; 97
+    5b1e:	b4 e4       	ldi	r27, 0x44	; 68
+    5b20:	89 8f       	std	Y+25, r24	; 0x19
+    5b22:	9a 8f       	std	Y+26, r25	; 0x1a
+    5b24:	ab 8f       	std	Y+27, r26	; 0x1b
+    5b26:	bc 8f       	std	Y+28, r27	; 0x1c
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    5b14:	69 8d       	ldd	r22, Y+25	; 0x19
-    5b16:	7a 8d       	ldd	r23, Y+26	; 0x1a
-    5b18:	8b 8d       	ldd	r24, Y+27	; 0x1b
-    5b1a:	9c 8d       	ldd	r25, Y+28	; 0x1c
-    5b1c:	20 e0       	ldi	r18, 0x00	; 0
-    5b1e:	30 e0       	ldi	r19, 0x00	; 0
-    5b20:	4a e7       	ldi	r20, 0x7A	; 122
-    5b22:	55 e4       	ldi	r21, 0x45	; 69
-    5b24:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5b28:	dc 01       	movw	r26, r24
-    5b2a:	cb 01       	movw	r24, r22
-    5b2c:	8d 8b       	std	Y+21, r24	; 0x15
-    5b2e:	9e 8b       	std	Y+22, r25	; 0x16
-    5b30:	af 8b       	std	Y+23, r26	; 0x17
-    5b32:	b8 8f       	std	Y+24, r27	; 0x18
+    5b28:	69 8d       	ldd	r22, Y+25	; 0x19
+    5b2a:	7a 8d       	ldd	r23, Y+26	; 0x1a
+    5b2c:	8b 8d       	ldd	r24, Y+27	; 0x1b
+    5b2e:	9c 8d       	ldd	r25, Y+28	; 0x1c
+    5b30:	20 e0       	ldi	r18, 0x00	; 0
+    5b32:	30 e0       	ldi	r19, 0x00	; 0
+    5b34:	4a e7       	ldi	r20, 0x7A	; 122
+    5b36:	55 e4       	ldi	r21, 0x45	; 69
+    5b38:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5b3c:	dc 01       	movw	r26, r24
+    5b3e:	cb 01       	movw	r24, r22
+    5b40:	8d 8b       	std	Y+21, r24	; 0x15
+    5b42:	9e 8b       	std	Y+22, r25	; 0x16
+    5b44:	af 8b       	std	Y+23, r26	; 0x17
+    5b46:	b8 8f       	std	Y+24, r27	; 0x18
 	if (__tmp < 1.0)
-    5b34:	6d 89       	ldd	r22, Y+21	; 0x15
-    5b36:	7e 89       	ldd	r23, Y+22	; 0x16
-    5b38:	8f 89       	ldd	r24, Y+23	; 0x17
-    5b3a:	98 8d       	ldd	r25, Y+24	; 0x18
-    5b3c:	20 e0       	ldi	r18, 0x00	; 0
-    5b3e:	30 e0       	ldi	r19, 0x00	; 0
-    5b40:	40 e8       	ldi	r20, 0x80	; 128
-    5b42:	5f e3       	ldi	r21, 0x3F	; 63
-    5b44:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    5b48:	88 23       	and	r24, r24
-    5b4a:	2c f4       	brge	.+10     	; 0x5b56 <APP_Autonomous_Car_voidApp+0xa54>
+    5b48:	6d 89       	ldd	r22, Y+21	; 0x15
+    5b4a:	7e 89       	ldd	r23, Y+22	; 0x16
+    5b4c:	8f 89       	ldd	r24, Y+23	; 0x17
+    5b4e:	98 8d       	ldd	r25, Y+24	; 0x18
+    5b50:	20 e0       	ldi	r18, 0x00	; 0
+    5b52:	30 e0       	ldi	r19, 0x00	; 0
+    5b54:	40 e8       	ldi	r20, 0x80	; 128
+    5b56:	5f e3       	ldi	r21, 0x3F	; 63
+    5b58:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    5b5c:	88 23       	and	r24, r24
+    5b5e:	2c f4       	brge	.+10     	; 0x5b6a <APP_Autonomous_Car_voidApp+0xa68>
 		__ticks = 1;
-    5b4c:	81 e0       	ldi	r24, 0x01	; 1
-    5b4e:	90 e0       	ldi	r25, 0x00	; 0
-    5b50:	9c 8b       	std	Y+20, r25	; 0x14
-    5b52:	8b 8b       	std	Y+19, r24	; 0x13
-    5b54:	3f c0       	rjmp	.+126    	; 0x5bd4 <APP_Autonomous_Car_voidApp+0xad2>
+    5b60:	81 e0       	ldi	r24, 0x01	; 1
+    5b62:	90 e0       	ldi	r25, 0x00	; 0
+    5b64:	9c 8b       	std	Y+20, r25	; 0x14
+    5b66:	8b 8b       	std	Y+19, r24	; 0x13
+    5b68:	3f c0       	rjmp	.+126    	; 0x5be8 <APP_Autonomous_Car_voidApp+0xae6>
 	else if (__tmp > 65535)
-    5b56:	6d 89       	ldd	r22, Y+21	; 0x15
-    5b58:	7e 89       	ldd	r23, Y+22	; 0x16
-    5b5a:	8f 89       	ldd	r24, Y+23	; 0x17
-    5b5c:	98 8d       	ldd	r25, Y+24	; 0x18
-    5b5e:	20 e0       	ldi	r18, 0x00	; 0
-    5b60:	3f ef       	ldi	r19, 0xFF	; 255
-    5b62:	4f e7       	ldi	r20, 0x7F	; 127
-    5b64:	57 e4       	ldi	r21, 0x47	; 71
-    5b66:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    5b6a:	18 16       	cp	r1, r24
-    5b6c:	4c f5       	brge	.+82     	; 0x5bc0 <APP_Autonomous_Car_voidApp+0xabe>
+    5b6a:	6d 89       	ldd	r22, Y+21	; 0x15
+    5b6c:	7e 89       	ldd	r23, Y+22	; 0x16
+    5b6e:	8f 89       	ldd	r24, Y+23	; 0x17
+    5b70:	98 8d       	ldd	r25, Y+24	; 0x18
+    5b72:	20 e0       	ldi	r18, 0x00	; 0
+    5b74:	3f ef       	ldi	r19, 0xFF	; 255
+    5b76:	4f e7       	ldi	r20, 0x7F	; 127
+    5b78:	57 e4       	ldi	r21, 0x47	; 71
+    5b7a:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    5b7e:	18 16       	cp	r1, r24
+    5b80:	4c f5       	brge	.+82     	; 0x5bd4 <APP_Autonomous_Car_voidApp+0xad2>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    5b6e:	69 8d       	ldd	r22, Y+25	; 0x19
-    5b70:	7a 8d       	ldd	r23, Y+26	; 0x1a
-    5b72:	8b 8d       	ldd	r24, Y+27	; 0x1b
-    5b74:	9c 8d       	ldd	r25, Y+28	; 0x1c
-    5b76:	20 e0       	ldi	r18, 0x00	; 0
-    5b78:	30 e0       	ldi	r19, 0x00	; 0
-    5b7a:	40 e2       	ldi	r20, 0x20	; 32
-    5b7c:	51 e4       	ldi	r21, 0x41	; 65
-    5b7e:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5b82:	dc 01       	movw	r26, r24
-    5b84:	cb 01       	movw	r24, r22
-    5b86:	bc 01       	movw	r22, r24
-    5b88:	cd 01       	movw	r24, r26
-    5b8a:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5b8e:	dc 01       	movw	r26, r24
-    5b90:	cb 01       	movw	r24, r22
-    5b92:	9c 8b       	std	Y+20, r25	; 0x14
-    5b94:	8b 8b       	std	Y+19, r24	; 0x13
-    5b96:	0f c0       	rjmp	.+30     	; 0x5bb6 <APP_Autonomous_Car_voidApp+0xab4>
-    5b98:	80 e9       	ldi	r24, 0x90	; 144
-    5b9a:	91 e0       	ldi	r25, 0x01	; 1
-    5b9c:	9a 8b       	std	Y+18, r25	; 0x12
-    5b9e:	89 8b       	std	Y+17, r24	; 0x11
-    5ba0:	89 89       	ldd	r24, Y+17	; 0x11
-    5ba2:	9a 89       	ldd	r25, Y+18	; 0x12
-    5ba4:	01 97       	sbiw	r24, 0x01	; 1
-    5ba6:	f1 f7       	brne	.-4      	; 0x5ba4 <APP_Autonomous_Car_voidApp+0xaa2>
-    5ba8:	9a 8b       	std	Y+18, r25	; 0x12
-    5baa:	89 8b       	std	Y+17, r24	; 0x11
+    5b82:	69 8d       	ldd	r22, Y+25	; 0x19
+    5b84:	7a 8d       	ldd	r23, Y+26	; 0x1a
+    5b86:	8b 8d       	ldd	r24, Y+27	; 0x1b
+    5b88:	9c 8d       	ldd	r25, Y+28	; 0x1c
+    5b8a:	20 e0       	ldi	r18, 0x00	; 0
+    5b8c:	30 e0       	ldi	r19, 0x00	; 0
+    5b8e:	40 e2       	ldi	r20, 0x20	; 32
+    5b90:	51 e4       	ldi	r21, 0x41	; 65
+    5b92:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5b96:	dc 01       	movw	r26, r24
+    5b98:	cb 01       	movw	r24, r22
+    5b9a:	bc 01       	movw	r22, r24
+    5b9c:	cd 01       	movw	r24, r26
+    5b9e:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5ba2:	dc 01       	movw	r26, r24
+    5ba4:	cb 01       	movw	r24, r22
+    5ba6:	9c 8b       	std	Y+20, r25	; 0x14
+    5ba8:	8b 8b       	std	Y+19, r24	; 0x13
+    5baa:	0f c0       	rjmp	.+30     	; 0x5bca <APP_Autonomous_Car_voidApp+0xac8>
+    5bac:	80 e9       	ldi	r24, 0x90	; 144
+    5bae:	91 e0       	ldi	r25, 0x01	; 1
+    5bb0:	9a 8b       	std	Y+18, r25	; 0x12
+    5bb2:	89 8b       	std	Y+17, r24	; 0x11
+    5bb4:	89 89       	ldd	r24, Y+17	; 0x11
+    5bb6:	9a 89       	ldd	r25, Y+18	; 0x12
+    5bb8:	01 97       	sbiw	r24, 0x01	; 1
+    5bba:	f1 f7       	brne	.-4      	; 0x5bb8 <APP_Autonomous_Car_voidApp+0xab6>
+    5bbc:	9a 8b       	std	Y+18, r25	; 0x12
+    5bbe:	89 8b       	std	Y+17, r24	; 0x11
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    5bac:	8b 89       	ldd	r24, Y+19	; 0x13
-    5bae:	9c 89       	ldd	r25, Y+20	; 0x14
-    5bb0:	01 97       	sbiw	r24, 0x01	; 1
-    5bb2:	9c 8b       	std	Y+20, r25	; 0x14
-    5bb4:	8b 8b       	std	Y+19, r24	; 0x13
+    5bc0:	8b 89       	ldd	r24, Y+19	; 0x13
+    5bc2:	9c 89       	ldd	r25, Y+20	; 0x14
+    5bc4:	01 97       	sbiw	r24, 0x01	; 1
+    5bc6:	9c 8b       	std	Y+20, r25	; 0x14
+    5bc8:	8b 8b       	std	Y+19, r24	; 0x13
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    5bb6:	8b 89       	ldd	r24, Y+19	; 0x13
-    5bb8:	9c 89       	ldd	r25, Y+20	; 0x14
-    5bba:	00 97       	sbiw	r24, 0x00	; 0
-    5bbc:	69 f7       	brne	.-38     	; 0x5b98 <APP_Autonomous_Car_voidApp+0xa96>
-    5bbe:	c1 ca       	rjmp	.-2686   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
+    5bca:	8b 89       	ldd	r24, Y+19	; 0x13
+    5bcc:	9c 89       	ldd	r25, Y+20	; 0x14
+    5bce:	00 97       	sbiw	r24, 0x00	; 0
+    5bd0:	69 f7       	brne	.-38     	; 0x5bac <APP_Autonomous_Car_voidApp+0xaaa>
+    5bd2:	b7 ca       	rjmp	.-2706   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    5bc0:	6d 89       	ldd	r22, Y+21	; 0x15
-    5bc2:	7e 89       	ldd	r23, Y+22	; 0x16
-    5bc4:	8f 89       	ldd	r24, Y+23	; 0x17
-    5bc6:	98 8d       	ldd	r25, Y+24	; 0x18
-    5bc8:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5bcc:	dc 01       	movw	r26, r24
-    5bce:	cb 01       	movw	r24, r22
-    5bd0:	9c 8b       	std	Y+20, r25	; 0x14
-    5bd2:	8b 8b       	std	Y+19, r24	; 0x13
-    5bd4:	8b 89       	ldd	r24, Y+19	; 0x13
-    5bd6:	9c 89       	ldd	r25, Y+20	; 0x14
-    5bd8:	98 8b       	std	Y+16, r25	; 0x10
-    5bda:	8f 87       	std	Y+15, r24	; 0x0f
-    5bdc:	8f 85       	ldd	r24, Y+15	; 0x0f
-    5bde:	98 89       	ldd	r25, Y+16	; 0x10
-    5be0:	01 97       	sbiw	r24, 0x01	; 1
-    5be2:	f1 f7       	brne	.-4      	; 0x5be0 <APP_Autonomous_Car_voidApp+0xade>
-    5be4:	98 8b       	std	Y+16, r25	; 0x10
-    5be6:	8f 87       	std	Y+15, r24	; 0x0f
-    5be8:	ac ca       	rjmp	.-2728   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
+    5bd4:	6d 89       	ldd	r22, Y+21	; 0x15
+    5bd6:	7e 89       	ldd	r23, Y+22	; 0x16
+    5bd8:	8f 89       	ldd	r24, Y+23	; 0x17
+    5bda:	98 8d       	ldd	r25, Y+24	; 0x18
+    5bdc:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5be0:	dc 01       	movw	r26, r24
+    5be2:	cb 01       	movw	r24, r22
+    5be4:	9c 8b       	std	Y+20, r25	; 0x14
+    5be6:	8b 8b       	std	Y+19, r24	; 0x13
+    5be8:	8b 89       	ldd	r24, Y+19	; 0x13
+    5bea:	9c 89       	ldd	r25, Y+20	; 0x14
+    5bec:	98 8b       	std	Y+16, r25	; 0x10
+    5bee:	8f 87       	std	Y+15, r24	; 0x0f
+    5bf0:	8f 85       	ldd	r24, Y+15	; 0x0f
+    5bf2:	98 89       	ldd	r25, Y+16	; 0x10
+    5bf4:	01 97       	sbiw	r24, 0x01	; 1
+    5bf6:	f1 f7       	brne	.-4      	; 0x5bf4 <APP_Autonomous_Car_voidApp+0xaf2>
+    5bf8:	98 8b       	std	Y+16, r25	; 0x10
+    5bfa:	8f 87       	std	Y+15, r24	; 0x0f
+    5bfc:	a2 ca       	rjmp	.-2748   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
 				_delay_ms(900);
 			} else if (Glob_u16DirRight >= Glob_u16DirLeft) {
-    5bea:	20 91 e6 01 	lds	r18, 0x01E6
-    5bee:	30 91 e7 01 	lds	r19, 0x01E7
-    5bf2:	80 91 e4 01 	lds	r24, 0x01E4
-    5bf6:	90 91 e5 01 	lds	r25, 0x01E5
-    5bfa:	28 17       	cp	r18, r24
-    5bfc:	39 07       	cpc	r19, r25
-    5bfe:	08 f4       	brcc	.+2      	; 0x5c02 <APP_Autonomous_Car_voidApp+0xb00>
-    5c00:	a0 ca       	rjmp	.-2752   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
+    5bfe:	20 91 e6 01 	lds	r18, 0x01E6
+    5c02:	30 91 e7 01 	lds	r19, 0x01E7
+    5c06:	80 91 e4 01 	lds	r24, 0x01E4
+    5c0a:	90 91 e5 01 	lds	r25, 0x01E5
+    5c0e:	28 17       	cp	r18, r24
+    5c10:	39 07       	cpc	r19, r25
+    5c12:	08 f4       	brcc	.+2      	; 0x5c16 <APP_Autonomous_Car_voidApp+0xb14>
+    5c14:	96 ca       	rjmp	.-2772   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
 				HAL_LCD_u8Clear();
-    5c02:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
+    5c16:	0e 94 19 26 	call	0x4c32	; 0x4c32 <HAL_LCD_u8Clear>
 				HAL_LCD_u8SendString("Moving Right...");
-    5c06:	80 eb       	ldi	r24, 0xB0	; 176
-    5c08:	90 e0       	ldi	r25, 0x00	; 0
-    5c0a:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    5c1a:	80 eb       	ldi	r24, 0xB0	; 176
+    5c1c:	90 e0       	ldi	r25, 0x00	; 0
+    5c1e:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 				HAL_LCD_u8GoTo(Second_Line,NUM0);
-    5c0e:	83 e0       	ldi	r24, 0x03	; 3
-    5c10:	60 e0       	ldi	r22, 0x00	; 0
-    5c12:	0e 94 bd 23 	call	0x477a	; 0x477a <HAL_LCD_u8GoTo>
+    5c22:	83 e0       	ldi	r24, 0x03	; 3
+    5c24:	60 e0       	ldi	r22, 0x00	; 0
+    5c26:	0e 94 bd 23 	call	0x477a	; 0x477a <HAL_LCD_u8GoTo>
 				HAL_LCD_u8SendString("Distance: ");
-    5c16:	80 e7       	ldi	r24, 0x70	; 112
-    5c18:	90 e0       	ldi	r25, 0x00	; 0
-    5c1a:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
+    5c2a:	80 e7       	ldi	r24, 0x70	; 112
+    5c2c:	90 e0       	ldi	r25, 0x00	; 0
+    5c2e:	0e 94 64 23 	call	0x46c8	; 0x46c8 <HAL_LCD_u8SendString>
 				HAL_LCD_u8SendNumber((u16)LOC_f32Distance);
-    5c1e:	fe 01       	movw	r30, r28
-    5c20:	e9 58       	subi	r30, 0x89	; 137
-    5c22:	ff 4f       	sbci	r31, 0xFF	; 255
-    5c24:	80 81       	ld	r24, Z
-    5c26:	91 81       	ldd	r25, Z+1	; 0x01
-    5c28:	a2 81       	ldd	r26, Z+2	; 0x02
-    5c2a:	b3 81       	ldd	r27, Z+3	; 0x03
-    5c2c:	bc 01       	movw	r22, r24
-    5c2e:	cd 01       	movw	r24, r26
-    5c30:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5c34:	dc 01       	movw	r26, r24
-    5c36:	cb 01       	movw	r24, r22
-    5c38:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
+    5c32:	fe 01       	movw	r30, r28
+    5c34:	e9 58       	subi	r30, 0x89	; 137
+    5c36:	ff 4f       	sbci	r31, 0xFF	; 255
+    5c38:	80 81       	ld	r24, Z
+    5c3a:	91 81       	ldd	r25, Z+1	; 0x01
+    5c3c:	a2 81       	ldd	r26, Z+2	; 0x02
+    5c3e:	b3 81       	ldd	r27, Z+3	; 0x03
+    5c40:	bc 01       	movw	r22, r24
+    5c42:	cd 01       	movw	r24, r26
+    5c44:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5c48:	dc 01       	movw	r26, r24
+    5c4a:	cb 01       	movw	r24, r22
+    5c4c:	0e 94 9a 23 	call	0x4734	; 0x4734 <HAL_LCD_u8SendNumber>
 				HAL_void_H_BridgeCW(MAX_SPEED);
-    5c3c:	83 e6       	ldi	r24, 0x63	; 99
-    5c3e:	0e 94 49 27 	call	0x4e92	; 0x4e92 <HAL_void_H_BridgeCW>
-    5c42:	80 e0       	ldi	r24, 0x00	; 0
-    5c44:	90 e0       	ldi	r25, 0x00	; 0
-    5c46:	a1 e6       	ldi	r26, 0x61	; 97
-    5c48:	b4 e4       	ldi	r27, 0x44	; 68
-    5c4a:	8b 87       	std	Y+11, r24	; 0x0b
-    5c4c:	9c 87       	std	Y+12, r25	; 0x0c
-    5c4e:	ad 87       	std	Y+13, r26	; 0x0d
-    5c50:	be 87       	std	Y+14, r27	; 0x0e
+    5c50:	83 e6       	ldi	r24, 0x63	; 99
+    5c52:	0e 94 49 27 	call	0x4e92	; 0x4e92 <HAL_void_H_BridgeCW>
+    5c56:	80 e0       	ldi	r24, 0x00	; 0
+    5c58:	90 e0       	ldi	r25, 0x00	; 0
+    5c5a:	a1 e6       	ldi	r26, 0x61	; 97
+    5c5c:	b4 e4       	ldi	r27, 0x44	; 68
+    5c5e:	8b 87       	std	Y+11, r24	; 0x0b
+    5c60:	9c 87       	std	Y+12, r25	; 0x0c
+    5c62:	ad 87       	std	Y+13, r26	; 0x0d
+    5c64:	be 87       	std	Y+14, r27	; 0x0e
  */
 void
 _delay_ms(double __ms)
 {
 	uint16_t __ticks;
 	double __tmp = ((F_CPU) / 4e3) * __ms;
-    5c52:	6b 85       	ldd	r22, Y+11	; 0x0b
-    5c54:	7c 85       	ldd	r23, Y+12	; 0x0c
-    5c56:	8d 85       	ldd	r24, Y+13	; 0x0d
-    5c58:	9e 85       	ldd	r25, Y+14	; 0x0e
-    5c5a:	20 e0       	ldi	r18, 0x00	; 0
-    5c5c:	30 e0       	ldi	r19, 0x00	; 0
-    5c5e:	4a e7       	ldi	r20, 0x7A	; 122
-    5c60:	55 e4       	ldi	r21, 0x45	; 69
-    5c62:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5c66:	dc 01       	movw	r26, r24
-    5c68:	cb 01       	movw	r24, r22
-    5c6a:	8f 83       	std	Y+7, r24	; 0x07
-    5c6c:	98 87       	std	Y+8, r25	; 0x08
-    5c6e:	a9 87       	std	Y+9, r26	; 0x09
-    5c70:	ba 87       	std	Y+10, r27	; 0x0a
+    5c66:	6b 85       	ldd	r22, Y+11	; 0x0b
+    5c68:	7c 85       	ldd	r23, Y+12	; 0x0c
+    5c6a:	8d 85       	ldd	r24, Y+13	; 0x0d
+    5c6c:	9e 85       	ldd	r25, Y+14	; 0x0e
+    5c6e:	20 e0       	ldi	r18, 0x00	; 0
+    5c70:	30 e0       	ldi	r19, 0x00	; 0
+    5c72:	4a e7       	ldi	r20, 0x7A	; 122
+    5c74:	55 e4       	ldi	r21, 0x45	; 69
+    5c76:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5c7a:	dc 01       	movw	r26, r24
+    5c7c:	cb 01       	movw	r24, r22
+    5c7e:	8f 83       	std	Y+7, r24	; 0x07
+    5c80:	98 87       	std	Y+8, r25	; 0x08
+    5c82:	a9 87       	std	Y+9, r26	; 0x09
+    5c84:	ba 87       	std	Y+10, r27	; 0x0a
 	if (__tmp < 1.0)
-    5c72:	6f 81       	ldd	r22, Y+7	; 0x07
-    5c74:	78 85       	ldd	r23, Y+8	; 0x08
-    5c76:	89 85       	ldd	r24, Y+9	; 0x09
-    5c78:	9a 85       	ldd	r25, Y+10	; 0x0a
-    5c7a:	20 e0       	ldi	r18, 0x00	; 0
-    5c7c:	30 e0       	ldi	r19, 0x00	; 0
-    5c7e:	40 e8       	ldi	r20, 0x80	; 128
-    5c80:	5f e3       	ldi	r21, 0x3F	; 63
-    5c82:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
-    5c86:	88 23       	and	r24, r24
-    5c88:	2c f4       	brge	.+10     	; 0x5c94 <APP_Autonomous_Car_voidApp+0xb92>
+    5c86:	6f 81       	ldd	r22, Y+7	; 0x07
+    5c88:	78 85       	ldd	r23, Y+8	; 0x08
+    5c8a:	89 85       	ldd	r24, Y+9	; 0x09
+    5c8c:	9a 85       	ldd	r25, Y+10	; 0x0a
+    5c8e:	20 e0       	ldi	r18, 0x00	; 0
+    5c90:	30 e0       	ldi	r19, 0x00	; 0
+    5c92:	40 e8       	ldi	r20, 0x80	; 128
+    5c94:	5f e3       	ldi	r21, 0x3F	; 63
+    5c96:	0e 94 25 04 	call	0x84a	; 0x84a <__ltsf2>
+    5c9a:	88 23       	and	r24, r24
+    5c9c:	2c f4       	brge	.+10     	; 0x5ca8 <APP_Autonomous_Car_voidApp+0xba6>
 		__ticks = 1;
-    5c8a:	81 e0       	ldi	r24, 0x01	; 1
-    5c8c:	90 e0       	ldi	r25, 0x00	; 0
-    5c8e:	9e 83       	std	Y+6, r25	; 0x06
-    5c90:	8d 83       	std	Y+5, r24	; 0x05
-    5c92:	3f c0       	rjmp	.+126    	; 0x5d12 <APP_Autonomous_Car_voidApp+0xc10>
+    5c9e:	81 e0       	ldi	r24, 0x01	; 1
+    5ca0:	90 e0       	ldi	r25, 0x00	; 0
+    5ca2:	9e 83       	std	Y+6, r25	; 0x06
+    5ca4:	8d 83       	std	Y+5, r24	; 0x05
+    5ca6:	3f c0       	rjmp	.+126    	; 0x5d26 <APP_Autonomous_Car_voidApp+0xc24>
 	else if (__tmp > 65535)
-    5c94:	6f 81       	ldd	r22, Y+7	; 0x07
-    5c96:	78 85       	ldd	r23, Y+8	; 0x08
-    5c98:	89 85       	ldd	r24, Y+9	; 0x09
-    5c9a:	9a 85       	ldd	r25, Y+10	; 0x0a
-    5c9c:	20 e0       	ldi	r18, 0x00	; 0
-    5c9e:	3f ef       	ldi	r19, 0xFF	; 255
-    5ca0:	4f e7       	ldi	r20, 0x7F	; 127
-    5ca2:	57 e4       	ldi	r21, 0x47	; 71
-    5ca4:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
-    5ca8:	18 16       	cp	r1, r24
-    5caa:	4c f5       	brge	.+82     	; 0x5cfe <APP_Autonomous_Car_voidApp+0xbfc>
+    5ca8:	6f 81       	ldd	r22, Y+7	; 0x07
+    5caa:	78 85       	ldd	r23, Y+8	; 0x08
+    5cac:	89 85       	ldd	r24, Y+9	; 0x09
+    5cae:	9a 85       	ldd	r25, Y+10	; 0x0a
+    5cb0:	20 e0       	ldi	r18, 0x00	; 0
+    5cb2:	3f ef       	ldi	r19, 0xFF	; 255
+    5cb4:	4f e7       	ldi	r20, 0x7F	; 127
+    5cb6:	57 e4       	ldi	r21, 0x47	; 71
+    5cb8:	0e 94 c5 03 	call	0x78a	; 0x78a <__gtsf2>
+    5cbc:	18 16       	cp	r1, r24
+    5cbe:	4c f5       	brge	.+82     	; 0x5d12 <APP_Autonomous_Car_voidApp+0xc10>
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
-    5cac:	6b 85       	ldd	r22, Y+11	; 0x0b
-    5cae:	7c 85       	ldd	r23, Y+12	; 0x0c
-    5cb0:	8d 85       	ldd	r24, Y+13	; 0x0d
-    5cb2:	9e 85       	ldd	r25, Y+14	; 0x0e
-    5cb4:	20 e0       	ldi	r18, 0x00	; 0
-    5cb6:	30 e0       	ldi	r19, 0x00	; 0
-    5cb8:	40 e2       	ldi	r20, 0x20	; 32
-    5cba:	51 e4       	ldi	r21, 0x41	; 65
-    5cbc:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
-    5cc0:	dc 01       	movw	r26, r24
-    5cc2:	cb 01       	movw	r24, r22
-    5cc4:	bc 01       	movw	r22, r24
-    5cc6:	cd 01       	movw	r24, r26
-    5cc8:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5ccc:	dc 01       	movw	r26, r24
-    5cce:	cb 01       	movw	r24, r22
-    5cd0:	9e 83       	std	Y+6, r25	; 0x06
-    5cd2:	8d 83       	std	Y+5, r24	; 0x05
-    5cd4:	0f c0       	rjmp	.+30     	; 0x5cf4 <APP_Autonomous_Car_voidApp+0xbf2>
-    5cd6:	80 e9       	ldi	r24, 0x90	; 144
-    5cd8:	91 e0       	ldi	r25, 0x01	; 1
-    5cda:	9c 83       	std	Y+4, r25	; 0x04
-    5cdc:	8b 83       	std	Y+3, r24	; 0x03
-    5cde:	8b 81       	ldd	r24, Y+3	; 0x03
-    5ce0:	9c 81       	ldd	r25, Y+4	; 0x04
-    5ce2:	01 97       	sbiw	r24, 0x01	; 1
-    5ce4:	f1 f7       	brne	.-4      	; 0x5ce2 <APP_Autonomous_Car_voidApp+0xbe0>
-    5ce6:	9c 83       	std	Y+4, r25	; 0x04
-    5ce8:	8b 83       	std	Y+3, r24	; 0x03
+    5cc0:	6b 85       	ldd	r22, Y+11	; 0x0b
+    5cc2:	7c 85       	ldd	r23, Y+12	; 0x0c
+    5cc4:	8d 85       	ldd	r24, Y+13	; 0x0d
+    5cc6:	9e 85       	ldd	r25, Y+14	; 0x0e
+    5cc8:	20 e0       	ldi	r18, 0x00	; 0
+    5cca:	30 e0       	ldi	r19, 0x00	; 0
+    5ccc:	40 e2       	ldi	r20, 0x20	; 32
+    5cce:	51 e4       	ldi	r21, 0x41	; 65
+    5cd0:	0e 94 1f 02 	call	0x43e	; 0x43e <__mulsf3>
+    5cd4:	dc 01       	movw	r26, r24
+    5cd6:	cb 01       	movw	r24, r22
+    5cd8:	bc 01       	movw	r22, r24
+    5cda:	cd 01       	movw	r24, r26
+    5cdc:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5ce0:	dc 01       	movw	r26, r24
+    5ce2:	cb 01       	movw	r24, r22
+    5ce4:	9e 83       	std	Y+6, r25	; 0x06
+    5ce6:	8d 83       	std	Y+5, r24	; 0x05
+    5ce8:	0f c0       	rjmp	.+30     	; 0x5d08 <APP_Autonomous_Car_voidApp+0xc06>
+    5cea:	80 e9       	ldi	r24, 0x90	; 144
+    5cec:	91 e0       	ldi	r25, 0x01	; 1
+    5cee:	9c 83       	std	Y+4, r25	; 0x04
+    5cf0:	8b 83       	std	Y+3, r24	; 0x03
+    5cf2:	8b 81       	ldd	r24, Y+3	; 0x03
+    5cf4:	9c 81       	ldd	r25, Y+4	; 0x04
+    5cf6:	01 97       	sbiw	r24, 0x01	; 1
+    5cf8:	f1 f7       	brne	.-4      	; 0x5cf6 <APP_Autonomous_Car_voidApp+0xbf4>
+    5cfa:	9c 83       	std	Y+4, r25	; 0x04
+    5cfc:	8b 83       	std	Y+3, r24	; 0x03
 		while(__ticks)
 		{
 			// wait 1/10 ms
 			_delay_loop_2(((F_CPU) / 4e3) / 10);
 			__ticks --;
-    5cea:	8d 81       	ldd	r24, Y+5	; 0x05
-    5cec:	9e 81       	ldd	r25, Y+6	; 0x06
-    5cee:	01 97       	sbiw	r24, 0x01	; 1
-    5cf0:	9e 83       	std	Y+6, r25	; 0x06
-    5cf2:	8d 83       	std	Y+5, r24	; 0x05
+    5cfe:	8d 81       	ldd	r24, Y+5	; 0x05
+    5d00:	9e 81       	ldd	r25, Y+6	; 0x06
+    5d02:	01 97       	sbiw	r24, 0x01	; 1
+    5d04:	9e 83       	std	Y+6, r25	; 0x06
+    5d06:	8d 83       	std	Y+5, r24	; 0x05
 		__ticks = 1;
 	else if (__tmp > 65535)
 	{
 		//	__ticks = requested delay in 1/10 ms
 		__ticks = (uint16_t) (__ms * 10.0);
 		while(__ticks)
-    5cf4:	8d 81       	ldd	r24, Y+5	; 0x05
-    5cf6:	9e 81       	ldd	r25, Y+6	; 0x06
-    5cf8:	00 97       	sbiw	r24, 0x00	; 0
-    5cfa:	69 f7       	brne	.-38     	; 0x5cd6 <APP_Autonomous_Car_voidApp+0xbd4>
-    5cfc:	22 ca       	rjmp	.-3004   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
+    5d08:	8d 81       	ldd	r24, Y+5	; 0x05
+    5d0a:	9e 81       	ldd	r25, Y+6	; 0x06
+    5d0c:	00 97       	sbiw	r24, 0x00	; 0
+    5d0e:	69 f7       	brne	.-38     	; 0x5cea <APP_Autonomous_Car_voidApp+0xbe8>
+    5d10:	18 ca       	rjmp	.-3024   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
 			__ticks --;
 		}
 		return;
 	}
 	else
 		__ticks = (uint16_t)__tmp;
-    5cfe:	6f 81       	ldd	r22, Y+7	; 0x07
-    5d00:	78 85       	ldd	r23, Y+8	; 0x08
-    5d02:	89 85       	ldd	r24, Y+9	; 0x09
-    5d04:	9a 85       	ldd	r25, Y+10	; 0x0a
-    5d06:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
-    5d0a:	dc 01       	movw	r26, r24
-    5d0c:	cb 01       	movw	r24, r22
-    5d0e:	9e 83       	std	Y+6, r25	; 0x06
-    5d10:	8d 83       	std	Y+5, r24	; 0x05
-    5d12:	8d 81       	ldd	r24, Y+5	; 0x05
-    5d14:	9e 81       	ldd	r25, Y+6	; 0x06
-    5d16:	9a 83       	std	Y+2, r25	; 0x02
-    5d18:	89 83       	std	Y+1, r24	; 0x01
-    5d1a:	89 81       	ldd	r24, Y+1	; 0x01
-    5d1c:	9a 81       	ldd	r25, Y+2	; 0x02
-    5d1e:	01 97       	sbiw	r24, 0x01	; 1
-    5d20:	f1 f7       	brne	.-4      	; 0x5d1e <APP_Autonomous_Car_voidApp+0xc1c>
-    5d22:	9a 83       	std	Y+2, r25	; 0x02
-    5d24:	89 83       	std	Y+1, r24	; 0x01
-    5d26:	0d ca       	rjmp	.-3046   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
+    5d12:	6f 81       	ldd	r22, Y+7	; 0x07
+    5d14:	78 85       	ldd	r23, Y+8	; 0x08
+    5d16:	89 85       	ldd	r24, Y+9	; 0x09
+    5d18:	9a 85       	ldd	r25, Y+10	; 0x0a
+    5d1a:	0e 94 49 00 	call	0x92	; 0x92 <__fixunssfsi>
+    5d1e:	dc 01       	movw	r26, r24
+    5d20:	cb 01       	movw	r24, r22
+    5d22:	9e 83       	std	Y+6, r25	; 0x06
+    5d24:	8d 83       	std	Y+5, r24	; 0x05
+    5d26:	8d 81       	ldd	r24, Y+5	; 0x05
+    5d28:	9e 81       	ldd	r25, Y+6	; 0x06
+    5d2a:	9a 83       	std	Y+2, r25	; 0x02
+    5d2c:	89 83       	std	Y+1, r24	; 0x01
+    5d2e:	89 81       	ldd	r24, Y+1	; 0x01
+    5d30:	9a 81       	ldd	r25, Y+2	; 0x02
+    5d32:	01 97       	sbiw	r24, 0x01	; 1
+    5d34:	f1 f7       	brne	.-4      	; 0x5d32 <APP_Autonomous_Car_voidApp+0xc30>
+    5d36:	9a 83       	std	Y+2, r25	; 0x02
+    5d38:	89 83       	std	Y+1, r24	; 0x01
+    5d3a:	03 ca       	rjmp	.-3066   	; 0x5142 <APP_Autonomous_Car_voidApp+0x40>
 
-00005d28 <main>:
+00005d3c <main>:
  *  Created on: Dec 13, 2023
  *      Author: Mohamed
  */
 
 #include "Autonomous_Car/Autonomous_Car.h"
 int main(void) {
-    5d28:	df 93       	push	r29
-    5d2a:	cf 93       	push	r28
-    5d2c:	cd b7       	in	r28, 0x3d	; 61
-    5d2e:	de b7       	in	r29, 0x3e	; 62
+    5d3c:	df 93       	push	r29
+    5d3e:	cf 93       	push	r28
+    5d40:	cd b7       	in	r28, 0x3d	; 61
+    5d42:	de b7       	in	r29, 0x3e	; 62
 	APP_Autonomous_Car_voidInit();
-    5d30:	0e 94 66 28 	call	0x50cc	; 0x50cc <APP_Autonomous_Car_voidInit>
+    5d44:	0e 94 66 28 	call	0x50cc	; 0x50cc <APP_Autonomous_Car_voidInit>
 	APP_Autonomous_Car_voidApp();
-    5d34:	0e 94 81 28 	call	0x5102	; 0x5102 <APP_Autonomous_Car_voidApp>
-    5d38:	80 e0       	ldi	r24, 0x00	; 0
-    5d3a:	90 e0       	ldi	r25, 0x00	; 0
+    5d48:	0e 94 81 28 	call	0x5102	; 0x5102 <APP_Autonomous_Car_voidApp>
+    5d4c:	80 e0       	ldi	r24, 0x00	; 0
+    5d4e:	90 e0       	ldi	r25, 0x00	; 0
 
 
 }
-    5d3c:	cf 91       	pop	r28
-    5d3e:	df 91       	pop	r29
-    5d40:	08 95       	ret
+    5d50:	cf 91       	pop	r28
+    5d52:	df 91       	pop	r29
+    5d54:	08 95       	ret
 
-00005d42 <__udivmodsi4>:
-    5d42:	a1 e2       	ldi	r26, 0x21	; 33
-    5d44:	1a 2e       	mov	r1, r26
-    5d46:	aa 1b       	sub	r26, r26
-    5d48:	bb 1b       	sub	r27, r27
-    5d4a:	fd 01       	movw	r30, r26
-    5d4c:	0d c0       	rjmp	.+26     	; 0x5d68 <__udivmodsi4_ep>
+00005d56 <__udivmodsi4>:
+    5d56:	a1 e2       	ldi	r26, 0x21	; 33
+    5d58:	1a 2e       	mov	r1, r26
+    5d5a:	aa 1b       	sub	r26, r26
+    5d5c:	bb 1b       	sub	r27, r27
+    5d5e:	fd 01       	movw	r30, r26
+    5d60:	0d c0       	rjmp	.+26     	; 0x5d7c <__udivmodsi4_ep>
 
-00005d4e <__udivmodsi4_loop>:
-    5d4e:	aa 1f       	adc	r26, r26
-    5d50:	bb 1f       	adc	r27, r27
-    5d52:	ee 1f       	adc	r30, r30
-    5d54:	ff 1f       	adc	r31, r31
-    5d56:	a2 17       	cp	r26, r18
-    5d58:	b3 07       	cpc	r27, r19
-    5d5a:	e4 07       	cpc	r30, r20
-    5d5c:	f5 07       	cpc	r31, r21
-    5d5e:	20 f0       	brcs	.+8      	; 0x5d68 <__udivmodsi4_ep>
-    5d60:	a2 1b       	sub	r26, r18
-    5d62:	b3 0b       	sbc	r27, r19
-    5d64:	e4 0b       	sbc	r30, r20
-    5d66:	f5 0b       	sbc	r31, r21
+00005d62 <__udivmodsi4_loop>:
+    5d62:	aa 1f       	adc	r26, r26
+    5d64:	bb 1f       	adc	r27, r27
+    5d66:	ee 1f       	adc	r30, r30
+    5d68:	ff 1f       	adc	r31, r31
+    5d6a:	a2 17       	cp	r26, r18
+    5d6c:	b3 07       	cpc	r27, r19
+    5d6e:	e4 07       	cpc	r30, r20
+    5d70:	f5 07       	cpc	r31, r21
+    5d72:	20 f0       	brcs	.+8      	; 0x5d7c <__udivmodsi4_ep>
+    5d74:	a2 1b       	sub	r26, r18
+    5d76:	b3 0b       	sbc	r27, r19
+    5d78:	e4 0b       	sbc	r30, r20
+    5d7a:	f5 0b       	sbc	r31, r21
 
-00005d68 <__udivmodsi4_ep>:
-    5d68:	66 1f       	adc	r22, r22
-    5d6a:	77 1f       	adc	r23, r23
-    5d6c:	88 1f       	adc	r24, r24
-    5d6e:	99 1f       	adc	r25, r25
-    5d70:	1a 94       	dec	r1
-    5d72:	69 f7       	brne	.-38     	; 0x5d4e <__udivmodsi4_loop>
-    5d74:	60 95       	com	r22
-    5d76:	70 95       	com	r23
-    5d78:	80 95       	com	r24
-    5d7a:	90 95       	com	r25
-    5d7c:	9b 01       	movw	r18, r22
-    5d7e:	ac 01       	movw	r20, r24
-    5d80:	bd 01       	movw	r22, r26
-    5d82:	cf 01       	movw	r24, r30
-    5d84:	08 95       	ret
+00005d7c <__udivmodsi4_ep>:
+    5d7c:	66 1f       	adc	r22, r22
+    5d7e:	77 1f       	adc	r23, r23
+    5d80:	88 1f       	adc	r24, r24
+    5d82:	99 1f       	adc	r25, r25
+    5d84:	1a 94       	dec	r1
+    5d86:	69 f7       	brne	.-38     	; 0x5d62 <__udivmodsi4_loop>
+    5d88:	60 95       	com	r22
+    5d8a:	70 95       	com	r23
+    5d8c:	80 95       	com	r24
+    5d8e:	90 95       	com	r25
+    5d90:	9b 01       	movw	r18, r22
+    5d92:	ac 01       	movw	r20, r24
+    5d94:	bd 01       	movw	r22, r26
+    5d96:	cf 01       	movw	r24, r30
+    5d98:	08 95       	ret
 
-00005d86 <__prologue_saves__>:
-    5d86:	2f 92       	push	r2
-    5d88:	3f 92       	push	r3
-    5d8a:	4f 92       	push	r4
-    5d8c:	5f 92       	push	r5
-    5d8e:	6f 92       	push	r6
-    5d90:	7f 92       	push	r7
-    5d92:	8f 92       	push	r8
-    5d94:	9f 92       	push	r9
-    5d96:	af 92       	push	r10
-    5d98:	bf 92       	push	r11
-    5d9a:	cf 92       	push	r12
-    5d9c:	df 92       	push	r13
-    5d9e:	ef 92       	push	r14
-    5da0:	ff 92       	push	r15
-    5da2:	0f 93       	push	r16
-    5da4:	1f 93       	push	r17
-    5da6:	cf 93       	push	r28
-    5da8:	df 93       	push	r29
-    5daa:	cd b7       	in	r28, 0x3d	; 61
-    5dac:	de b7       	in	r29, 0x3e	; 62
-    5dae:	ca 1b       	sub	r28, r26
-    5db0:	db 0b       	sbc	r29, r27
-    5db2:	0f b6       	in	r0, 0x3f	; 63
-    5db4:	f8 94       	cli
-    5db6:	de bf       	out	0x3e, r29	; 62
-    5db8:	0f be       	out	0x3f, r0	; 63
-    5dba:	cd bf       	out	0x3d, r28	; 61
-    5dbc:	09 94       	ijmp
+00005d9a <__prologue_saves__>:
+    5d9a:	2f 92       	push	r2
+    5d9c:	3f 92       	push	r3
+    5d9e:	4f 92       	push	r4
+    5da0:	5f 92       	push	r5
+    5da2:	6f 92       	push	r6
+    5da4:	7f 92       	push	r7
+    5da6:	8f 92       	push	r8
+    5da8:	9f 92       	push	r9
+    5daa:	af 92       	push	r10
+    5dac:	bf 92       	push	r11
+    5dae:	cf 92       	push	r12
+    5db0:	df 92       	push	r13
+    5db2:	ef 92       	push	r14
+    5db4:	ff 92       	push	r15
+    5db6:	0f 93       	push	r16
+    5db8:	1f 93       	push	r17
+    5dba:	cf 93       	push	r28
+    5dbc:	df 93       	push	r29
+    5dbe:	cd b7       	in	r28, 0x3d	; 61
+    5dc0:	de b7       	in	r29, 0x3e	; 62
+    5dc2:	ca 1b       	sub	r28, r26
+    5dc4:	db 0b       	sbc	r29, r27
+    5dc6:	0f b6       	in	r0, 0x3f	; 63
+    5dc8:	f8 94       	cli
+    5dca:	de bf       	out	0x3e, r29	; 62
+    5dcc:	0f be       	out	0x3f, r0	; 63
+    5dce:	cd bf       	out	0x3d, r28	; 61
+    5dd0:	09 94       	ijmp
 
-00005dbe <__epilogue_restores__>:
-    5dbe:	2a 88       	ldd	r2, Y+18	; 0x12
-    5dc0:	39 88       	ldd	r3, Y+17	; 0x11
-    5dc2:	48 88       	ldd	r4, Y+16	; 0x10
-    5dc4:	5f 84       	ldd	r5, Y+15	; 0x0f
-    5dc6:	6e 84       	ldd	r6, Y+14	; 0x0e
-    5dc8:	7d 84       	ldd	r7, Y+13	; 0x0d
-    5dca:	8c 84       	ldd	r8, Y+12	; 0x0c
-    5dcc:	9b 84       	ldd	r9, Y+11	; 0x0b
-    5dce:	aa 84       	ldd	r10, Y+10	; 0x0a
-    5dd0:	b9 84       	ldd	r11, Y+9	; 0x09
-    5dd2:	c8 84       	ldd	r12, Y+8	; 0x08
-    5dd4:	df 80       	ldd	r13, Y+7	; 0x07
-    5dd6:	ee 80       	ldd	r14, Y+6	; 0x06
-    5dd8:	fd 80       	ldd	r15, Y+5	; 0x05
-    5dda:	0c 81       	ldd	r16, Y+4	; 0x04
-    5ddc:	1b 81       	ldd	r17, Y+3	; 0x03
-    5dde:	aa 81       	ldd	r26, Y+2	; 0x02
-    5de0:	b9 81       	ldd	r27, Y+1	; 0x01
-    5de2:	ce 0f       	add	r28, r30
-    5de4:	d1 1d       	adc	r29, r1
-    5de6:	0f b6       	in	r0, 0x3f	; 63
-    5de8:	f8 94       	cli
-    5dea:	de bf       	out	0x3e, r29	; 62
-    5dec:	0f be       	out	0x3f, r0	; 63
-    5dee:	cd bf       	out	0x3d, r28	; 61
-    5df0:	ed 01       	movw	r28, r26
-    5df2:	08 95       	ret
+00005dd2 <__epilogue_restores__>:
+    5dd2:	2a 88       	ldd	r2, Y+18	; 0x12
+    5dd4:	39 88       	ldd	r3, Y+17	; 0x11
+    5dd6:	48 88       	ldd	r4, Y+16	; 0x10
+    5dd8:	5f 84       	ldd	r5, Y+15	; 0x0f
+    5dda:	6e 84       	ldd	r6, Y+14	; 0x0e
+    5ddc:	7d 84       	ldd	r7, Y+13	; 0x0d
+    5dde:	8c 84       	ldd	r8, Y+12	; 0x0c
+    5de0:	9b 84       	ldd	r9, Y+11	; 0x0b
+    5de2:	aa 84       	ldd	r10, Y+10	; 0x0a
+    5de4:	b9 84       	ldd	r11, Y+9	; 0x09
+    5de6:	c8 84       	ldd	r12, Y+8	; 0x08
+    5de8:	df 80       	ldd	r13, Y+7	; 0x07
+    5dea:	ee 80       	ldd	r14, Y+6	; 0x06
+    5dec:	fd 80       	ldd	r15, Y+5	; 0x05
+    5dee:	0c 81       	ldd	r16, Y+4	; 0x04
+    5df0:	1b 81       	ldd	r17, Y+3	; 0x03
+    5df2:	aa 81       	ldd	r26, Y+2	; 0x02
+    5df4:	b9 81       	ldd	r27, Y+1	; 0x01
+    5df6:	ce 0f       	add	r28, r30
+    5df8:	d1 1d       	adc	r29, r1
+    5dfa:	0f b6       	in	r0, 0x3f	; 63
+    5dfc:	f8 94       	cli
+    5dfe:	de bf       	out	0x3e, r29	; 62
+    5e00:	0f be       	out	0x3f, r0	; 63
+    5e02:	cd bf       	out	0x3d, r28	; 61
+    5e04:	ed 01       	movw	r28, r26
+    5e06:	08 95       	ret
 
-00005df4 <itoa>:
-    5df4:	fb 01       	movw	r30, r22
-    5df6:	9f 01       	movw	r18, r30
-    5df8:	e8 94       	clt
-    5dfa:	42 30       	cpi	r20, 0x02	; 2
-    5dfc:	c4 f0       	brlt	.+48     	; 0x5e2e <itoa+0x3a>
-    5dfe:	45 32       	cpi	r20, 0x25	; 37
-    5e00:	b4 f4       	brge	.+44     	; 0x5e2e <itoa+0x3a>
-    5e02:	4a 30       	cpi	r20, 0x0A	; 10
-    5e04:	29 f4       	brne	.+10     	; 0x5e10 <itoa+0x1c>
-    5e06:	97 fb       	bst	r25, 7
-    5e08:	1e f4       	brtc	.+6      	; 0x5e10 <itoa+0x1c>
-    5e0a:	90 95       	com	r25
-    5e0c:	81 95       	neg	r24
-    5e0e:	9f 4f       	sbci	r25, 0xFF	; 255
-    5e10:	64 2f       	mov	r22, r20
-    5e12:	77 27       	eor	r23, r23
-    5e14:	0e 94 2b 2f 	call	0x5e56	; 0x5e56 <__udivmodhi4>
-    5e18:	80 5d       	subi	r24, 0xD0	; 208
-    5e1a:	8a 33       	cpi	r24, 0x3A	; 58
-    5e1c:	0c f0       	brlt	.+2      	; 0x5e20 <itoa+0x2c>
-    5e1e:	89 5d       	subi	r24, 0xD9	; 217
-    5e20:	81 93       	st	Z+, r24
-    5e22:	cb 01       	movw	r24, r22
-    5e24:	00 97       	sbiw	r24, 0x00	; 0
-    5e26:	a1 f7       	brne	.-24     	; 0x5e10 <itoa+0x1c>
-    5e28:	16 f4       	brtc	.+4      	; 0x5e2e <itoa+0x3a>
-    5e2a:	5d e2       	ldi	r21, 0x2D	; 45
-    5e2c:	51 93       	st	Z+, r21
-    5e2e:	10 82       	st	Z, r1
-    5e30:	c9 01       	movw	r24, r18
-    5e32:	0c 94 1b 2f 	jmp	0x5e36	; 0x5e36 <strrev>
+00005e08 <itoa>:
+    5e08:	fb 01       	movw	r30, r22
+    5e0a:	9f 01       	movw	r18, r30
+    5e0c:	e8 94       	clt
+    5e0e:	42 30       	cpi	r20, 0x02	; 2
+    5e10:	c4 f0       	brlt	.+48     	; 0x5e42 <itoa+0x3a>
+    5e12:	45 32       	cpi	r20, 0x25	; 37
+    5e14:	b4 f4       	brge	.+44     	; 0x5e42 <itoa+0x3a>
+    5e16:	4a 30       	cpi	r20, 0x0A	; 10
+    5e18:	29 f4       	brne	.+10     	; 0x5e24 <itoa+0x1c>
+    5e1a:	97 fb       	bst	r25, 7
+    5e1c:	1e f4       	brtc	.+6      	; 0x5e24 <itoa+0x1c>
+    5e1e:	90 95       	com	r25
+    5e20:	81 95       	neg	r24
+    5e22:	9f 4f       	sbci	r25, 0xFF	; 255
+    5e24:	64 2f       	mov	r22, r20
+    5e26:	77 27       	eor	r23, r23
+    5e28:	0e 94 35 2f 	call	0x5e6a	; 0x5e6a <__udivmodhi4>
+    5e2c:	80 5d       	subi	r24, 0xD0	; 208
+    5e2e:	8a 33       	cpi	r24, 0x3A	; 58
+    5e30:	0c f0       	brlt	.+2      	; 0x5e34 <itoa+0x2c>
+    5e32:	89 5d       	subi	r24, 0xD9	; 217
+    5e34:	81 93       	st	Z+, r24
+    5e36:	cb 01       	movw	r24, r22
+    5e38:	00 97       	sbiw	r24, 0x00	; 0
+    5e3a:	a1 f7       	brne	.-24     	; 0x5e24 <itoa+0x1c>
+    5e3c:	16 f4       	brtc	.+4      	; 0x5e42 <itoa+0x3a>
+    5e3e:	5d e2       	ldi	r21, 0x2D	; 45
+    5e40:	51 93       	st	Z+, r21
+    5e42:	10 82       	st	Z, r1
+    5e44:	c9 01       	movw	r24, r18
+    5e46:	0c 94 25 2f 	jmp	0x5e4a	; 0x5e4a <strrev>
 
-00005e36 <strrev>:
-    5e36:	dc 01       	movw	r26, r24
-    5e38:	fc 01       	movw	r30, r24
-    5e3a:	67 2f       	mov	r22, r23
-    5e3c:	71 91       	ld	r23, Z+
-    5e3e:	77 23       	and	r23, r23
-    5e40:	e1 f7       	brne	.-8      	; 0x5e3a <strrev+0x4>
-    5e42:	32 97       	sbiw	r30, 0x02	; 2
-    5e44:	04 c0       	rjmp	.+8      	; 0x5e4e <strrev+0x18>
-    5e46:	7c 91       	ld	r23, X
-    5e48:	6d 93       	st	X+, r22
-    5e4a:	70 83       	st	Z, r23
-    5e4c:	62 91       	ld	r22, -Z
-    5e4e:	ae 17       	cp	r26, r30
-    5e50:	bf 07       	cpc	r27, r31
-    5e52:	c8 f3       	brcs	.-14     	; 0x5e46 <strrev+0x10>
-    5e54:	08 95       	ret
+00005e4a <strrev>:
+    5e4a:	dc 01       	movw	r26, r24
+    5e4c:	fc 01       	movw	r30, r24
+    5e4e:	67 2f       	mov	r22, r23
+    5e50:	71 91       	ld	r23, Z+
+    5e52:	77 23       	and	r23, r23
+    5e54:	e1 f7       	brne	.-8      	; 0x5e4e <strrev+0x4>
+    5e56:	32 97       	sbiw	r30, 0x02	; 2
+    5e58:	04 c0       	rjmp	.+8      	; 0x5e62 <strrev+0x18>
+    5e5a:	7c 91       	ld	r23, X
+    5e5c:	6d 93       	st	X+, r22
+    5e5e:	70 83       	st	Z, r23
+    5e60:	62 91       	ld	r22, -Z
+    5e62:	ae 17       	cp	r26, r30
+    5e64:	bf 07       	cpc	r27, r31
+    5e66:	c8 f3       	brcs	.-14     	; 0x5e5a <strrev+0x10>
+    5e68:	08 95       	ret
 
-00005e56 <__udivmodhi4>:
-    5e56:	aa 1b       	sub	r26, r26
-    5e58:	bb 1b       	sub	r27, r27
-    5e5a:	51 e1       	ldi	r21, 0x11	; 17
-    5e5c:	07 c0       	rjmp	.+14     	; 0x5e6c <__udivmodhi4_ep>
+00005e6a <__udivmodhi4>:
+    5e6a:	aa 1b       	sub	r26, r26
+    5e6c:	bb 1b       	sub	r27, r27
+    5e6e:	51 e1       	ldi	r21, 0x11	; 17
+    5e70:	07 c0       	rjmp	.+14     	; 0x5e80 <__udivmodhi4_ep>
 
-00005e5e <__udivmodhi4_loop>:
-    5e5e:	aa 1f       	adc	r26, r26
-    5e60:	bb 1f       	adc	r27, r27
-    5e62:	a6 17       	cp	r26, r22
-    5e64:	b7 07       	cpc	r27, r23
-    5e66:	10 f0       	brcs	.+4      	; 0x5e6c <__udivmodhi4_ep>
-    5e68:	a6 1b       	sub	r26, r22
-    5e6a:	b7 0b       	sbc	r27, r23
+00005e72 <__udivmodhi4_loop>:
+    5e72:	aa 1f       	adc	r26, r26
+    5e74:	bb 1f       	adc	r27, r27
+    5e76:	a6 17       	cp	r26, r22
+    5e78:	b7 07       	cpc	r27, r23
+    5e7a:	10 f0       	brcs	.+4      	; 0x5e80 <__udivmodhi4_ep>
+    5e7c:	a6 1b       	sub	r26, r22
+    5e7e:	b7 0b       	sbc	r27, r23
 
-00005e6c <__udivmodhi4_ep>:
-    5e6c:	88 1f       	adc	r24, r24
-    5e6e:	99 1f       	adc	r25, r25
-    5e70:	5a 95       	dec	r21
-    5e72:	a9 f7       	brne	.-22     	; 0x5e5e <__udivmodhi4_loop>
-    5e74:	80 95       	com	r24
-    5e76:	90 95       	com	r25
-    5e78:	bc 01       	movw	r22, r24
-    5e7a:	cd 01       	movw	r24, r26
-    5e7c:	08 95       	ret
+00005e80 <__udivmodhi4_ep>:
+    5e80:	88 1f       	adc	r24, r24
+    5e82:	99 1f       	adc	r25, r25
+    5e84:	5a 95       	dec	r21
+    5e86:	a9 f7       	brne	.-22     	; 0x5e72 <__udivmodhi4_loop>
+    5e88:	80 95       	com	r24
+    5e8a:	90 95       	com	r25
+    5e8c:	bc 01       	movw	r22, r24
+    5e8e:	cd 01       	movw	r24, r26
+    5e90:	08 95       	ret
 
-00005e7e <_exit>:
-    5e7e:	f8 94       	cli
+00005e92 <_exit>:
+    5e92:	f8 94       	cli
 
-00005e80 <__stop_program>:
-    5e80:	ff cf       	rjmp	.-2      	; 0x5e80 <__stop_program>
+00005e94 <__stop_program>:
+    5e94:	ff cf       	rjmp	.-2      	; 0x5e94 <__stop_program>

@@ -45,10 +45,12 @@ void APP_Autonomous_Car_voidApp(void) {
 		}
 		else if (LOC_f32Distance <= DISTANCE_30) {
 			if (LOC_f32Distance <= DISTANCE_10) {
+				HAL_Buzzer_u8BuzzerMode(PortA,Pin3,Pin_High);
 				HAL_LCD_u8Clear();
 				HAL_LCD_u8SendString("Moving Back...");
 				HAL_void_H_BridgeBack(MAX_SPEED);
 				_delay_ms(1000);
+				HAL_Buzzer_u8BuzzerMode(PortA,Pin3,Pin_Low);
 			}
 			HAL_void_H_BridgeStop(NUM0);
 			HAL_LED_u8LedMode(PortA, Pin1, LED_ON);
