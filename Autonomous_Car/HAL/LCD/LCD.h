@@ -19,6 +19,7 @@
 #define beginning_2stLine   0xc0
 #define Right_Shift_Command 0x1c
 #define Left_Shift_Command  0x18
+#define CURSOR_OFF 0x0c
 
 #define LCD_OUTPUT 1
 #define LCD_INPUT 0
@@ -56,5 +57,5 @@ void HAL_LCD_u8SendString(u8*);
 void HAL_LCD_u8Clear();
 void HAL_LCD_u8GoTo(u8, u8);
 void HAL_LCD_u8CustomChar(u8, u8*);
-
+void  HAL_LCD_voidData(u8 Data);
 #endif /* HAL_LCD_LCD_H_ */

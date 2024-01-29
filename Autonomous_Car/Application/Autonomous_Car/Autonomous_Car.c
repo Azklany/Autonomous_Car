@@ -4,14 +4,11 @@
  *  Created on: Dec 13, 2023
  *      Author: Mohamed
  */
-#include "../../HAL/H_Bridge/H_Bridge.h"
-#include "../../HAL/Servo Motor/Servo_Motor.h"
-#include "../../HAL/Ultrasonic Sensor/Ultrasonic_Sensor.h"
-#include "../../HAL/LED/LED.h"
-#include "../../HAL/LCD/LCD.h"
-#include "../../HAL/Buzzer/Buzzer.h"
+
 #include "Autonomous_Car.h"
-volatile f32 Glob_f32AnglesDistance[2];
+volatile u16 Glob_u16DirLeft = NUM0;
+volatile u16 Glob_u16DirRight = NUM0;
+volatile u16 Glob_u16DirFront = NUM0;
 void APP_Autonomous_Car_voidInit(void) {
 	//Init Buzzer
 	HAL_Buzzer_u8BuzzerInit(PortA, Pin3);
@@ -28,61 +25,83 @@ void APP_Autonomous_Car_voidInit(void) {
 	HAL_LED_u8LedInit(PortA, Pin1);
 }
 void APP_Autonomous_Car_voidApp(void) {
-	//Start
-	HAL_LED_u8LedMode(PortA, Pin0, Pin_High);
-	f32 Loc_f32Distance = 0;
-	HAL_SM_voidSMSetAngle(90);
-	_delay_ms(2000);
-	while (1) {
-		HAL_Ultrasonic_Sensor_voidCalcDistancse(&Loc_f32Distance);
-		if (Loc_f32Distance <= 30.0) {
-			if (Loc_f32Distance <= 10) {
-						HAL_void_H_BridgeBack(99);
-						_delay_ms(1000);
-						HAL_void_H_BridgeStop(0);
-
-					}
-			HAL_void_H_BridgeStop(0);
-			HAL_LED_u8LedMode(PortA, Pin1, Pin_High);
-			for (int i = 90; i >= 0; i -= 2) {
-				if (i == 0)
-					HAL_SM_voidSMSetAngle(i);
-				_delay_ms(1);
-				if (i == 0) {
-					HAL_Ultrasonic_Sensor_voidCalcDistancse(&Loc_f32Distance);
-					Glob_f32AnglesDistance[0] = Loc_f32Distance;
+	f32 LOC_f32Distance = NUM0;
+	//	Initially Set Servo Angle 90
+	HAL_SM_voidSMSetAngle(START_ANGLE);
+	//Light Front LEDS
+	HAL_LED_u8LedMode(PortA, Pin0, LED_ON);
+	while (NUM1) {
+		_delay_ms(50);
+		HAL_Ultrasonic_Sensor_voidCalcDistancse(&LOC_f32Distance);
+		if(LOC_f32Distance>DISTANCE_30){
+			HAL_LCD_u8Clear();
+			HAL_LCD_u8SendString("Moving Front...");
+			HAL_LCD_u8GoTo(Second_Line,NUM0);
+			HAL_LCD_u8SendString("Distance: ");
+			Glob_u16DirFront=LOC_f32Distance;
+			HAL_LCD_u8SendNumber(Glob_u16DirFront);
+			HAL_void_H_BridgeFront(MAX_SPEED);
+			HAL_LED_u8LedMode(PortA, Pin1, LED_OFF);
+		}
+		else if (LOC_f32Distance <= DISTANCE_30) {
+			if (LOC_f32Distance <= DISTANCE_10) {
+				HAL_LCD_u8Clear();
+				HAL_LCD_u8SendString("Moving Back...");
+				HAL_void_H_BridgeBack(MAX_SPEED);
+				_delay_ms(1000);
+			}
+			HAL_void_H_BridgeStop(NUM0);
+			HAL_LED_u8LedMode(PortA, Pin1, LED_ON);
+			for (int i = START_ANGLE; i >= MAX_CCW_ANGLE; i -= NUM_2) {
+				HAL_SM_voidSMSetAngle(i);
+				if (i == MAX_CCW_ANGLE) {
+					_delay_ms(50);
+					HAL_Ultrasonic_Sensor_voidCalcDistancse(&LOC_f32Distance);
+					HAL_LCD_u8Clear();
+					HAL_LCD_u8SendString("Dir Right: ");
+					Glob_u16DirRight = LOC_f32Distance;
+					HAL_LCD_u8SendNumber(Glob_u16DirRight);
 					_delay_ms(200);
-					for (int i = 0; i <= 180; i += 2) {
-						if (i == 180)
-							Glob_f32AnglesDistance[1] = Loc_f32Distance;
-						HAL_SM_voidSMSetAngle(i);
-						_delay_ms(1);
-						if (i == 180) {
+					for (int j = MAX_CCW_ANGLE; j <= MAX_CW_ANGLE; j += NUM_2) {
+						HAL_SM_voidSMSetAngle(j);
+						if (j == MAX_CW_ANGLE) {
+							_delay_ms(50);
 							HAL_Ultrasonic_Sensor_voidCalcDistancse(
-									&Loc_f32Distance);
-							Glob_f32AnglesDistance[1] = Loc_f32Distance;
+									&LOC_f32Distance);
+							HAL_LCD_u8Clear();
+							HAL_LCD_u8SendString("Dir Left: ");
+							Glob_u16DirLeft = LOC_f32Distance;
+							HAL_LCD_u8SendNumber(Glob_u16DirLeft);
 							_delay_ms(200);
-							for (int i = 180; i >= 90; i -= 2) {
-								HAL_SM_voidSMSetAngle(i);
-								_delay_ms(1);
+							for (int k = MAX_CW_ANGLE; k >= START_ANGLE; k -= NUM_2) {
+								HAL_SM_voidSMSetAngle(k);
 							}
 						}
 					}
 				}
 			}
-			//take
-			if (Glob_f32AnglesDistance[0] > Glob_f32AnglesDistance[1]) {
-				HAL_void_H_BridgeCW(99);
-				_delay_ms(1500);
+			if (Glob_u16DirLeft > Glob_u16DirRight) {
+				HAL_LCD_u8Clear();
+				HAL_LCD_u8SendString("Moving Left...");
+				HAL_LCD_u8GoTo(Second_Line,NUM0);
+				HAL_LCD_u8SendString("Distance: ");
+				HAL_LCD_u8SendNumber((u16)LOC_f32Distance);
+				HAL_void_H_BridgeCCW(MAX_SPEED);
+				_delay_ms(900);
+			} else if (Glob_u16DirRight >= Glob_u16DirLeft) {
+				HAL_LCD_u8Clear();
+				HAL_LCD_u8SendString("Moving Right...");
+				HAL_LCD_u8GoTo(Second_Line,NUM0);
+				HAL_LCD_u8SendString("Distance: ");
+				HAL_LCD_u8SendNumber((u16)LOC_f32Distance);
+				HAL_void_H_BridgeCW(MAX_SPEED);
+				_delay_ms(900);
 			} else {
-				HAL_void_H_BridgeCCW(99);
-				_delay_ms(1500);
+				//NOTHING
 			}
-		}   else {
-
-
-			HAL_void_H_BridgeFront(99);
-			HAL_LED_u8LedMode(PortA, Pin1, Pin_Low);
+		} else {
+			//NOTHING
 		}
 	}
+
 }

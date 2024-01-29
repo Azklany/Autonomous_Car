@@ -27,16 +27,18 @@ void HAL_LCD_u8LCDInit() {
 	HAL_LCD_u8SendCommands(Display_Clear);
 	_delay_ms(2);
 	HAL_LCD_u8SendCommands(Entry_Mode);
+	_delay_ms(2);
+	HAL_LCD_u8SendCommands(CURSOR_OFF);
 }
 
 void HAL_LCD_u8SendCommands(u8 Loc_u8LCD_Command) {
 	MCAL_DIO_u8SetPinValue(RS_Port, RS_Pin, RS_Low);
 	MCAL_DIO_u8SetPinValue(RW_Port, RW_Pin, RW_Low);
-	MCAL_DIO_u8SetPortValue(LCD_D_PORT, Loc_u8LCD_Command);
+	   HAL_LCD_voidData( Loc_u8LCD_Command>>4);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_High);
 	_delay_ms(2);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_Low);
-	MCAL_DIO_u8SetPortValue(LCD_D_PORT, (Loc_u8LCD_Command << 4));
+	   HAL_LCD_voidData( Loc_u8LCD_Command);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_High);
 	_delay_ms(2);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_Low);
@@ -45,11 +47,11 @@ void HAL_LCD_u8SendCommands(u8 Loc_u8LCD_Command) {
 void HAL_LCD_u8SendChar(u8 Loc_u8LCD_Char) {
 	MCAL_DIO_u8SetPinValue(RS_Port, RS_Pin, RS_High);
 	MCAL_DIO_u8SetPinValue(RW_Port, RW_Pin, RW_Low);
-	MCAL_DIO_u8SetPortValue(LCD_D_PORT, Loc_u8LCD_Char);
+	   HAL_LCD_voidData( Loc_u8LCD_Char>>4);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_High);
 	_delay_ms(2);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_Low);
-	MCAL_DIO_u8SetPortValue(LCD_D_PORT, (Loc_u8LCD_Char << 4));
+	   HAL_LCD_voidData( Loc_u8LCD_Char);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_High);
 	_delay_ms(2);
 	MCAL_DIO_u8SetPinValue(Enable_PORT, Enable_PIN, Enable_Low);
@@ -101,3 +103,43 @@ void HAL_LCD_u8CustomChar(u8 Loc_u8Location, u8* Loc_u8msg) {
 	HAL_LCD_u8SendCommands(0x02);
 }
 
+ void  HAL_LCD_voidData(u8 Data)
+{
+
+  if (GET_BIT(Data,0)==1)
+  {
+    MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D4_PIN,Pin_High);
+  }
+  else
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D4_PIN,Pin_Low);
+  }
+  if (GET_BIT(Data,1)==1)
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D5_PIN,Pin_High);
+  }
+  else
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D5_PIN,Pin_Low);
+  }
+
+  if (GET_BIT(Data,2)==1)
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D6_PIN,Pin_High);
+  }
+  else
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D6_PIN,Pin_Low);
+  }
+
+  if (GET_BIT(Data,3)==1)
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D7_PIN,Pin_High);
+  }
+  else
+  {
+	  MCAL_DIO_u8SetPinValue(LCD_D_PORT,LCD_D7_PIN,Pin_Low);
+  }
+
+
+}

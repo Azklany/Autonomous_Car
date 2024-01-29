@@ -1,6 +1,7 @@
 Application/Autonomous_Car/Autonomous_Car.o \
   Application/Autonomous_Car/Autonomous_Car.o:  \
  ../Application/Autonomous_Car/Autonomous_Car.c \
+  ../Application/Autonomous_Car/Autonomous_Car.h \
   ../Application/Autonomous_Car/../../HAL/H_Bridge/H_Bridge.h \
   ../Application/Autonomous_Car/../../HAL/H_Bridge/../../MCAL/DIO/DIO.h \
   ../Application/Autonomous_Car/../../HAL/H_Bridge/../../MCAL/DIO/../../Commons/MCU.h \
@@ -29,8 +30,9 @@ Application/Autonomous_Car/Autonomous_Car.o \
   ../Application/Autonomous_Car/../../HAL/LCD/LCD.h \
   ../Application/Autonomous_Car/../../HAL/LCD/../../MCAL/DIO/DIO.h \
   ../Application/Autonomous_Car/../../HAL/Buzzer/Buzzer.h \
-  ../Application/Autonomous_Car/../../HAL/Buzzer/../../MCAL/DIO/DIO.h \
-  ../Application/Autonomous_Car/Autonomous_Car.h
+  ../Application/Autonomous_Car/../../HAL/Buzzer/../../MCAL/DIO/DIO.h
+
+../Application/Autonomous_Car/Autonomous_Car.h:
 
 ../Application/Autonomous_Car/../../HAL/H_Bridge/H_Bridge.h:
 
@@ -89,5 +91,3 @@ Application/Autonomous_Car/Autonomous_Car.o \
 ../Application/Autonomous_Car/../../HAL/Buzzer/Buzzer.h:
 
 ../Application/Autonomous_Car/../../HAL/Buzzer/../../MCAL/DIO/DIO.h:
-
-../Application/Autonomous_Car/Autonomous_Car.h:

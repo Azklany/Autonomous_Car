@@ -18,7 +18,7 @@ void HAL_Ultrasonic_Sensor_voidInit(void) {
 	MCAL_DIO_u8SetPinDirection(TRIG_PORT, TRIG_PIN, Pin_High);  //  trigger
 	MCAL_Interrupt_EXIT_CallBack_0(HAL_Ultrasonic_Sensor_voidInterrupt); // external interrupt call back
 	SET_BIT(SREG,Pin7);
-	MCAL_Timer0_Init(Normal_Mode,Prescaller_64,Non_Inverted);
+	MCAL_Timer0_Init(Normal_Mode,Prescaller_64,'\0');
 	MCAL_Timer0_SetPreloadValue(113);
 }
 
