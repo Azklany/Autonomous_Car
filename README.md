@@ -60,4 +60,4 @@ turning to any empty direction.
   ```
 <hr>
 
-All rights reserved © 2023 to [Azklany](https://github.com/Azklany) & [Abdo](https://github.com/AbdulrahmanElanani).
+All rights reserved © 2024 to [Azklany](https://github.com/Azklany) & [Abdo](https://github.com/AbdulrahmanElanani).
