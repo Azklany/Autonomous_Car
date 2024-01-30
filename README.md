@@ -16,6 +16,7 @@
 - Ultrasonic HC- SR04.
 - Servo motor.
 - H-Bridge (L293D).
+- LCD
 - Motors.
 - Caster wheel.
 - Chassis
@@ -37,8 +38,7 @@ turning to any empty direction.
 ### Drivers
 - Application
   - Autonomous_Car
-  - main
-- FreeRTOS 
+  - main 
 - HAL
   - LED
   - LCD
